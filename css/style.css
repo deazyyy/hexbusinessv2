@@ -1766,9 +1766,6 @@ footer{
 
 
 
-
-
-
 .section_heading{
   margin: 2em 0 2em 0 !important
 }
@@ -1779,28 +1776,15 @@ footer{
   margin-top: 5%;
 }
 
-
-
-
-
 .hexmoneyimage{
 	width: 100% !important;
 	max-width: none !important;
 	margin: 2em 0em 2em 1em !important;
 }
 
-
-
-
-
-
-
 .mobileshow{
 		display: none;
 	}
-
-
-
 
 .mobileshow-footer{
 	display: flex;
@@ -1811,3 +1795,5 @@ footer{
 	width: auto;
 	margin-right: 20px;
 }
+
+/**/

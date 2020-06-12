@@ -7,7 +7,6 @@
   font-family: 'Montserrat';
 }
 
-
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Thin.woff2') format('woff2'),
@@ -2226,14 +2225,6 @@ background-image: linear-gradient(to left, #fff , #fff) !important;
 ;
 }
 
-
-
-
-
-
-
-
-
 .hex-btn-capitalise{
   max-width: 10em
 }
@@ -2251,9 +2242,7 @@ background-image: linear-gradient(to left, #fff , #fff) !important;
 
 .mobileshow{
     display: none;
-  }
-
-
+}
 
 .navmobilehide .navbar-default .navbar-nav{
   background-image: -webkit-gradient(linear, right top, left top, from(#9045F4) , to(#00B8FA)) !important;
@@ -2271,12 +2260,48 @@ background-image: linear-gradient(to left, #fff , #fff) !important;
 }
 
 
-
-
 .table-responsive-outer{
   display: flex;
 }
 
 .table-responsive-outer .table-responsive{
   width: 50%;
+}
+
+#errorMsg {
+  display: none;
+  color: red;
+  position: fixed;
+  top:0px;
+  left:50%;
+  transform: translate(-50%, 0%);
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 10px;
+  z-index:99;
+  font-weight: 700;
+  box-shadow: 0px 0px 5px black;
+}
+
+#successMsg {
+  display: none;
+  color: green;
+  position: fixed;
+  top:0px;
+  left:50%;
+  transform: translate(-50%, 0%);
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 10px;
+  z-index:99;
+  font-weight: 700;
+  box-shadow: 0px 0px 5px black;
+}
+
+.addressBreak {
+  word-wrap: break-word;
+  word-break: break-all;
+  font-weight: bold;
 }

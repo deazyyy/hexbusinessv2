@@ -427,10 +427,10 @@ async function GetBalance() {
 	var eth = await web3.eth.getBalance(activeAccount);
 	eth /= 10 ** 18;
 	document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
-	document.getElementById("hxyAvailable").innerHTML = toFixedMax(hxy, 8) - (frozenTokens / 10 ** 8);
-	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 4);
+	document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
+	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);
 	document.getElementById("usdcBalance").innerHTML = toFixedMax(usdc, 2);
-	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 16);
+	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 8);
 }
 
 function isFreezeFinished(timestamp, days) {

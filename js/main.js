@@ -289,6 +289,7 @@ async function FreezeTokens() {
 async function UnfreezeTokens(freezingDate, days) {
   if(isFreezeFinished(freezingDate, days)){
     errorMessage("Cannot unfreeze yet");
+    return;
   }
   else{
     hxyContract.methods.releaseFrozen(freezingDate).send({
@@ -311,16 +312,24 @@ async function Capitalize(freezingDate, days){
   //  errorMessage("");
   //}
   //else{
+  var interest = await hxyContract.methods.getCurrentInterestAmount(activeAccount, freezingDate).call();
+  if(interest == 0){
+    errorMessage("You have no interest on this freeze, please try later...");
+    return;
+  }
   hxyContract.methods.refreezeHxy(freezingDate).send({
     from: activeAccount
   })
   .on('receipt', function (receipt) {
     successMessage("Successfully capitalized!");
     console.log(receipt);
+    setTimeout(function(){
+      GetUserFreezings();
+    },3000);
   })
   .on('error', function () {
     console.error;
-    errorMessage("Capitilize failed, please try later...");
+    errorMessage("Capitalize failed, please try later...");
   }); 
 //}
 }
@@ -346,6 +355,7 @@ async function GetUserFreezings() {
             freezes.push(freezing);
             i++;
             if(i == result.length){
+              freezes.sort(doSort(false));
               GetBalance();
               UpdateTables();
             }
@@ -416,13 +426,13 @@ function UpdateTables() {
       var interest = freeze.interest / 10 ** 8;
       console.log(isFreezeFinished(timestamp, days));
       if(isFreezeFinished(timestamp, days)){
-        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ i +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td><td width="35%">           <div class="hex-btn">            <div class="hex-btn-outer">                <button type="button" class="btn-main" onclick="UnfreezeTokens(' + timestamp + ', ' + days + ')">Unfreeze</button>            </div>                    </div></td></tr>');
+        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td><td width="35%">           <div class="hex-btn">            <div class="hex-btn-outer">                <button type="button" class="btn-main" onclick="UnfreezeTokens(' + timestamp + ', ' + days + ')">Unfreeze</button>            </div>                    </div></td></tr>');
       }
       else{
         var daysLeft = getDaysLeft(timestamp, days);
         var endTime = getEndTime(timestamp, days);
         var endDate = timestampToDate(endTime);
-        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ i +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
+        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
       }
     }
 }
@@ -528,6 +538,13 @@ function CalcTimeElapsed(timestamp) {
 }
 
 /*----------HELPER FUNCTIONS------------ */
+function doSort(ascending) {
+  ascending = typeof ascending == 'undefined' || ascending == true;
+  return function (a, b) {
+      var ret = a[1] - b[1];
+      return ascending ? ret : -ret;
+  };
+}
 
 function getCookie(cname) {
   var name = cname + "=";

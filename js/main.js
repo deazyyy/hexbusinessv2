@@ -22,7 +22,41 @@ if (isDeviceMobile()) {
 
 setInterval(function(){
   UpdateData();
-},60000);//60 secs
+},30000);//60 secs
+
+async function UpdateData(){
+  var totalSupply = await hxyContract.methods.totalSupply().call();
+  var maxSupply = await hxyContract.methods.cap().call();
+  var frozenSupply = await hxyContract.methods.getTotalFrozen().call();
+  var lockedSupply  = await hxyContract.methods.getLockedSupply().call();
+  totalSupply /= 10 ** 8;
+  maxSupply /= 10 ** 8;
+  frozenSupply /= 10 ** 8;
+  lockedSupply /= 10 ** 8;
+  document.getElementById("totalSupply").innerHTML =  totalSupply;
+  document.getElementById("maxSupply").innerHTML =  maxSupply;
+  document.getElementById("frozenSupply").innerHTML =  frozenSupply;
+  document.getElementById("lockedSupply").innerHTML =  lockedSupply;
+  document.getElementById("circulatingSupply").innerHTML = (totalSupply - (lockedSupply + frozenSupply));
+  GetAvailableDividends();
+  GetUserFreezings();
+}
+
+async function GetBalance() {
+	var hex = await hexContract.methods.balanceOf(activeAccount).call();
+	hex /= 10 ** 8;
+	var hxy = await hxyContract.methods.balanceOf(activeAccount).call();
+	hxy /= 10 ** 8;
+	var usdc = await usdcContract.methods.balanceOf(activeAccount).call();
+	usdc /= 10 ** 6;
+	var eth = await web3.eth.getBalance(activeAccount);
+	eth /= 10 ** 18;
+	document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
+	document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
+	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);
+	document.getElementById("usdcBalance").innerHTML = toFixedMax(usdc, 2);
+	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 8);
+}
 
 async function AddToMetamask(){
   errorMessage("This feature is coming soon.<br/>You can add HXY manually using the contract address.");
@@ -185,9 +219,6 @@ function Transform(){
     }).on('receipt', function (receipt) {
       successMessage('ETH successfully transformed to HXY');
       console.log(receipt);
-      setTimeout(function(){
-        Populate();
-      },5000)
     })
     .on('error', function (error){
       errorMessage('Something went wrong, try again');
@@ -213,9 +244,6 @@ function Transform(){
     }).on('receipt', function (receipt) {
       successMessage('HEX successfully transformed to HXY');
       console.log(receipt);
-      setTimeout(function(){
-        Populate();
-      },5000)
     })
     .on('error', function (error){
       errorMessage('Something went wrong, try again');
@@ -242,9 +270,6 @@ function Transform(){
     }).on('receipt', function (receipt) {
       successMessage('USDC successfully transformed to HXY');
       console.log(receipt);
-      setTimeout(function(){
-        Populate();
-      },5000)
     })
     .on('error', function (error){
       errorMessage('Something went wrong, try again');
@@ -272,11 +297,14 @@ async function FreezeTokens() {
     }
     hxyContract.methods.freezeHxy(_hxy).send({
       from: activeAccount
-    }).then(function () {
-        successMessage("HXY frozen successfully!");
-        setTimeout(function(){
-          Populate();
-        },5000)
+    })
+    .on('receipt', function (receipt) {
+      successMessage("HXY frozen successfully!");
+      console.log(receipt);
+    })
+    .on('error', function (error){
+      errorMessage('Freeze failed, try again');
+      console.log(error);
     });
   }
 }
@@ -314,9 +342,9 @@ async function Capitalize(freezingDate){
   .on('receipt', function (receipt) {
     successMessage("Successfully capitalized!");
     console.log(receipt);
-    setTimeout(function(){
-      GetUserFreezings();
-    },3000);
+    //setTimeout(function(){
+    //  GetUserFreezings();
+    //},3000);
   })
   .on('error', function () {
     console.error;
@@ -399,40 +427,6 @@ function UpdateFreezeTable() {
   }
 }
 
-async function UpdateData(){
-  var totalSupply = await hxyContract.methods.totalSupply().call();
-  var maxSupply = await hxyContract.methods.cap().call();
-  var frozenSupply = await hxyContract.methods.getTotalFrozen().call();
-  var lockedSupply  = await hxyContract.methods.getLockedSupply().call();
-  totalSupply /= 10 ** 8;
-  maxSupply /= 10 ** 8;
-  frozenSupply /= 10 ** 8;
-  lockedSupply /= 10 ** 8;
-  document.getElementById("totalSupply").innerHTML =  totalSupply;
-  document.getElementById("maxSupply").innerHTML =  maxSupply;
-  document.getElementById("frozenSupply").innerHTML =  frozenSupply;
-  document.getElementById("lockedSupply").innerHTML =  lockedSupply;
-  document.getElementById("circulatingSupply").innerHTML = (totalSupply - (lockedSupply + frozenSupply));
-  GetAvailableDividends();
-  GetUserFreezings();
-}
-
-async function GetBalance() {
-	var hex = await hexContract.methods.balanceOf(activeAccount).call();
-	hex /= 10 ** 8;
-	var hxy = await hxyContract.methods.balanceOf(activeAccount).call();
-	hxy /= 10 ** 8;
-	var usdc = await usdcContract.methods.balanceOf(activeAccount).call();
-	usdc /= 10 ** 6;
-	var eth = await web3.eth.getBalance(activeAccount);
-	eth /= 10 ** 18;
-	document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
-	document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
-	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);
-	document.getElementById("usdcBalance").innerHTML = toFixedMax(usdc, 2);
-	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 8);
-}
-
 function isFreezeFinished(timestamp, days) {
    return ((timestamp + (days * oneDaySeconds) <= (Date.now()/1000)));
 }
@@ -452,7 +446,7 @@ function timestampToDate(endTimestamp){
 
 function DonateEth() {
   if (typeof web3 !== "undefined") {
-    Populate();
+    Setup();
     //donate
     const input = document.getElementById('ethDonate');
     if (input.value <= 0) {
@@ -480,7 +474,7 @@ function DonateEth() {
 
 function DonateHex() {
   if (typeof web3 !== "undefined") {
-    Populate();
+    Setup();
     //donate
     const input = document.getElementById('hexDonate');
     if (input.value <= 0) {

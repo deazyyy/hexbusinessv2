@@ -3849,12 +3849,11 @@ window.addEventListener('load', async () => {
 			// Request account access if needed
 			ethereum.enable().then(function(){
 				// Accounts now exposed
-				Populate();
+				Setup();
 			});
 		} catch (error) {
 			// User denied account access...
 			web3 = new Web3(new Web3.providers.HttpProvider(infura));
-			//PopulatePools();
 			console.error;
 			console.log("Defaulting to infura for view only");
 			errorMessage("Failed to connect to your wallet, allow access to use hex.business");
@@ -3865,18 +3864,17 @@ window.addEventListener('load', async () => {
 	else if (window.web3) {
 		window.web3 = new Web3(web3.currentProvider);
 		// Acccounts now exposed
-		Populate();
+		Setup();
 	}
 	// Non-dapp browsers...
 	else {
 		web3 = new Web3(new Web3.providers.HttpProvider(infura));
-		//PopulatePools();
 		errorMessage("No wallet found, please try with a compatible dapp browser.<br/><br/><i style='color:black; width:35px;' class='fa fa-mobile'></i><a href='https://www.opera.com/mobile' target='_blank'>Opera Browser</a><br/><i style='color:black; width:35px;' class='fa fa-desktop'></i><a href='https://brave.com/?ref=swi951' target='_blank'>Brave Browser</a>");
 		console.log("Defaulting to infura for view only");
 	}
 });
 
-async function Populate() {
+async function Setup() {
 		if (!web3Found) {
 			successMessage("Connecting...");
 			CheckAccount();
@@ -3968,19 +3966,19 @@ function CheckNetwork() {
 function errorMessage(text) {
 	console.log(text);
 	document.getElementById("errorMsg").innerHTML = '<i class="fa fa-exclamation-circle"></i>&nbsp;' + text;
-	$("#errorMsg").fadeIn(1000);
+	$("#errorMsg").slideDown(300);
 	setTimeout(function () {
-		$("#errorMsg").fadeOut(1000);
-	}, 3000);
+		$("#errorMsg").slideUp(300);
+	}, 3500);
 }
 
 function successMessage(text) {
 	console.log(text);
 	document.getElementById("successMsg").innerHTML = '<i class="fa fa-exclamation-circle"></i>&nbsp;' + text;
-	$("#successMsg").fadeIn(1000);
+	$("#successMsg").slideDown(300);
 	setTimeout(function () {
-		$("#successMsg").fadeOut(1000);
-	}, 3000);
+		$("#successMsg").slideUp(300);
+	}, 3500);
 }
 
 function ShowUserAddress() {

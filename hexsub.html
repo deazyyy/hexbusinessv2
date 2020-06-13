@@ -179,7 +179,7 @@
                         <div class="hex-receive">
                             <label>Amount</label>
                             <div>
-                            <input id="transformInput" type="number" class="form-control" placeholder="2000" value="2000" oninput="TransformChange(this, this.nextElementSibling.innerHTML)">
+                            <input id="transformInput" type="number" class="form-control" value="2000" oninput="TransformChange(this, this.nextElementSibling.innerHTML)">
                             <span id="transformCoin2">HEX</span>
                            </div> 
                         </div>
@@ -208,7 +208,7 @@
                         <div class="hex-receive">
                             <label>Amount</label>
                             <div>
-                                <input id="freezeAmount" type="number" class="form-control" placeholder="1" value="1">
+                                <input id="freezeAmount" type="number" class="form-control" value="1"/>
                                 <span>HXY</span>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                     <h5>Frozen</h5>
                 </div>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="freezeTable" class="table">
                         <thead>
                             <tr>
                                 <th width="5%">#</th>
@@ -314,103 +314,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td width="5%"><p>1</p></td>
-                                <td width="20%">
-                                    <p>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                    <p>
-                                        <span><b>Earn</b></span>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                    <div class="hex-btn hex-btn-capitalise">
-                                        <div class="hex-btn-outer">
-                                            <button href="#" type="submit" class="btn-main">Capitalize</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td width="35%">
-                                    <p>
-                                        <span><b><img src="images/icons/hourglass.png">2020.10.16 16:34 CET</b></span>
-                                        <span>16 Days Left</span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="5%"><p>1</p></td>
-                                <td width="20%">
-                                    <p>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                    <p>
-                                        <span><b>Earn</b></span>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                   <div class="hex-btn hex-btn-capitalise">
-                                        <div class="hex-btn-outer">
-                                            <button href="#" type="submit" class="btn-main">Capitalize</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td width="35%">
-                                    <p>
-                                        <span><b><img src="images/icons/hourglass.png">2020.10.16 16:34 CET</b></span>
-                                        <span>16 Days Left</span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="5%"><p>1</p></td>
-                                <td width="20%">
-                                    <p>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                    <p>
-                                        <span><b>Earn</b></span>
-                                        <img src="images/icons/receive-form.png">
-                                        <span><b>100</b></span>
-                                        <span>HXY</span>
-                                    </p>
-                                </td>
-                                <td width="20%">
-                                    <div class="hex-btn hex-btn-capitalise">
-                                        <div class="hex-btn-outer">
-                                            <button href="#" type="submit" class="btn-main">Capitalize</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td width="35%">
-                                    
-                                       <div class="hex-btn">
-                                            <div class="hex-btn-outer">
-                                                <button href="#" type="submit" class="btn-main">Unfreeze</button>
-                                            </div>
-                                            
-                                        </div>
-                                
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

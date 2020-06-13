@@ -3914,7 +3914,7 @@ async function CheckAccount() {
 		} else {
 			activeAccount = accounts[0];
 			web3.eth.defaultAccount = accounts[0];
-
+			//GetBalance();
 			clearInterval(accountInterval);
 			//interval for account change
 			accountInterval = setInterval(function () {

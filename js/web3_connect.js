@@ -3850,7 +3850,6 @@ window.addEventListener('load', async () => {
 			ethereum.enable().then(function(){
 				// Accounts now exposed
 				Populate();
-
 			});
 		} catch (error) {
 			// User denied account access...
@@ -3914,7 +3913,6 @@ async function CheckAccount() {
 		} else {
 			activeAccount = accounts[0];
 			web3.eth.defaultAccount = accounts[0];
-			//GetBalance();
 			clearInterval(accountInterval);
 			//interval for account change
 			accountInterval = setInterval(function () {
@@ -3929,6 +3927,7 @@ async function CheckAccount() {
 					}
 				});
 			}, 5000);
+  			UpdateData();
 		}
 	}); 
 

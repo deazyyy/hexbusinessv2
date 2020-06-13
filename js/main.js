@@ -20,14 +20,9 @@ if (isDeviceMobile()) {
 
 }
 
-setTimeout(async function(){
-  getAvailableDividends();
-  await GetUserFreezings();
-  UpdateData();
-}, 3000);
 setInterval(function(){
   UpdateData();
-},15000);//15 secs
+},60000);//60 secs
 
 async function AddToMetamask(){
   errorMessage("This feature is coming soon.<br/>You can add HXY manually using the contract address.");
@@ -118,7 +113,7 @@ function getHxyRate() {
    return hxyContract.methods.getCurrentHxyRate().call();
 }
 
-function getAvailableDividends() {
+function GetAvailableDividends() {
     dividendsContract.methods.getAvailableDividends(activeAccount).call().then((result) => {
       result.map((dividend, index) => {
         if(dividendsKeys[index] == "ETH"){
@@ -355,9 +350,9 @@ async function GetUserFreezings() {
             freezes.push(freezing);
             i++;
             if(i == result.length){
-              freezes.sort(doSort(false));
+              freezes.sort(doSort(true));
               GetBalance();
-              UpdateTables();
+              UpdateFreezeTable();
             }
           });
          
@@ -374,10 +369,31 @@ async function GetUserFreezings() {
   });
 }
 
-function getBlock() {
-  return web3.eth.getBlockNumber();
+function UpdateFreezeTable() {
+  console.log("freezeList = " + freezes);
+  var freezeTbody = document.getElementById("freezeTable").lastElementChild;
+  freezeTbody.innerHTML = "";
+  //iterate through freezes
+  for (var i = 0; i < freezes.length; i++) {
+    var freeze = freezes[i];
+    console.log(freeze);
+    var id = freeze.id;
+    var amount = freeze.freezeAmount / 10 ** 8;
+    var days = parseInt(freeze.freezeDays);
+    var timestamp = parseInt(freeze.startDate);
+    var interest = freeze.interest / 10 ** 8;
+    console.log(isFreezeFinished(timestamp, days));
+    if(isFreezeFinished(timestamp, days)){
+      freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td><td width="35%">           <div class="hex-btn">            <div class="hex-btn-outer">                <button type="button" class="btn-main" onclick="UnfreezeTokens(' + timestamp + ', ' + days + ')">Unfreeze</button>            </div>                    </div></td></tr>');
+    }
+    else{
+      var daysLeft = getDaysLeft(timestamp, days);
+      var endTime = getEndTime(timestamp, days);
+      var endDate = timestampToDate(endTime);
+      freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
+    }
+  }
 }
-
 
 async function UpdateData(){
   var totalSupply = await hxyContract.methods.totalSupply().call();
@@ -393,6 +409,8 @@ async function UpdateData(){
   document.getElementById("frozenSupply").innerHTML =  frozenSupply;
   document.getElementById("lockedSupply").innerHTML =  lockedSupply;
   document.getElementById("circulatingSupply").innerHTML = (totalSupply - (lockedSupply + frozenSupply));
+  GetAvailableDividends();
+  GetUserFreezings();
 }
 
 async function GetBalance() {
@@ -409,32 +427,6 @@ async function GetBalance() {
 	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 4);
 	document.getElementById("usdcBalance").innerHTML = toFixedMax(usdc, 2);
 	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 16);
-}
-
-function UpdateTables() {
-    console.log("freezeList = " + freezes);
-    var freezeTbody = document.getElementById("freezeTable").lastElementChild;
-    freezeTbody.innerHTML = "";
-    //iterate through freezes
-    for (var i = 0; i < freezes.length; i++) {
-      var freeze = freezes[i];
-      console.log(freeze);
-      var id = freeze.id;
-      var amount = freeze.freezeAmount / 10 ** 8;
-      var days = parseInt(freeze.freezeDays);
-      var timestamp = parseInt(freeze.startDate);
-      var interest = freeze.interest / 10 ** 8;
-      console.log(isFreezeFinished(timestamp, days));
-      if(isFreezeFinished(timestamp, days)){
-        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td><td width="35%">           <div class="hex-btn">            <div class="hex-btn-outer">                <button type="button" class="btn-main" onclick="UnfreezeTokens(' + timestamp + ', ' + days + ')">Unfreeze</button>            </div>                    </div></td></tr>');
-      }
-      else{
-        var daysLeft = getDaysLeft(timestamp, days);
-        var endTime = getEndTime(timestamp, days);
-        var endDate = timestampToDate(endTime);
-        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
-      }
-    }
 }
 
 function isFreezeFinished(timestamp, days) {
@@ -538,6 +530,11 @@ function CalcTimeElapsed(timestamp) {
 }
 
 /*----------HELPER FUNCTIONS------------ */
+
+function getBlock() {
+  return web3.eth.getBlockNumber();
+}
+
 function doSort(ascending) {
   ascending = typeof ascending == 'undefined' || ascending == true;
   return function (a, b) {

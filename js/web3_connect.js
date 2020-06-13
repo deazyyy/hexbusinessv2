@@ -1,5 +1,5 @@
 //currently kovan
-const oneDaySeconds = 86400;
+const oneDaySeconds = 300;// 86400;
 const dividendsKeys = ['HEX', 'HXY', 'ETH', 'USDC'];
 var transformRound;
 
@@ -3926,7 +3926,7 @@ async function CheckAccount() {
 						console.log("Active wallet = " + activeAccount);
 					}
 				});
-			}, 5000);
+			}, 6000);
   			UpdateData();
 		}
 	}); 

@@ -293,7 +293,15 @@ async function UnfreezeTokens(freezingDate, days) {
   else{
     hxyContract.methods.releaseFrozen(freezingDate).send({
       from: activeAccount
-    });
+    })
+    .on('receipt', function (receipt) {
+      successMessage("Successfully unfroze HXY");
+      console.log(receipt);
+    })
+    .on('error', function () {
+      console.error;
+      errorMessage("Unfreeze failed, please try again...");
+    }); 
   }
 
 }
@@ -305,7 +313,15 @@ async function Capitalize(freezingDate, days){
   //else{
   hxyContract.methods.refreezeHxy(freezingDate).send({
     from: activeAccount
-  });
+  })
+  .on('receipt', function (receipt) {
+    successMessage("Successfully capitalized!");
+    console.log(receipt);
+  })
+  .on('error', function () {
+    console.error;
+    errorMessage("Capitilize failed, please try later...");
+  }); 
 //}
 }
 

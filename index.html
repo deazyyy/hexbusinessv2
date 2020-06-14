@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.5" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=2.6" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.1" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=2.9" />
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <title>HEX business - Version 2.0</title>
 </head>
@@ -61,6 +61,9 @@
                           <li><a href="#">Page3</a></li>
                         </ul>
                     </li>
+                    <li class="nav-hexbtn"> 
+                        <a href="#" class="btn-main" ><span>Go to </span><div class="navbtn_img"></div></a>
+                    </li>
             </div>
         </div>
     </nav>
@@ -73,7 +76,12 @@
                 <div class="banner-block wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.60s">
                     <div class="banner-details">
                         <h5><span>New</span> Now available on Google Play</h5>
-                        <h1>let's talk <strong>hex.business</strong></h1>
+                        <h1 style="display: flex;justify-content: center;align-items: center;">
+                            let's talk
+                            <strong
+                                class="txt-rotate" style="margin-left: 10px;"
+                                data-period="1200"
+                                data-rotate='[ "hex.business", "hex.money", "hex.stake"]'></strong></h1>
                         <p>hex.business is an ecosystem built entirely around HEX, <br> an ERC20 Token based on the Ethereum blockchain.</p>
                         <a href="#" class="btn-main">Download the App</a>
                         <h6>Available on Google Play, iOS & APK</h6>
@@ -1257,7 +1265,7 @@
                 </div>
             </div>
             <div class="copyright-wrapper wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.40s">
-                    <div class="col-md-5 col-sm-6">
+                    <div class="col-md-12 col-sm-12">
                         <div class="copyright-nm">
                             <p>© 2020 <img src="images/icons/lemon-icon.png" alt="icon"> <a href="#">happylemon</a>. All rights reserved.</p>
                         </div>
@@ -1399,6 +1407,64 @@
               $('.about-msg').removeClass('fadeInRight');
          
         });
+    </script>
+    <script>
+        var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<strong class="wrap">'+this.txt+'</strong>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
+  document.body.appendChild(css);
+};
     </script>
 </body>
 </html>

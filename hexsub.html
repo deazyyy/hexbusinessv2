@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/style2.css?ver=2.2" />
-    <link rel="stylesheet" type="text/css" href="css/responsive2.css?ver=2.2" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css?ver=3.2" />
+    <link rel="stylesheet" type="text/css" href="css/responsive2.css?ver=3.4" />
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <title>HEX Money</title>
 </head>
@@ -129,12 +129,146 @@
     <!-- End Header -->
 
     <section class="welcome_section">
+        <div class="welcome_upper">
+            <div class="welcome_upper_first">
+                <div class="round_outer">
+                <div class="coloured_gradient_outer"><div class="round_innervalue">1</div></div>
+                <b>Round</b>
+                </div>
+                <div class="welcome_conv_outer">
+                <div>1 HXY=</div>
+                <div class="coloured_gradient_outer">
+                    <div class="welcome_conv_inner">
+                        <img src="images/cmp-icons/01.png">
+                        <b>1.000</b>
+                        <div>HEX</div>
+                    </div>
+                </div>
+                <div class="coloured_gradient_outer">
+                    <div class="welcome_conv_inner">
+                        <img src="images/cmp-icons/04.png">
+                        <b>1.000</b>
+                        <div>ETH</div>
+                    </div>
+                </div>
+                <div class="coloured_gradient_outer">
+                    <div class="welcome_conv_inner">
+                        <img src="images/cmp-icons/06.png">
+                        <b>1.000</b>
+                        <div>USDC</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="welcome_progressbar">
+                <b>Total HXY Transformed</b>
+                <div>
+                   <div style="height: 100%; width: 100%;margin-bottom: 10px;">
+                        <div class="col1">
+                            <div class="meter" style="width: 300px;">
+                                <span style="width: 70%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>750000/300000</div>
+                </div>
+            </div>
+        </div>
+
+
+
+<style type="text/css">
+    /* NOT NEEDED FOR PROGRESS BAR OR SLIDERS */
+body {font-family: 'Open Sans', sans-serif;}
+td {padding-right: 20px; padding-bottom: 4px;}
+.col1, .col2 {
+  width: 48%;
+  height: 100%;
+}
+.col1 {
+  background-color: #FFF;
+  float: left;
+}
+.col2 {
+  background-color: #212325;
+  color: #FFF;
+  float: right;
+}
+
+/* PROGRESS BAR - BASE */
+.meter { 
+    width: 120px !important;
+    height: 8px;
+    position: relative;
+    background: #DCE0E3;
+border-radius: 8px;
+}
+.dark {
+  background: #4D575F;
+}
+.meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: linear-gradient(-60deg, #01b7f9 0%, #9143f3 100%);
+    position: relative;
+    overflow: hidden;
+}
+.meter > span:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    /*background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #56aa1c), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, #56aa1c), color-stop(.75, #56aa1c), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(-45deg, #56aa1c 25%, transparent 25%, transparent 50%, #56aa1c 50%, #56aa1c 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, #56aa1c 25%, transparent 25%, transparent 50%, #56aa1c 50%, #56aa1c 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(-45deg, #56aa1c 25%, transparent 25%, transparent 50%, #56aa1c 50%, #56aa1c 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, #56aa1c 25%, transparent 25%, transparent 50%, #56aa1c 50%, #56aa1c 75%, transparent 75%, transparent);*/
+    z-index: 1;
+    background-size:20px 20px;
+    -webkit-animation: move 2s linear infinite;
+
+               border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+                border-top-left-radius: 20px;
+             border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+
+/* PROGRESS BAR - ANIMATION */
+@-webkit-keyframes move {
+  0% {background-position: 0 0;}
+  100% {background-position: 30px 30px;}
+}
+@-moz-keyframes move {
+  0% {background-position: 0 0;}
+  100% {background-position: 30px 30px;}
+}
+::-ms-fill-lower {background: #58BFFF;}
+</style>
+
+
+
+<script type="text/javascript">
+    // ANIMATE PROGRESS BAR FILL
+$(".meter > span").each(function() {
+    $(this)
+        .data("origWidth", $(this).width())
+        .width(0)
+        .animate({
+            width: $(this).data("origWidth")
+        }, 1200);
+});
+</script>
+
         <div class="welcome_section_main">
-             <div class="welcome_usrname">
+            <div class="welcome_usrname">
                 Welcome
                 <span>
                     <img src="images/icons/fox-icon.png">
-                    <b id="userAddress" class="addressBreak">Connecting...</b>
+                        <b id="userAddress" class="addressBreak">Connecting...</b>
                 </span>
             </div>
             <div class="welcome_walletbalance">
@@ -142,15 +276,15 @@
                 <span class="welcome_col_span">
                     <span><img src="images/cmp-icons/01.png"></span>
                     <span><b id="hxyBalance">0</b></span>
-                    <span>HXY</span>
+                    <span>HEX</span>
                 </span>
                 <span class="welcome_col_span">
                     <span><img src="images/cmp-icons/05.png"></span>
                     <span><b id="hexBalance">0</b></span>
-                    <span>HEX</span>
+                    <span>HXY</span>
                 </span>
                 <span class="welcome_col_span">
-                    <span><img src="images/cmp-icons/04.png"></span>
+                    <span><img src="images/cmp-icons/09.png"></span>
                     <span><b id="ethBalance">0</b></span>
                     <span>ETH</span>
                 </span>
@@ -186,7 +320,7 @@
                         <div class="hex-available">
                             <label>Receive</label>
                             <div>
-                                <img src="images/icons/receive-form.png">
+                                <img src="images/cmp-icons/05.png">
                                 <b id="hxyConversion">1</b>
                                 <span>HXY</span>
                             </div>
@@ -205,7 +339,7 @@
                 <div class="hextabs-block hextabs-block2" id="hex-tab1">
                     <h4>Freeze HXY </h4>
                     <div class="hex-form">
-                        <div class="hex-receive">
+                        <div class="hex-receive hex-receive-div-3">
                             <label>Amount</label>
                             <div>
                                 <input id="freezeAmount" type="number" class="form-control" value="1"/>
@@ -222,7 +356,7 @@
                         <div class="hex-available">
                             <label>Available</label>
                             <div>
-                                <img src="images/icons/receive-form.png">
+                                <img src="images/cmp-icons/05.png">
                                 <b id="hxyAvailable">Loading...</b>
                                 <span>HXY</span>
                             </div>
@@ -293,10 +427,10 @@
 
         </div>
     </section>
-<section  class="hexsection">
-    <p><b style="color:white"><i class="fa fa-info-circle"></i>&nbsp;Please Claim daily dividends (if any) before any action with freezing (Freeze, Unfreeze, Capitalize).
-    After any action you will not be able to get dividends today.</b></p>
-</section>
+<div id="claimdividends">
+    <p><img src="images/icons/alert.png">Please Claim daily dividends (if any) before any action with freezing (Freeze, Unfreeze, Capitalize).
+    After any action you will not be able to get dividends today.</p>
+</div>
 
      <section class="overview_section">
         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeInLeft;">
@@ -329,6 +463,204 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="overview_section dividends_section">
+        <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeInLeft;">
+            <div class="hex-table">
+                <div class="hex-table-title">
+                    <h5>Dividends</h5>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead  class="overview_rate_sec_thead">
+                            <tr>
+                                <th>Dividends</th>
+                                <th><img src="images/cmp-icons/04.png"> ETH</th>
+                                <th><img src="images/cmp-icons/05.png"> HXY</th>
+                                <th><img src="images/cmp-icons/01.png"> HEX</th>
+                                <th><img src="images/cmp-icons/06.png"> USDC</th>
+                            </tr>
+                        </thead>
+                        <tbody class="overview_rate_sec_tbody">
+                            <tr>
+                                <td width="24%"><p><strong>Collected Today</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span class="up">0.03 %</span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="24%"><p><strong>Total Yesterday</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span class="down">0.03 %</span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="24%"><p><strong>Distributed Yesterday</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span class="up">0.03 %</span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                            </tr>
+              
+                    
+              
+                        </tbody>
+                        <tbody class="overview_rate_sec_tbody">
+                            <tr>
+                                <td width="24%"><p><strong>Total Dividends</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span class="up">0.03 %</span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="24%"><p><strong>Your Total Dividends</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span class="down">0.03 %</span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="maxSupply">60,000,000</b></span>
+                                    </p>
+                                </td>
+                            </tr>   
+                          
+              
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="overview_section">
         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeInLeft;">
             <div class="hex-table">
@@ -346,10 +678,10 @@
                             </thead>
                             <tbody class="overview_rate_sec_tbody">
                                 <tr>
-                                    <td width="50%"><p><strong>Max Supply</strong></p></td>
+                                    <td width="50%"><p><strong>Total Supply</strong></p></td>
                                     <td width="50%"  class="overview_rate">
                                         <p>
-                                            <img src="images/icons/receive-form.png">
+                                            <img src="images/cmp-icons/05.png">
                                             <span><b id="maxSupply">60,000,000</b></span>
                                             <span>HXY</span>
                                         </p>
@@ -357,10 +689,10 @@
                                 </tr>
                   
                                 <tr>
-                                    <td width="50%"><p><strong>Locked</strong></p></td>
+                                    <td width="50%"><p><strong>Frozen HXY</strong></p></td>
                                     <td width="50%" class="overview_rate">
                                         <p>
-                                            <img src="images/icons/receive-form.png">
+                                            <img src="images/cmp-icons/05.png">
                                             <span><b id="lockedSupply">6,000,000</b></span>
                                             <span>HXY</span>
                                         </p>
@@ -368,10 +700,10 @@
                                 </tr>
 
                                 <tr>
-                                    <td width="50%"><p><strong>Total Supply</strong></p></td>
+                                    <td width="50%"><p><strong>Circulating Supply</strong></p></td>
                                     <td width="50%">
                                         <p>
-                                            <img src="images/icons/receive-form.png">
+                                            <img src="images/cmp-icons/05.png">
                                             <span><b id="totalSupply">Loading...</b></span>
                                             <span>HXY</span>
                                         </p>
@@ -380,34 +712,44 @@
                   
 
                                 <tr>
-                                    <td width="50%"><p><strong>Frozen</strong></p></td>
+                                    <td width="50%"><p><strong>Total HEX Transformed</strong></p></td>
                                     <td width="50%">
                                         <p>
-                                            <img src="images/icons/receive-form.png">
-                                            <span><b id="frozenSupply">Loading...</b></span>
-                                            <span>HXY</span>
+                                            <img src="images/cmp-icons/01.png">
+                                            <span><b id="frozenSupply">9.000.000</b></span>
+                                            <span>HEX</span>
                                         </p>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td width="50%"><p><strong>Circulating</strong></p></td>
+                                    <td width="50%"><p><strong>Total USDC Transformed</strong></p></td>
                                     <td width="50%">
                                         <p>
-                                            <img src="images/icons/receive-form.png">
-                                            <span><b id="circulatingSupply">Loading...</b></span>
-                                            <span>HXY</span>
+                                            <img src="images/cmp-icons/06.png">
+                                            <span><b id="circulatingSupply">9.000.000</b></span>
+                                            <span>USDC</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"><p><strong>Total ETH Transformed</strong></p></td>
+                                    <td width="50%">
+                                        <p>
+                                            <img src="images/cmp-icons/04.png">
+                                            <span><b id="circulatingSupply">9.00.00</b></span>
+                                            <span>ETH</span>
                                         </p>
                                     </td>
                                 </tr>
 
 
-                                <tr class="mobilehide">
+                                <!--tr class="mobilehide">
                                     <td width="50%"></td>
                                     <td width="50%">
                                     
                                     </td>
-                                </tr>
+                                </tr-->
                   
                   
                   
@@ -425,29 +767,29 @@
                             </thead>
                             <tbody class="overview_rate_sec_tbody">
                                 <tr>
-                                    <td width="50%"><p><strong>Dividends Yesterday</strong></p></td>
+                                    <td width="50%"><p><strong>Locked HXY</strong></p></td>
                                      <td width="50%">
                                         <p>
-                                            <img src="images/cmp-icons/04.png">
-                                            <span><b>0</b></span>
-                                            <span>ETH</span>
+                                            <img src="images/cmp-icons/05.png">
+                                            <span><b>90.000.000</b></span>
+                                            <span>HEX</span>
                                         </p>
                                     </td>
                                 </tr>
                   
                                 <tr>
-                                    <td width="50%"><p><strong>Dividends Today</strong></p></td>
+                                    <td width="50%"><p><strong>Your HXY Interest</strong></p></td>
                                      <td width="50%">
                                         <p>
-                                            <img src="images/cmp-icons/04.png">
-                                            <span><b>0</b></span>
-                                            <span>ETH</span>
+                                            <img src="images/cmp-icons/05.png">
+                                            <span><b>90.000.000</b></span>
+                                            <span>HEX</span>
                                         </p>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td width="50%"><p><strong>Dividends Yesterday</strong></p></td>
+                                    <td width="50%"><p><strong>Your Frozen HXY</strong></p></td>
                                      <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
@@ -459,7 +801,7 @@
                   
 
                                 <tr>
-                                    <td width="50%"><p><strong>Dividends Today</strong></p></td>
+                                    <td width="50%"><p><strong>Max Supply</strong></p></td>
                                      <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
@@ -470,7 +812,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td width="50%"><p><strong>Dividends Yesterday</strong></p></td>
+                                    <td width="50%"><p><strong>Total HXY Transformed</strong></p></td>
                                      <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
@@ -478,21 +820,7 @@
                                             <span>USDC</span>
                                         </p>
                                     </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td width="50%"><p><strong>Dividends Today</strong></p></td>
-                                     <td width="50%">
-                                        <p>
-                                            <img src="images/cmp-icons/05.png">
-                                            <span><b>0</b></span>
-                                            <span>USDC</span>
-                                        </p>
-                                    </td>
-                                </tr>
-                  
-                  
+                                </tr>                  
                   
                             </tbody>
                         </table>
@@ -504,7 +832,18 @@
         </div>
     </section>
 
-
+    <section class="overview_section reff_section">
+        <div class="hex-block">
+            <div>
+                Your Referral URL
+            </div>
+            <div class="referral_outer" >
+                <b style="color:#1e266d;">https://hex.business/?r=<span id="refAddress" class="addressBreak">YOUR_ETH_ADDRESS</span></b>
+                <div class="ref_copy_icon"><img src="images/icons/copy.png"></div>
+                
+            </div>
+        </div>
+    </section>
    
 
 
@@ -537,12 +876,12 @@
                     <a href="https://t.me/hexmobileapp" class="btn-main">Join <i class="fa fa-paper-plane"></i> Telegram</a>
                 </div>
             </div>
-            <div class="join-wrapepr">
+            <!--div class="join-wrapepr">
                 <div class="join-details wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.40s">
                     <h2 class="main-title">Refer others and <br>earn HXY rewards</h2>
                 </div>
                 <p><b style="color:white">https://hex.business/?r=<span id="refAddress" class="addressBreak">YOUR_ETH_ADDRESS</span></b></p>
-            </div>
+            </div-->
         </div>
     </section>
     <!-- Join Us end -->
@@ -781,6 +1120,15 @@
             }
           },1000);
         }
+    </script>
+
+    <script type="text/javascript">
+    setTimeout(function(){
+         $('#claimdividends').fadeIn();
+         setTimeout(function(){
+             $('#claimdividends').fadeOut() 
+        }, 5000);
+    }, 6000);
     </script>
 
     <!-- Ethereum control -->

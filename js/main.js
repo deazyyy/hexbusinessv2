@@ -124,15 +124,19 @@ async function TransformChange(elem, coin) {
   }
   console.log(inputValue);
   if(coin == "HEX"){
-    hxyValue = inputValue / (1000 * 2);
+    hxyValue = inputValue / (1000 * transformRound);
   }
   else if(coin == "USDC"){
-  //
+  var ethAmount = await uniswapUsdc.methods.getTokenToEthInputPrice((inputValue * 10 ** 6)).call();
+  var hexAmount = await uniswapContract.methods.getEthToTokenInputPrice(ethAmount).call();
+  hxyValue = (hexAmount / 10 ** 8) / (1000 * transformRound);
   }
   else{
   //
+  var hexAmount = await uniswapContract.methods.getEthToTokenInputPrice(web3.utils.toWei(inputValue)).call();
+  hxyValue = (hexAmount / 10 ** 8) / (1000 * transformRound);
   }
-  document.getElementById("hxyConversion").innerHTML = hxyValue;
+  document.getElementById("hxyConversion").innerHTML = toFixedMax(hxyValue, 8);
 }
 
 function getUSDCPrice() {
@@ -227,6 +231,10 @@ function Transform(){
   }
 
   async function sendHEX(amount) {
+    if(amount < 1000 * 10 ** 8){
+      errorMessage("1000 HEX transform minimum");
+      return;
+    }
     var balance = await hexContract.methods.balanceOf(activeAccount).call();
     console.log(balance);
     if(amount > balance){
@@ -292,7 +300,7 @@ async function FreezeTokens() {
     var hxy = value;
     var _hxy = hxy * 10 ** 8;
     if ((balance - frozenTokens) < _hxy) {
-      errorMessage("Insufficient HXY available balance");
+      errorMessage("Insufficient available HXY balance");
       return;
     }
     hxyContract.methods.freezeHxy(_hxy).send({

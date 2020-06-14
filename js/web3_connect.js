@@ -3881,6 +3881,7 @@ async function Setup() {
 			CheckNetwork();
 			ShowUserAddress();
 			transformRound = await hxyContract.methods.getCurrentHxyRound().call();
+			transformRound += 2;
 			web3Found = true;
 			console.log("Web3 Found!");
 			console.log(web3.version);

@@ -118,36 +118,36 @@
                                                 <td>
                                                     <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong> - hex <span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
                                                 </td>
-                                                <td><p>0.00489108</p></td>
-                                                <td><a href="#" class="up">0.16 %</a></td>
+                                                <td><p id="hexUsd"></p></td>
+                                                <td><a id="hexChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong> - Bitcoin <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
                                                 </td>
-                                                <td><p>$9.4270k</p></td>
-                                                <td><a href="#" class="down">0.16 %</a></td>
+                                                <td><p id="btcUsd" ></p></td>
+                                                <td><a id="btcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - hex <span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong> - Bitcoin</p>
                                                 </td>
-                                                <td><p>51.93 sats</p></td>
-                                                <td><a href="#" class="up">1.51 %</a></td>
+                                                <td><p id="hexBtc"></p></td>
+                                                <td><a id="hexBtcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong> - Ethereum <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
                                                 </td>
-                                                <td><p>$220.79</p></td>
-                                                <td><a href="#" class="up">1.05 %</a></td>
+                                                <td><p id="ethUsd"></p></td>
+                                                <td><a id="ethChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - hex <span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - hex <span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong> - Ethereum</p>
                                                 </td>
-                                                <td><p>221.52 gwei</p></td>
-                                                <td><a href="#" class="down">0.88 %</a></td>
+                                                <td><p id="hexEth"></p></td>
+                                                <td><a id="hexEthChange"></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -161,36 +161,42 @@
                         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
                             <div class="hex-table">
                                 <div class="hex-table-title">
-                                    <h5>Overview</h5>
+                                    <h5>HXY Overview</h5>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Indicator</th>
-                                                <th>Volume</th>
+                                                <th>Data</th>
+                                                <th>Total</th>
                                                 <th>Rate</th>
-                                                <th>Growth</th>
+                                                <th>Share</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p>242.069B</p></td>
-                                                <td><p>$1192106.48k</p></td>
-                                                <td><a href="#" class="up">0.57 %</a></td>
+                                                <td><p id="hxyTotal" ></p></td>
+                                                <td><p id="hxyTotalUsd"></p></td>
+                                                <td><a id="hxyTotalPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p>242.069B</p></td>
-                                                <td><p>$1192106.48k</p></td>
-                                                <td><a href="#" class="up">0.57 %</a></td>
+                                                <td><p><strong>Frozen Supply</strong></p></td>
+                                                <td><p id="hxyFrozen"></p></td>
+                                                <td><p id="hxyFrozenUsd"></p></td>
+                                                <td><a  id="hxyFrozenPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p>242.069B</p></td>
-                                                <td><p>$1192106.48k</p></td>
-                                                <td><a href="#" class="up">0.57 %</a></td>
+                                                <td><p><strong>Locked Supply</strong></p></td>
+                                                <td><p id="hxyLocked"></p></td>
+                                                <td><p id="hxyLockedUsd"></p></td>
+                                                <td><a id="hxyLockedPercent" class="down"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p><strong>Circulating Supply</strong></p></td>
+                                                <td><p id="hxyCirculating"></p></td>
+                                                <td><p id="hxyCirculatingUsd"></p></td>
+                                                <td><a id="hxyCirculatingPercent" class="up"></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -216,18 +222,18 @@
                                         <tbody>
                                             <tr>
                                                 <td><p><strong>AA Pool val</strong></p></td>
-                                                <td><p>10.003k ETH</p></td>
-                                                <td><a href="#" class="up">0.57 %</a></td>
+                                                <td><p id="aaEth">10.003k ETH</p></td>
+                                                <td><a id="aaChange">0.57 %</a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p>51.048k H/E</p></td>
-                                                <td><a href="#" class="up">0.06 %</a></td>
+                                                <td><p><strong>AA HEX/ETH rate</strong></p></td>
+                                                <td><p id="aaHexRate">51.048k H/E</p></td>
+                                                <td><a id="aaPriceChange" class="up">0.06 %</a></td>
                                             </tr>
                                             <tr>
                                                 <td><p><strong>Uniswap Cost</strong></p></td>
-                                                <td><p>44.891k H/E</p></td>
-                                                <td><a href="#" class="up">0.70 %</a></td>
+                                                <td><p id="uniswapHexRate">44.891k H/E</p></td>
+                                                <td><a id="uniswapPriceChange" class="up">0.70 %</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1282,6 +1288,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/priceData.js"></script>
     <script type="text/javascript">
         //wow animation js
         new WOW().init();

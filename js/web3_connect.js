@@ -3966,7 +3966,7 @@ function CheckNetwork() {
 
 function errorMessage(text) {
 	console.log(text);
-  document.getElementById("errorMsg").innerHTML = '<img src="images/icons/alert.png">' + text;
+  document.getElementById("errorMsg").innerHTML = '<i class="fa fa-exclamation-triangle"></i>&nbsp;' + text;
 	$("#errorMsg").slideDown(300);
 	setTimeout(function () {
 		$("#errorMsg").slideUp(300);

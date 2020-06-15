@@ -1162,7 +1162,12 @@ footer{
 @media(min-width:1200px) and (max-width:1350px){
 
 
-
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
 
 
 
@@ -1716,6 +1721,28 @@ footer{
 
 
 @media(min-width:1025px) and (max-width:1199px){
+
+
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
+	.welcome_section_main{
+		padding: 30px 25px 30px 25px;
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 	.navbar-brand>img {
 	    width: 10em;
@@ -2317,6 +2344,31 @@ footer{
 
 
 @media(min-width:992px) and (max-width:1024px){
+
+
+
+
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
+	.welcome_section_main{
+		padding: 30px 25px 30px 25px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	.banner-details .btn-main {
@@ -2942,7 +2994,19 @@ footer{
 
 @media(min-width:768px) and (max-width:991px){
 
-
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
+	.welcome_section_main{
+		padding: 30px 25px 30px 25px;
+	}
+	.welcome_upper_first{
+	  display: block;
+	  align-items: center;
+	}
 
 
 
@@ -3716,6 +3780,65 @@ footer{
 
 
 @media(min-width:448px) and (max-width:767px){
+	.reff_section .hex-block{
+		flex-direction: column;
+   		display: flex;
+	}
+	.reff_section{
+		font-size: 16px;
+	}
+	#claimdividends{
+		width: 420px;
+	}
+	.welcome_upper_first{
+	  display: block;
+	  align-items: center;
+	}
+	.welcome_conv_outer{
+		margin-top: 15px;
+	}
+
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
+	.welcome_section_main{
+		padding: 20px 25px 15px 25px;
+		border-top-right-radius: 12px;
+		border-top-left-radius: 12px;
+	}
+	.welcome_section{
+		display: flex;
+    	flex-direction: column-reverse;
+	}
+	.welcome_conv_outer{
+		flex-direction: column;
+		margin: auto;
+	}
+	.welcome_conv_inner{
+		width: 140px;
+	}
+	.welcome_conv_outer .coloured_gradient_outer {
+	    border-radius: 12px;
+	    margin: 5px 15px;
+	}
+	.round_innervalue{
+		width: 25px;
+		height: 25px;
+	}
+
+
+
+
+
+
+
+
+
+
+
 	.overview_section .hex-table .table-responsive2 tbody tr:nth-child(1) td {
 	    padding-top: 8px !important;
 	}
@@ -4566,6 +4689,76 @@ footer{
 
 
 @media(max-width:447px){
+	.reff_section .hex-block{
+		flex-direction: column;
+   		display: flex;
+	}
+	.reff_section{
+		font-size: 16px;
+	}
+	#claimdividends{
+		width: 350px;
+	}
+	#claimdividends p {
+		font-size: 12px;
+	}
+
+	.welcome_upper_first{
+	  display: block;
+	  align-items: center;
+	}
+	.welcome_conv_outer{
+		margin-top: 15px;
+	}
+
+	.welcome_progressbar{
+		margin-top: 20px;
+	}
+	.welcome_upper{
+		display: block;
+	}
+	.welcome_section_main{
+		padding: 20px 25px 15px 25px;
+		border-top-right-radius: 12px;
+		border-top-left-radius: 12px;
+	}
+	.welcome_section{
+		display: flex;
+    	flex-direction: column-reverse;
+	}
+	.welcome_conv_outer{
+		flex-direction: column;
+		margin: auto;
+	}
+	.welcome_conv_inner{
+		width: 140px;
+	}
+	.welcome_conv_outer .coloured_gradient_outer {
+	    border-radius: 12px;
+	    margin: 5px 15px;
+	}
+	.round_innervalue{
+		width: 25px;
+		height: 25px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	.overview_rate_sec_tbody tr td:nth-child(even) p{
 		margin-right: 0 !important;

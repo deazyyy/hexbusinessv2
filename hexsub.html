@@ -132,7 +132,7 @@
         <div class="welcome_upper">
             <div class="welcome_upper_first">
                 <div class="round_outer">
-                <div class="coloured_gradient_outer"><div class="round_innervalue">1</div></div>
+                <div class="coloured_gradient_outer"><div id="transformRound" class="round_innervalue"></div></div>
                 <b>Round</b>
                 </div>
                 <div class="welcome_conv_outer">
@@ -140,21 +140,21 @@
                 <div class="coloured_gradient_outer">
                     <div class="welcome_conv_inner">
                         <img src="images/cmp-icons/01.png">
-                        <b>1.000</b>
+                        <b id="hexRate"></b>
                         <div>HEX</div>
                     </div>
                 </div>
                 <div class="coloured_gradient_outer">
                     <div class="welcome_conv_inner">
                         <img src="images/cmp-icons/04.png">
-                        <b>1.000</b>
+                        <b id="ethRate"></b>
                         <div>ETH</div>
                     </div>
                 </div>
                 <div class="coloured_gradient_outer">
                     <div class="welcome_conv_inner">
                         <img src="images/cmp-icons/06.png">
-                        <b>1.000</b>
+                        <b id="usdcRate"></b>
                         <div>USDC</div>
                     </div>
                 </div>
@@ -166,11 +166,11 @@
                    <div style="height: 100%; width: 100%;margin-bottom: 10px;">
                         <div class="col1">
                             <div class="meter" style="width: 300px;">
-                                <span style="width: 70%;"></span>
+                                <span id="progressBar"></span>
                             </div>
                         </div>
                     </div>
-                    <div>750000/300000</div>
+                    <div><span id="transformedHxyRound"></span>/<span id="remainingHxyRound"></span></div>
                 </div>
             </div>
         </div>
@@ -251,17 +251,7 @@ border-radius: 8px;
 
 
 
-<script type="text/javascript">
-    // ANIMATE PROGRESS BAR FILL
-$(".meter > span").each(function() {
-    $(this)
-        .data("origWidth", $(this).width())
-        .width(0)
-        .animate({
-            width: $(this).data("origWidth")
-        }, 1200);
-});
-</script>
+
 
         <div class="welcome_section_main">
             <div class="welcome_usrname">
@@ -274,17 +264,17 @@ $(".meter > span").each(function() {
             <div class="welcome_walletbalance">
                 <span>Your Wallet Balance</span>
                 <span class="welcome_col_span">
-                    <span><img src="images/cmp-icons/01.png"></span>
-                    <span><b id="hxyBalance">0</b></span>
-                    <span>HEX</span>
-                </span>
-                <span class="welcome_col_span">
                     <span><img src="images/cmp-icons/05.png"></span>
-                    <span><b id="hexBalance">0</b></span>
+                    <span><b id="hxyBalance">0</b></span>
                     <span>HXY</span>
                 </span>
                 <span class="welcome_col_span">
-                    <span><img src="images/cmp-icons/09.png"></span>
+                    <span><img src="images/cmp-icons/01.png"></span>
+                    <span><b id="hexBalance">0</b></span>
+                    <span>HEX</span>
+                </span>
+                <span class="welcome_col_span">
+                    <span><img src="images/cmp-icons/04.png"></span>
                     <span><b id="ethBalance">0</b></span>
                     <span>ETH</span>
                 </span>
@@ -404,7 +394,7 @@ $(".meter > span").each(function() {
                         </div>
                         <div class="hex-available">
                             <label>Expire in</label>
-                            <span><b id="mins">10:</b><b id="seconds">00</b></span>
+                            <span><b id="claimCountdown"></b></span>
                         
                         </div>
                         <div class="hex-btn">
@@ -499,26 +489,48 @@ $(".meter > span").each(function() {
                         </thead>
                         <tbody class="overview_rate_sec_tbody">
                             <tr>
-                                <td width="24%"><p><strong>Collected Today</strong></p></td>
+                                <td width="24%"><p><strong>Claimed Today</strong></p></td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                        <span class="up">0.03 %</span>
+                                        <span><b id="claimedTodayEth"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="claimedTodayHxy"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="claimedTodayHex"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="claimedTodayUsdc"></b></span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="24%"><p><strong>Total Today</strong></p></td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="totalTodayEth"></b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="totalTodayHxy"></b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="totalTodayHex"></b></span>
+                                    </p>
+                                </td>
+                                <td width="19%"  class="overview_rate">
+                                    <p>
+                                        <span><b id="totalTodayUsdc"></b></span>
                                     </p>
                                 </td>
                             </tr>
@@ -526,47 +538,22 @@ $(".meter > span").each(function() {
                                 <td width="24%"><p><strong>Total Yesterday</strong></p></td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                        <span class="down">0.03 %</span>
+                                        <span><b id="totalYesterdayEth"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalYesterdayHxy"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalYesterdayHex"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="24%"><p><strong>Distributed Yesterday</strong></p></td>
-                                <td width="19%"  class="overview_rate">
-                                    <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                        <span class="up">0.03 %</span>
-                                    </p>
-                                </td>
-                                <td width="19%"  class="overview_rate">
-                                    <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                    </p>
-                                </td>
-                                <td width="19%"  class="overview_rate">
-                                    <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                    </p>
-                                </td>
-                                <td width="19%"  class="overview_rate">
-                                    <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalYesterdayUsdc"></b></span>
                                     </p>
                                 </td>
                             </tr>
@@ -574,58 +561,56 @@ $(".meter > span").each(function() {
                     
               
                         </tbody>
-                        <tbody class="overview_rate_sec_tbody">
+                        <!-- <tbody class="overview_rate_sec_tbody">
                             <tr>
                                 <td width="24%"><p><strong>Total Dividends</strong></p></td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                        <span class="up">0.03 %</span>
+                                        <span><b id="totalDividendsEth"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalDividendsHxy"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalDividendsHex"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="totalDividendsUsdc"></b></span>
                                     </p>
                                 </td>
                             </tr>
-                            <tr>
+                           <tr>
                                 <td width="24%"><p><strong>Your Total Dividends</strong></p></td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
-                                        <span class="down">0.03 %</span>
+                                        <span><b id="yourTotalDividendsEth"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="yourTotalDividendsHxy"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="yourTotalDividendsHex"></b></span>
                                     </p>
                                 </td>
                                 <td width="19%"  class="overview_rate">
                                     <p>
-                                        <span><b id="maxSupply">60,000,000</b></span>
+                                        <span><b id="yourTotalDividendsUsdc"></b></span>
                                     </p>
                                 </td>
                             </tr>   
                           
               
-                        </tbody>
+                        </tbody>-->
                     </table>
                 </div>
             </div>
@@ -668,7 +653,7 @@ $(".meter > span").each(function() {
                     <h5>Overview</h5>
                 </div>
                 <div class="table-responsive-outer">
-                    <div class="table-responsive">
+                    <div style="width:100%" class="table-responsive">
                         <table class="table">
                             <thead  class="overview_rate_sec_thead">
                                 <tr>
@@ -678,45 +663,63 @@ $(".meter > span").each(function() {
                             </thead>
                             <tbody class="overview_rate_sec_tbody">
                                 <tr>
-                                    <td width="50%"><p><strong>Total Supply</strong></p></td>
+                                    <td width="50%"><p><strong>Total HXY Supply</strong></p></td>
                                     <td width="50%"  class="overview_rate">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
-                                            <span><b id="maxSupply">60,000,000</b></span>
+                                            <span><b id="totalSupply">60,000,000</b></span>
                                             <span>HXY</span>
                                         </p>
                                     </td>
                                 </tr>
                   
                                 <tr>
-                                    <td width="50%"><p><strong>Frozen HXY</strong></p></td>
+                                    <td width="50%"><p><strong>Frozen HXY Supply</strong></p></td>
                                     <td width="50%" class="overview_rate">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
-                                            <span><b id="lockedSupply">6,000,000</b></span>
+                                            <span><b id="frozenSupply"></b></span>
                                             <span>HXY</span>
                                         </p>
                                     </td>
                                 </tr>
-
                                 <tr>
-                                    <td width="50%"><p><strong>Circulating Supply</strong></p></td>
+                                    <td width="50%"><p><strong>Max HXY Supply</strong></p></td>
+                                     <td width="50%">
+                                        <p>
+                                            <img src="images/cmp-icons/05.png">
+                                            <span><b id="maxSupply">0</b></span>
+                                            <span>HXY</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"><p><strong>Locked HXY Supply</strong></p></td>
+                                     <td width="50%">
+                                        <p>
+                                            <img src="images/cmp-icons/05.png">
+                                            <span><b id="lockedSupply"></b></span>
+                                            <span>HXY</span>
+                                        </p>
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <td width="50%"><p><strong>Circulating HXY Supply</strong></p></td>
                                     <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
-                                            <span><b id="totalSupply">Loading...</b></span>
+                                            <span><b id="circulatingSupply">Loading...</b></span>
                                             <span>HXY</span>
                                         </p>
                                     </td>
                                 </tr>
-                  
 
-                                <tr>
+                               <!-- <tr>
                                     <td width="50%"><p><strong>Total HEX Transformed</strong></p></td>
                                     <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/01.png">
-                                            <span><b id="frozenSupply">9.000.000</b></span>
+                                            <span><b id="totalHexTransformed">Loading...</b></span>
                                             <span>HEX</span>
                                         </p>
                                     </td>
@@ -727,7 +730,7 @@ $(".meter > span").each(function() {
                                     <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/06.png">
-                                            <span><b id="circulatingSupply">9.000.000</b></span>
+                                            <span><b id="totalUsdcTransformed">Loading...</b></span>
                                             <span>USDC</span>
                                         </p>
                                     </td>
@@ -737,11 +740,11 @@ $(".meter > span").each(function() {
                                     <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/04.png">
-                                            <span><b id="circulatingSupply">9.00.00</b></span>
+                                            <span><b id="totalEthTransformed">Loading...</b></span>
                                             <span>ETH</span>
                                         </p>
                                     </td>
-                                </tr>
+                                </tr>-->
 
 
                                 <!--tr class="mobilehide">
@@ -757,7 +760,7 @@ $(".meter > span").each(function() {
                         </table>
                     </div>
                    
-                    <div class="table-responsive table-responsive2">
+                    <!--<div class="table-responsive table-responsive2">
                         <table class="table">
                             <thead  class="overview_rate_sec_thead mobilehide">
                                 <tr>
@@ -766,24 +769,15 @@ $(".meter > span").each(function() {
                                 </tr>
                             </thead>
                             <tbody class="overview_rate_sec_tbody">
-                                <tr>
-                                    <td width="50%"><p><strong>Locked HXY</strong></p></td>
-                                     <td width="50%">
-                                        <p>
-                                            <img src="images/cmp-icons/05.png">
-                                            <span><b>90.000.000</b></span>
-                                            <span>HEX</span>
-                                        </p>
-                                    </td>
-                                </tr>
+
                   
                                 <tr>
                                     <td width="50%"><p><strong>Your HXY Interest</strong></p></td>
                                      <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
-                                            <span><b>90.000.000</b></span>
-                                            <span>HEX</span>
+                                            <span><b id="hxyInterest"></b></span>
+                                            <span>HXY</span>
                                         </p>
                                     </td>
                                 </tr>
@@ -793,38 +787,14 @@ $(".meter > span").each(function() {
                                      <td width="50%">
                                         <p>
                                             <img src="images/cmp-icons/05.png">
-                                            <span><b>0</b></span>
-                                            <span>HEX</span>
-                                        </p>
-                                    </td>
-                                </tr>
-                  
-
-                                <tr>
-                                    <td width="50%"><p><strong>Max Supply</strong></p></td>
-                                     <td width="50%">
-                                        <p>
-                                            <img src="images/cmp-icons/05.png">
-                                            <span><b>0</b></span>
-                                            <span>HEX</span>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td width="50%"><p><strong>Total HXY Transformed</strong></p></td>
-                                     <td width="50%">
-                                        <p>
-                                            <img src="images/cmp-icons/05.png">
-                                            <span><b>0</b></span>
-                                            <span>USDC</span>
+                                            <span><b id="yourFrozenHxy">0</b></span>
+                                            <span>HXY</span>
                                         </p>
                                     </td>
                                 </tr>                  
-                  
                             </tbody>
                         </table>
-                    </div>
+                    </div>-->
                     
                 </div>
 
@@ -838,8 +808,10 @@ $(".meter > span").each(function() {
                 Your Referral URL
             </div>
             <div class="referral_outer" >
+                
                 <b style="color:#1e266d;">https://hex.business/?r=<span id="refAddress" class="addressBreak">YOUR_ETH_ADDRESS</span></b>
-                <div class="ref_copy_icon"><img src="images/icons/copy.png"></div>
+                <input style="opacity:0; visibility: collapse; position:absolute" type="text"/>
+                <div onclick="writeToClipboard(this.previousElementSibling)" class="ref_copy_icon"><img src="images/icons/copy.png"></div>
                 
             </div>
         </div>
@@ -985,6 +957,10 @@ $(".meter > span").each(function() {
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript">
+    
         //wow animation js
         new WOW().init();
 
@@ -1091,35 +1067,6 @@ $(".meter > span").each(function() {
                 },
             }
         })
-    </script>
-    <script type="text/javascript">
-        var mins =2; /* Add the timer that you want to add herre*/
-        var seconds =0;
-        startTimer();
-        function startTimer(){
-          timex = setTimeout(function(){
-              seconds--;
-            if(seconds <=0){
-                seconds=59;
-                mins--;                             
-            if(mins<10){                     
-              $("#mins").text('0'+mins+':');}       
-               else $("#mins").text(mins+':');
-                           }    
-            if(seconds <10) {
-              $("#seconds").text('0'+seconds);} else {
-              $("#seconds").text(seconds);
-              }
-             
-            
-            if(mins>=0 && seconds >0)
-            {startTimer();}
-            else{
-                $("#seconds").text('00');
-                 $("#mins").text('00:');
-            }
-          },1000);
-        }
     </script>
 
     <script type="text/javascript">

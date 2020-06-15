@@ -1,7 +1,7 @@
 //currently kovan
 const oneDaySeconds = 300;// 86400;
 const dividendsKeys = ['HEX', 'HXY', 'ETH', 'USDC'];
-var transformRound;
+var transformRound = 0;
 
 var hxyContract;
 var usdcContract;
@@ -3880,7 +3880,7 @@ async function Setup() {
 			CheckAccount();
 			CheckNetwork();
 			ShowUserAddress();
-			transformRound = await hxyContract.methods.getCurrentHxyRound().call();
+			transformRound = parseInt(await hxyContract.methods.getCurrentHxyRound().call());
 			transformRound += 2;
 			web3Found = true;
 			console.log("Web3 Found!");

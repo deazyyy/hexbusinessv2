@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.1" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=2.9" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.4" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=3.5" />
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <title>HEX business - Version 2.0</title>
 </head>
@@ -26,13 +26,12 @@
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="LOGO"></a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="menu">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
+                        <a class=" dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Page1</a></li>
+                          <li class="hexmobile_scroll_click"><a href="#" >Page1</a></li>
                           <li><a href="#">Page2</a></li>
                           <li><a href="#">Page3</a></li>
                         </ul>
@@ -40,7 +39,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Our Projects</a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Page1</a></li>
+                          <li><a href="#" >Page1</a></li>
                           <li><a href="#">Page2</a></li>
                           <li><a href="#">Page3</a></li>
                         </ul>
@@ -62,7 +61,7 @@
                         </ul>
                     </li>
                     <li class="nav-hexbtn"> 
-                        <a href="#" class="btn-main" ><span>Go to </span><div class="navbtn_img"></div></a>
+                        <a href="hexsub.html" class="btn-main" ><span>Go to </span><div class="navbtn_img"></div></a>
                     </li>
             </div>
         </div>
@@ -81,9 +80,9 @@
                             <strong
                                 class="txt-rotate" style="margin-left: 10px;"
                                 data-period="1200"
-                                data-rotate='[ "hex.business", "hex.money", "hex.stake"]'></strong></h1>
+                                data-rotate='[ "hex.business", "hex money", "hex.credit"]'></strong></h1>
                         <p>hex.business is an ecosystem built entirely around HEX, <br> an ERC20 Token based on the Ethereum blockchain.</p>
-                        <a href="#" class="btn-main">Download the App</a>
+                        <a href="#app" class="btn-main">Download the App</a>
                         <h6>Available on Google Play, iOS & APK</h6>
                     </div>
                 </div>
@@ -116,35 +115,35 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong> - hex <span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
                                                 <td><p id="hexUsd"></p></td>
                                                 <td><a id="hexChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong> - Bitcoin <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong><span class="mobilehidespan"> - Bitcoin</span> <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong><span class="mobilehidespan"> - US Dollar</span></p>
                                                 </td>
                                                 <td><p id="btcUsd" ></p></td>
                                                 <td><a id="btcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - hex <span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong> - Bitcoin</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong><span class="mobilehidespan"> - Bitcoin </span></p>
                                                 </td>
                                                 <td><p id="hexBtc"></p></td>
                                                 <td><a id="hexBtcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong> - Ethereum <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong><span class="mobilehidespan"> - Ethereum  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
                                                 <td><p id="ethUsd"></p></td>
                                                 <td><a id="ethChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - hex <span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong> - Ethereum</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong><span class="mobilehidespan"> - Ethereum</span></p>
                                                 </td>
                                                 <td><p id="hexEth"></p></td>
                                                 <td><a id="hexEthChange"></a></td>
@@ -157,7 +156,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
                             <div class="hex-table">
                                 <div class="hex-table-title">
@@ -169,34 +168,34 @@
                                             <tr>
                                                 <th>Data</th>
                                                 <th>Total</th>
-                                                <th>Rate</th>
-                                                <th>Share</th>
+                                                <th>Share / Change</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p id="hxyTotal" ></p></td>
-                                                <td><p id="hxyTotalUsd"></p></td>
+                                                <td><p id="hxyTotal"></p></td>
                                                 <td><a id="hxyTotalPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
                                                 <td><p><strong>Frozen Supply</strong></p></td>
                                                 <td><p id="hxyFrozen"></p></td>
-                                                <td><p id="hxyFrozenUsd"></p></td>
                                                 <td><a  id="hxyFrozenPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
                                                 <td><p><strong>Locked Supply</strong></p></td>
                                                 <td><p id="hxyLocked"></p></td>
-                                                <td><p id="hxyLockedUsd"></p></td>
                                                 <td><a id="hxyLockedPercent" class="down"></a></td>
                                             </tr>
                                             <tr>
                                                 <td><p><strong>Circulating Supply</strong></p></td>
                                                 <td><p id="hxyCirculating"></p></td>
-                                                <td><p id="hxyCirculatingUsd"></p></td>
                                                 <td><a id="hxyCirculatingPercent" class="up"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p><strong>Transform rate</strong></p></td>
+                                                <td><p id="hxyPrice"></p></td>
+                                                <td><a id="hxyPriceChange" ></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -204,39 +203,88 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="hex-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
+                    <div class="col-md-6">
+                        <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
                             <div class="hex-table">
                                 <div class="hex-table-title">
-                                    <h5>Adoption Amplifier</h5>
+                                    <h5>HEX Overview</h5>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Indicator</th>
-                                                <th>Volume</th>
-                                                <th>Growth</th>
+                                                <th>Data</th>
+                                                <th>Total</th>
+                                                <th>Share / Change</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><p><strong>AA Pool val</strong></p></td>
-                                                <td><p id="aaEth">10.003k ETH</p></td>
-                                                <td><a id="aaChange">0.57 %</a></td>
+                                                <td><p><strong>Total Supply</strong></p></td>
+                                                <td><p id="hexTotal" ></p></td>
+                                                <td><a id="hexTotalPercent" class="up"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p><strong>Staked Supply</strong></p></td>
+                                                <td><p id="hexStaked"></p></td>
+                                                <td><a  id="hexStakedPercent"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><p><strong>Circulating Supply</strong></p></td>
+                                                <td><p id="hexCirculating"></p></td>
+                                                <td><a id="hexCirculatingPercent"></a></td>
                                             </tr>
                                             <tr>
                                                 <td><p><strong>AA HEX/ETH rate</strong></p></td>
-                                                <td><p id="aaHexRate">51.048k H/E</p></td>
-                                                <td><a id="aaPriceChange" class="up">0.06 %</a></td>
+                                                <td><p id="aaHexRate"></p></td>
+                                                <td><a id="aaHexChange"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Uniswap Cost</strong></p></td>
-                                                <td><p id="uniswapHexRate">44.891k H/E</p></td>
-                                                <td><a id="uniswapPriceChange" class="up">0.70 %</a></td>
+                                                <td><p><strong>Current price</strong></p></td>
+                                                <td><p id="hexPrice"></p></td>
+                                                <td><a id="hexPriceChange"></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hex-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
+                                <div class="hex-table">
+                                    <div class="hex-table-title">
+                                        <h5>Adoption Amplifier</h5>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Stats</th>
+                                                    <th>Change</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><p><strong>AA Pool val</strong></p></td>
+                                                    <td><p id="aaPool"></p></td>
+                                                    <td><a id="aaPoolChange" class="limitWidth"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p><strong>AA HEX/ETH rate</strong></p></td>
+                                                    <td><p id="aaHexRate2"></p></td>
+                                                    <td><a id="aaHexChange2" class="limitWidth"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p><strong>AA Closing</strong></p></td>
+                                                    <td><p id="aaClosing">00:00 UTC</p></td>
+                                                    <td><a id="aaClosingTicker" class="ticker limitWidth"></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +296,7 @@
     <!-- End Hex Currencies -->
 
     <!-- About Us -->
-    <section class="about-us">
+    <section id="app" class="about-us  hexmobile_scroll_sec">
         <div class="container">
             <h2 class="main-title section_heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.20s">More about hex.business</h2>
             <div class="about-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
@@ -265,7 +313,7 @@
                                     <div class="about-details wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
                                         <h5 class="title-btn">hex mobile</h5>
                                         <h2 class="main-title main-title-sub">Simply buy and stake<br>HEX assets</h2>
-                                        <p>Hex mobile is an app that has been designed to help onboard users new to HEX. Using a QR code, the process is streamlined so even newcomers to the world of Crypto will find it straight forward to use.</p>
+                                        <p>hexmobile is an app that has been designed to help onboard users new to HEX and HXY. Using a QR code, the process is streamlined so even newcomers to the world of crypto will find it straight forward to use.</p>
                                         <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="2s" data-wow-delay="0.40s">
                                             <img src="images/mobile-icon.png" alt="mobile-icon"> 
                                         </div>
@@ -296,7 +344,7 @@
                                         <ul class="hex-loan">
                                             <li>
                                                 <img src="images/icons/pigi-bank.png" alt="icons" class="nor-img">
-                                                <p>Minting while spending <span>Mint HXY for every 1000 HEX spent.</span></p>
+                                                <p>Minting while spending <span>Mint HXY for every HEX AA lobby transform.</span></p>
                                             </li>  
                                             <li>
                                                 <img src="images/icons/qr-code.png" alt="icon" class="nor-img">
@@ -475,7 +523,7 @@
                                             </div-->
                                             <img src="images/hexmoney.png" class="hexmoneyimage" style="width: 100% !important;max-width: none !important;">
                                             <div class="about-details mobileshow">
-                                                <a href="./hexsub.html" class="btn-main">Get hex money</a>
+                                                <a href="./hexsub.html" class="btn-main">Get hexmoney</a>
                                             </div>
                                         </div>
                                     </div>
@@ -591,7 +639,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-msg wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+            <!--<div class="about-msg wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="about-sld">
                     <div>
                         <div class="items ">
@@ -600,7 +648,7 @@
                                     <div class="about-img wow fadeInLeft mobilehide" data-wow-duration="1s" data-wow-delay="1s">
                                         <div class="about-chatbox">
                                             <div class="about-chatwrap">
-                                                <h4><img src="images/icons/hex-icon.png" alt="icons"> hex assistant <span>chat</span></h4>
+                                                <h4><img src="images/icons/hex-icon.png" alt="icons"> hxy assistant <span>chat</span></h4>
                                                 <div class="about-chatblk">
                                                     <div class="chat-blk">
                                                         <div class="chat-left">
@@ -633,7 +681,7 @@
                                                     </div>
                                                     <div class="chat-blk">
                                                         <div class="chat-right">
-                                                            <p>/burn</p>
+                                                            <p>/supply</p>
                                                         </div>
                                                     </div>
                                                     <div class="chat-blk">
@@ -649,7 +697,7 @@
                                 <div class="col-md-6 ">
                                     <div class="about-details wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
                                         <div class="assistant_btn1_box">
-                                            <h5 class="title-btn">hex assistant</h5>
+                                            <h5 class="title-btn">hxy assistant</h5>
                                             <h2 class="main-title">Virtual assistent<br>in real time</h2>
                                             <p>Tap on a command and the <strong>hex.bot</strong> gives you information you need.</p>
                                             <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="1s" data-wow-delay="1s">
@@ -688,7 +736,7 @@
                                                             </div>
                                                             <div class="chat-blk">
                                                                 <div class="chat-right">
-                                                                    <p>/burn</p>
+                                                                    <p>/locked</p>
                                                                 </div>
                                                             </div>
                                                             <div class="chat-blk">
@@ -719,7 +767,7 @@
                                                 <li>
                                                     <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
                                                     <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                    <p>/burn<span><strong>HXY</strong> users can freeze their tokens to earn daily <strong>HXY</strong> interest, <strong>HXY</strong> freezers wil also receive bonus divs in <strong>HEX!</strong></span></p>
+                                                    <p>/price<span><strong>HXY</strong> real-time Uniswap price data</span></p>
                                                 </li>
                                             </ul>
 
@@ -727,17 +775,17 @@
                                         </div>
     
                                         <div class="assistant_btn2_box">
-                                            <h5 class="title-btn">hex assistant</h5>
+                                            <h5 class="title-btn">hxy assistant</h5>
                                             <h2 class="main-title">Virtual assistent<br>in real time</h2>
                                             <p>Tap on a command and the <strong>hex.bot</strong> gives you information you need.</p>
                                             <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="1s" data-wow-delay="1s">
                                                 <div class="about-chatbox">
                                                     <div class="about-chatwrap">
-                                                        <h4><img src="images/icons/hex-icon.png" alt="icons"> hex assistant <span>chat</span></h4>
+                                                        <h4><img src="images/icons/hex-icon.png" alt="icons"> hxy assistant <span>chat</span></h4>
                                                         <div class="about-chatblk">
                                                             <div class="chat-blk">
                                                                 <div class="chat-left">
-                                                                    <p>Hello hex.user! <img src="images/icons/hand-msg.png" alt="icons"><br>I am your virtual assistant. How can I help you?</p>
+                                                                    <p>Hello HXY user! <img src="images/icons/hand-msg.png" alt="icons"><br>I am your virtual assistant. How can I help you?</p>
                                                                 </div>
                                                             </div>
                                                             <div class="chat-blk">
@@ -759,14 +807,14 @@
                                                             </div>
                                                             <div class="chat-left-blk">
                                                                 <div class="chat-left">
-                                                                    <p><strong>Hex Money</strong> users can freeze their tokens to earn daily <strong>HXY</strong> interest, <strong>HXY</strong> freezers will also receive bonus divs in <strong>HEX!</strong></p>
+                                                                    <p><strong>Hex Money</strong> users can freeze their tokens to earn daily <strong>HXY</strong> interest, <strong>HXY</strong> freezers will also receive dividends in <strong>HEX, ETH and USDC!</strong></p>
 
                                                                     <p><img src="images/icons/flower.png" alt="flower-img">How does freezing work?<img src="images/icons/flower.png" alt="flower-img"><br>To freeze your tokens head to <a href="#">hex.business.</a></p>
                                                                 </div>
                                                             </div>
                                                             <div class="chat-blk">
                                                                 <div class="chat-right">
-                                                                    <p>/burn</p>
+                                                                    <p>/supply</p>
                                                                 </div>
                                                             </div>
                                                             <div class="chat-blk">
@@ -791,7 +839,7 @@
                                                         <a href="#">
                                                             <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/burn</span>
+                                                            <span>/info</span>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -805,49 +853,49 @@
                                                         <a href="#">
                                                             <img src="images/icons/freez-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/freeze</span>
+                                                            <span>/supply</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
                                                             <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/burn</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
-                                                            <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/burn</span>
+                                                            <span>/transforms</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
                                                             <img src="images/icons/freez-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/freeze</span>
+                                                            <span>/price</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
                                                             <img src="images/icons/freez-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/freeze</span>
+                                                            <span>/frozen</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="images/icons/freez-icon.png" alt="icon" class="nor-img">
+                                                            <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
+                                                            <span>/contract</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
                                                             <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/burn</span>
+                                                            <span>/toptransformers</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#">
                                                             <img src="images/icons/fire-icon.png" alt="icon" class="nor-img">
                                                             <img src="images/icons/wallet-icon.png" alt="icon" class="hov-img">
-                                                            <span>/burn</span>
+                                                            <span>/locked</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -855,7 +903,7 @@
                                             <a href="#" class="btn-msg" id="assistant_btn2">Show less commands</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!--div class="col-md-6 assistant_btn2_box">
                                     <div class="about-virtual">
                                         <div class="about-details wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
@@ -940,8 +988,8 @@
                                         </div>
                                     </div>
                                 </div-->
-                            </div>
-                        </div>
+                            <!--</div>
+                        </div>-->
                         <!--div class="items assistant_btn2_box">
                             <div class="row">
                                 <div class="col-md-6">
@@ -1079,10 +1127,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div-->
+                        </div
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="about-project wow fadeIn" data-wow-duration="1s" data-wow-delay="1.20s">
                 <div class="row">
                     <div class="col-md-6 col-md-push-6">
@@ -1176,7 +1224,7 @@
         <div class="container">
             <div class="join-wrapepr">
                 <div class="join-details wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.40s">
-                    <h2 class="main-title">Join 8.738+ Users <br> on our Telegram Group</h2>
+                    <h2 class="main-title">Join 8.738k+ Users <br> on our Telegram Group</h2>
                 </div>
                 <div class="join-btn wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.40s">
                     <a href="https://t.me/hexmobileapp" class="btn-main">Join <i class="fa fa-paper-plane"></i> Telegram</a>
@@ -1208,7 +1256,10 @@
                                 <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             </ul>
-                            <a href="#" class="btn-top mobilehide">Approve Metamask</a>
+                            <div class="nav-hexbtn"> 
+                        <a href="hexsub.html" class="btn-main btn-top"><span>Go to </span><div class="navbtn_img"></div></a>
+                    </div>
+
                         </div>
                     </div>
                     <div class="footer-blk-two">
@@ -1281,9 +1332,6 @@
         </div>
     </footer>
     <!-- Footer end -->
-    <script type="text/javascript">
-       
-    </script>
     <script type="text/javascript" src="js/jquery.min.js"></script> 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -1473,6 +1521,18 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
   document.body.appendChild(css);
 };
+    </script>
+
+
+    <script type="text/javascript">
+    	$(document).ready(function () {
+			  $('.hexmobile_scroll_click').click(function(e) {
+			  	 e.preventDefault();
+			  $('html, body').animate({
+			    scrollTop: $(".hexmobile_scroll_sec").offset().top
+			  }, 1000)
+			})
+		});
     </script>
 </body>
 </html>

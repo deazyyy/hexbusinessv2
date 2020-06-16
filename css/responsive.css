@@ -5703,10 +5703,20 @@ footer{
 
 
 
-
+.hex-table .table tbody tr td .ticker{
+	font-size: 10px;
+	transform: scale(0.8);
+}
+.hex-table .table tbody tr td .ticker:before{
+	width: 10px;
+    height: 12px;
+}
 
 
 .hex-table .table tbody tr td .up{
+	transform: scale(0.8);
+}
+.hex-table .table tbody tr td .down{
 	transform: scale(0.8);
 }
 
@@ -5777,7 +5787,7 @@ footer{
 }
 
 .hex-table .table tbody tr td{
-	padding: 8px 8px 0 0;
+	padding: 8px 0px 0 0;
 }
 
 
@@ -6556,7 +6566,7 @@ footer{
 	.hex-table .table thead tr th,
 	.hextabs-table .table tr td p,
 	.hex-table .table tbody tr td p{
-		font-size: 12px;
+		font-size: 10px;
 	}
 	.hextabs-table .table-footer p span{
 		margin-right: 10px;
@@ -6619,5 +6629,9 @@ footer{
 	/*another end*/
 	.mobilehidespan{
 		display: none !important;
+	}
+	.adoption_amplifier{
+		margin-right: 0;
+    margin-left: 0;
 	}
 }

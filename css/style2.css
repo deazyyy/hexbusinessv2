@@ -565,6 +565,7 @@ p{
 .hex-table .table tbody tr td .down:before{
   background-image: url('../images/icons/arrow-low.png');
 }
+
 /* Hex currencies end */
 
 /* About Us */
@@ -618,7 +619,7 @@ p{
   width: 100%;
   display: block;
   padding-right: 120px;
-  word-break: break-word;
+  /*word-break: break-word;*/
   margin-top: 0px;
 }
 .about-details .title-btn{
@@ -677,7 +678,7 @@ p{
   font-size: 20px;
   font-weight: 500;
   line-height: 38px;
-  word-break: break-all;
+  /*word-break: break-all;*/
   padding-right: 74px;
   color: #3b4f79;
   margin-bottom: 20px;
@@ -1304,7 +1305,7 @@ p{
 }
 
 .hex-form .hex-receive .form-control{
-  background-image: url('../images/cmp-icons/01.png');
+  background-image: url('../images/icons/pigi-bank.png');
 }
 .hex-receive-div-1 .form-control{
   background-image: url('../images/cmp-icons/04.png') !important;
@@ -1906,6 +1907,7 @@ footer{
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 35px 0 30px 0;
+  font-size:16px;
 }
 .hex-available div{
    display: -webkit-box;
@@ -2284,8 +2286,7 @@ background-image: linear-gradient(to left, #fff , #fff) !important;
   padding: 15px;
   z-index:200;
   color: #ff1445;
-  font-family: "Montserrat";
-  font-weight: 400;
+  font-weight: 700;
 }
 .errormsgflex{
   display: flex;

@@ -26,11 +26,10 @@ setInterval(function(){
 
 async function UpdateData(){
   var totalSupply = await hxyContract.methods.totalSupply().call();
-  var maxSupply = await hxyContract.methods.cap().call();
+  var maxSupply = 60000000;
   var frozenSupply = await hxyContract.methods.getTotalFrozen().call();
   var lockedSupply  = await hxyContract.methods.getLockedSupply().call();
   totalSupply /= 10 ** 8;
-  maxSupply /= 10 ** 8;
   frozenSupply /= 10 ** 8;
   lockedSupply /= 10 ** 8;
   document.getElementById("totalSupply").innerHTML =  totalSupply;
@@ -38,8 +37,134 @@ async function UpdateData(){
   document.getElementById("frozenSupply").innerHTML =  frozenSupply;
   document.getElementById("lockedSupply").innerHTML =  lockedSupply;
   document.getElementById("circulatingSupply").innerHTML = (totalSupply - (lockedSupply + frozenSupply));
+  //document.getElementById("yourFrozenHxy").innerHTML =  yourFrozenSupply;
+  //document.getElementById("totalEthTransformed").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  //document.getElementById("totalHexTransformed").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
+  //document.getElementById("totalUsdcTransformed").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
+
+  var divs = await dividendsContract.methods.getClaimedDividendsTotal().call();
+  var ethDivs = divs[0];
+  var hxyDivs = divs[1];
+  var hexDivs = divs[2];
+  var usdcDivs = divs[3];
+  document.getElementById("claimedTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  document.getElementById("claimedTodayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
+  document.getElementById("claimedTodayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
+  document.getElementById("claimedTodayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
+  divs = await dividendsContract.methods.getAvailableDividendsTotal().call();
+  ethDivs = divs[0];
+  hxyDivs = divs[1];
+  hexDivs = divs[2];
+  usdcDivs = divs[3];
+  document.getElementById("totalTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  document.getElementById("totalTodayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
+  document.getElementById("totalTodayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
+  document.getElementById("totalTodayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
+  divs = await dividendsContract.methods.getPreviousDividendsTotal().call();
+  ethDivs = divs[0];
+  hxyDivs = divs[1];
+  hexDivs = divs[2];
+  usdcDivs = divs[3];
+  ethDivs /= 100 * 90;
+  hxyDivs /= 100 * 90;
+  hexDivs /= 100 * 90;
+  usdcDivs /= 100 * 90;
+  document.getElementById("totalYesterdayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  document.getElementById("totalYesterdayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
+  document.getElementById("totalYesterdayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
+  document.getElementById("totalYesterdayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
+  GetTransformData();
+  document.getElementById("claimCountdown").innerHTML = await GetClaimEnd();
   GetAvailableDividends();
   GetUserFreezings();
+}
+
+
+async function GetClaimEnd(){
+  var timestamp = parseInt(await dividendsContract.methods.getRecordTime().call()) + oneDaySeconds;
+  var lastClaim = await dividendsContract.methods.getUserLastClaim(activeAccount).call();
+  var now = Date.now();
+  var seconds = ((parseInt(now) / 1000) - parseInt(timestamp));
+  var minutes = seconds / 60;
+  var hours = minutes / 60;
+  var days = hours / 24;
+  var weeks = days / 7;
+  var years = weeks / 52;
+  var months = years * 12;
+
+  if (minutes < 1) {
+    return seconds.toFixed() + "s left";
+  } else if (hours < 1) {
+    return minutes.toFixed() + "m left";
+  } else if (days < 1) {
+    return toFixedMax(hours, 1) + "h left";
+  } else if (months < 1) {
+    return weeks.toFixed().toString() + "w left";
+  } else if (years < 1) {
+    return months.toFixed().toString() + "m left";
+  } else {
+    return years.toFixed().toString() + "y left";
+  } 
+}
+
+function startTimer(mins, seconds){
+
+  timex = setTimeout(function(){
+      seconds--;
+    if(seconds <=0){
+        seconds=59;
+        mins--;                             
+    if(mins<10){                     
+      $("#mins").text('0'+mins+':');}       
+       else $("#mins").text(mins+':');
+                   }    
+    if(seconds <10) {
+      $("#seconds").text('0'+seconds);} else {
+      $("#seconds").text(seconds);
+      }
+     
+    
+    if(mins>=0 && seconds >0)
+    {startTimer();}
+    else{
+        $("#seconds").text('00');
+         $("#mins").text('00:');
+    }
+  },1000);
+}
+
+async function GetTransformData() {
+    
+    var remainingHxy = await hxyContract.methods.getRemainingHxyInRound().call();
+    var totalHxyInRound = await hxyContract.methods.getTotalHxyInRound().call();
+    var transformedHxy = totalHxyInRound - remainingHxy;
+    var progressBar = document.getElementById("progressBar");
+    var percent = toFixedMax(transformedHxy / totalHxyInRound * 100 , 2);
+    console.log(percent);
+    progressBar.style.width = percent + "%";
+    AnimateProgress();
+    document.getElementById("transformedHxyRound").innerHTML = toFixedMax(transformedHxy / 10 ** 8, 2);
+    document.getElementById("remainingHxyRound").innerHTML = toFixedMax(remainingHxy / 10 ** 8, 2);
+    document.getElementById("transformRound").innerHTML = transformRound;
+
+    var hexRate = 1000 * transformRound;
+    var ethRate = await uniswapContract.methods.getTokenToEthInputPrice((hexRate * 10 ** 8)).call();
+    var usdcRate = await uniswapUsdc.methods.getEthToTokenInputPrice(ethRate).call();
+    document.getElementById("ethRate").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethRate)),4);
+    document.getElementById("hexRate").innerHTML = toFixedMax(hexRate, 0);
+    document.getElementById("usdcRate").innerHTML = toFixedMax(usdcRate / 10 ** 6, 2);
+}
+
+function AnimateProgress(){
+        // ANIMATE PROGRESS BAR FILL
+        $(".meter > span").each(function() {
+          $(this)
+              .data("origWidth", $(this).width())
+              .width(0)
+              .animate({
+                  width: $(this).data("origWidth")
+              }, 1200);
+      });
 }
 
 async function GetBalance() {
@@ -536,6 +661,16 @@ function CalcTimeElapsed(timestamp) {
 }
 
 /*----------HELPER FUNCTIONS------------ */
+
+
+async function writeToClipboard (elem) {
+  elem.value = "https://hex.business/?r=" + activeAccount;
+  navigator.clipboard.writeText(elem.value).then(function() {
+    successMessage("Referral link copied to clipboard");
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+  }
 
 function getBlock() {
   return web3.eth.getBlockNumber();

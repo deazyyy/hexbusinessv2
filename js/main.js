@@ -22,16 +22,16 @@ if (isDeviceMobile()) {
 
 setInterval(function(){
   UpdateData();
-},30000);//60 secs
+},60000);//60 secs
 
 async function UpdateData(){
   var totalSupply = await hxyContract.methods.totalSupply().call();
   var maxSupply = 60000000;
   var frozenSupply = await hxyContract.methods.getTotalFrozen().call();
-  var lockedSupply  = await hxyContract.methods.getLockedSupply().call();
+  var lockedSupply  = 7500000;
   totalSupply /= 10 ** 8;
   frozenSupply /= 10 ** 8;
-  lockedSupply /= 10 ** 8;
+  //lockedSupply /= 10 ** 8;
   document.getElementById("totalSupply").innerHTML =  totalSupply;
   document.getElementById("maxSupply").innerHTML =  maxSupply;
   document.getElementById("frozenSupply").innerHTML =  frozenSupply;
@@ -47,7 +47,7 @@ async function UpdateData(){
   var hxyDivs = divs[1];
   var hexDivs = divs[2];
   var usdcDivs = divs[3];
-  document.getElementById("claimedTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  document.getElementById("claimedTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(ethDivs), 4);
   document.getElementById("claimedTodayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
   document.getElementById("claimedTodayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
   document.getElementById("claimedTodayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
@@ -56,7 +56,7 @@ async function UpdateData(){
   hxyDivs = divs[1];
   hexDivs = divs[2];
   usdcDivs = divs[3];
-  document.getElementById("totalTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
+  document.getElementById("totalTodayEth").innerHTML = toFixedMax(web3.utils.fromWei(ethDivs), 4);
   document.getElementById("totalTodayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
   document.getElementById("totalTodayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
   document.getElementById("totalTodayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
@@ -65,7 +65,6 @@ async function UpdateData(){
   hxyDivs = divs[1];
   hexDivs = divs[2];
   usdcDivs = divs[3];
-  ethDivs /= 100 * 90;
   hxyDivs /= 100 * 90;
   hexDivs /= 100 * 90;
   usdcDivs /= 100 * 90;
@@ -74,37 +73,55 @@ async function UpdateData(){
   document.getElementById("totalYesterdayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
   document.getElementById("totalYesterdayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
   GetTransformData();
-  document.getElementById("claimCountdown").innerHTML = await GetClaimEnd();
+  
+  document.getElementById("claimCountdown").innerHTML = await TimeTillNewDay();
   GetAvailableDividends();
   GetUserFreezings();
 }
 
+//public getRemainingRecordTime() {
+//  return this.DividendsContract.methods.getRecordTime().call().then((r: any) => {
+//    r = +r;
+//    const now = Math.round(new Date().getTime() / 1000);
+//    let leftSeconds = r % SECONDS_OF_DAY - now % SECONDS_OF_DAY;
+//    if (leftSeconds < 0) {
+//      leftSeconds += SECONDS_OF_DAY;
+//    }
+  //
+//    return this.DividendsContract.methods.getUserLastClaim(
+//      this.DividendsContract.givenProvider.selectedAddress
+//    ).call().then((lastClaim) => {
+//      return {
+//        left: leftSeconds,
+//        latest: +lastClaim,
+//        next: now + leftSeconds,
+//        period: SECONDS_OF_DAY,
+//        requireRequest: now > r
+//      };
+//    });
+//  });
+//}
 
-async function GetClaimEnd(){
-  var timestamp = parseInt(await dividendsContract.methods.getRecordTime().call()) + oneDaySeconds;
-  var lastClaim = await dividendsContract.methods.getUserLastClaim(activeAccount).call();
+function TimeTillNewDay() {
+  //lobby close
+  var today = new Date(new Date().getTime());
+  var day = today.getDate() + 1;
+  var month = today.getMonth();
+  var year = today.getFullYear();
+  console.log(day + "/" + month + "/" + year);
+  var aaClose = Date.UTC(year, month, day);
   var now = Date.now();
-  var seconds = ((parseInt(now) / 1000) - parseInt(timestamp));
+  var seconds = (parseInt(aaClose) - parseInt(now)) / 1000;
   var minutes = seconds / 60;
   var hours = minutes / 60;
   var days = hours / 24;
-  var weeks = days / 7;
-  var years = weeks / 52;
-  var months = years * 12;
-
   if (minutes < 1) {
-    return seconds.toFixed() + "s left";
+    return seconds.toFixed() + "seconds";
   } else if (hours < 1) {
-    return minutes.toFixed() + "m left";
+    return minutes.toFixed() + "minute/s";
   } else if (days < 1) {
-    return toFixedMax(hours, 1) + "h left";
-  } else if (months < 1) {
-    return weeks.toFixed().toString() + "w left";
-  } else if (years < 1) {
-    return months.toFixed().toString() + "m left";
-  } else {
-    return years.toFixed().toString() + "y left";
-  } 
+    return toFixedMax(hours, 1) + "hour/s";
+  }
 }
 
 function startTimer(mins, seconds){
@@ -169,13 +186,13 @@ function AnimateProgress(){
 
 async function GetBalance() {
 	var hex = await hexContract.methods.balanceOf(activeAccount).call();
-	hex /= 10 ** 8;
+  hex /= 10 ** 8;
 	var hxy = await hxyContract.methods.balanceOf(activeAccount).call();
-	hxy /= 10 ** 8;
+  hxy /= 10 ** 8;
 	var usdc = await usdcContract.methods.balanceOf(activeAccount).call();
-	usdc /= 10 ** 6;
+  usdc /= 10 ** 6;
 	var eth = await web3.eth.getBalance(activeAccount);
-	eth /= 10 ** 18;
+  eth /= 10 ** 18;
 	document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
 	document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
 	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);
@@ -189,21 +206,8 @@ async function AddToMetamask(){
 }
 
 async function Approve() {
- // var hexInput = document.getElementById("hexInput");
- // if (hexInput.value == null || hexInput.value <= 0 || hexInput.value == undefined) {
- //   console.log("check values");
- //   errorMessage("HEX amount needed for approve, check the form and try again.");
- //   return;
- // }
- // if (hexInput.value.includes(".")) {
- //   errorMessage("Invalid input, HEX input does not accept decimals");
- //   return;
- // }
- // var hex = hexInput.value;
- // var approvedHex = document.getElementById("approvedHex");
- // var hearts = parseInt(web3.utils.toBN(hexInput.value));
- // hearts *= 10 ** decimals;
-  var value = "99999999999999999999999999999999999999999999999999999999999999999999"; //max approve - approve once for all
+
+  var value = "99999999999999999999999999999999999999999999999"; //max approve - approve once for all
   hexContract.methods.approve(HEX_EXCHANGE, web3.utils.toHex(value)).send({
       from: activeAccount
     })
@@ -276,38 +280,82 @@ function getHxyRate() {
    return hxyContract.methods.getCurrentHxyRate().call();
 }
 
-function GetAvailableDividends() {
-    dividendsContract.methods.getAvailableDividends(activeAccount).call().then((result) => {
-      result.map((dividend, index) => {
-        if(dividendsKeys[index] == "ETH"){
-          document.getElementById("ethDivs").value = web3.utils.fromWei(dividend);
-        }
-        if(dividendsKeys[index] == "HEX"){
-          document.getElementById("hexDivs").value = (dividend / 10 ** 8);
-        }
-        if(dividendsKeys[index] == "HXY"){
-          document.getElementById("hxyDivs").value = (dividend / 10 ** 8);
-        }
-        if(dividendsKeys[index] == "USDC"){
-          document.getElementById("usdcDivs").value = (dividend / 10 ** 6);
-        }
-      });
-    }).catch((err) => {
-      return null;
-    });
+async function GetAvailableDividends() {
+  var hasClaim = await hasClaimed();
+   if(hasClaim){
+      console.log("alreadyClaimed");
+      document.getElementById("claimCountdown").innerHTML = "Claimed";
+   }
+   else{
+     dividendsContract.methods.getAvailableDividends(activeAccount).call().then((result) => {
+       result.map((dividend, index) => {
+         console.log(dividend);
+         console.log(index);
+         if(index == 0){
+           document.getElementById("ethDivs").value = web3.utils.fromWei(dividend);
+         }
+         if(index == 1){
+           document.getElementById("hxyDivs").value = (dividend / 10 ** 8);
+         }
+         if(index == 2){
+           document.getElementById("hexDivs").value = (dividend / 10 ** 8);
+         }
+         if(index == 3){
+           document.getElementById("usdcDivs").value = (dividend / 10 ** 6);
+         }
+       });
+       return result;
+     }).catch((err) => {
+       return null;
+     });
+   }
   }
 
-function ClaimDividends() {
-    dividendsContract.methods.claimDividends().send({
-      from: activeAccount
-    }).on('receipt', function (receipt) {
-      successMessage("Successfully claimed dividends!");
-      console.log(receipt);
-    })
-    .on('error', function () {
-      console.error;
-      errorMessage("Claim failed, please try again...");
-    }); 
+async function hasClaimed(){
+    var lastClaim = await dividendsContract.methods.getUserLastClaim(activeAccount).call();
+    var today = new Date(new Date().getTime());
+    var day = today.getDate();
+    var tomorrow = today.getDate() + 1;
+    var month = today.getMonth();
+    var year = today.getFullYear();
+    console.log(day + "/" + month + "/" + year);
+    var _today = Date.UTC(year, month, day);
+    var _tomorrow = Date.UTC(year, month, tomorrow);
+    console.log(lastClaim);
+    console.log(_today / 1000);
+    console.log((_tomorrow / 1000));
+    if(parseInt(lastClaim) > (_today / 1000) && parseInt(lastClaim) < (_tomorrow / 1000)){
+        console.log("heelo");
+        return true;
+    }
+    else{
+      return false;
+    }
+}
+
+async function ClaimDividends() {
+    var result = await dividendsContract.methods.getAvailableDividends(activeAccount).call();
+    console.log(result[0]);
+    if(result[0] == 0 && result[1] == 0 && result[2] == 0 && result[3] == 0){
+      errorMessage("You have no dividends to claim");
+      return false;
+    }
+    //if(hasClaimed()){
+    //  errorMessage("You have already claimed dividends today, try again tomorrow anytime after 00:00UTC");
+    //  return false;
+    //}
+    else{
+      dividendsContract.methods.claimDividends().send({
+        from: activeAccount
+      }).on('receipt', function (receipt) {
+        successMessage("Successfully claimed dividends!");
+        console.log(receipt);
+      })
+      .on('error', function () {
+        console.error;
+        errorMessage("Claim failed, please try again...");
+      }); 
+    }
   }
 
 function Transform(){
@@ -372,7 +420,7 @@ function Transform(){
       errorMessage('You must approve Metamask');
       return;
     }
-    hexExchange.methods.exchangeHex(amount).send({
+    hexExchange.methods.exchangeHex(web3.utils.toHex(amount)).send({
       from: activeAccount
     }).on('receipt', function (receipt) {
       successMessage('HEX successfully transformed to HXY');
@@ -555,7 +603,7 @@ function UpdateFreezeTable() {
         var daysLeft = getDaysLeft(timestamp, days);
         var endTime = getEndTime(timestamp, days);
         var endDate = timestampToDate(endTime);
-        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <div class="hex-btn hex-btn-capitalise">        <div class="hex-btn-outer">            <button type="button" class="btn-main" onclick="Capitalize(' + timestamp + ', ' + days + ')">Capitalize</button>        </div>    </div></td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
+        freezeTbody.insertAdjacentHTML('afterbegin', '<tr><td width="5%"><p>'+ (i + 1) +'</p></td><td width="20%">    <p>        <img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(amount, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    <p><img src="images/icons/receive-form.png">        <span><b>'+ toFixedMax(interest, 8) +'</b></span>        <span>HXY</span>    </p></td><td width="20%">    </td>  <td width="35%"><p> <span><b><img src="images/icons/hourglass.png">'+ endDate +'</b></span><span>'+ (daysLeft + 1) +' Days Left</span></p></td></tr>');
       }
   }
 }
@@ -657,6 +705,21 @@ function CalcTimeElapsed(timestamp) {
     return months.toFixed().toString() + "m ago";
   } else {
     return years.toFixed().toString() + "y ago";
+  }
+}
+
+function CalcTimeTill(timestamp) {
+  var now = Date.now();
+  var seconds = (parseInt(timestamp) - parseInt(now)) / 1000;
+  var minutes = seconds / 60;
+  var hours = minutes / 60;
+  var days = hours / 24;
+  if (minutes < 1) {
+    return seconds.toFixed() + "s till close";
+  } else if (hours < 1) {
+    return minutes.toFixed() + "m till close";
+  } else if (days < 1) {
+    return toFixedMax(hours, 1) + "h till close";
   }
 }
 

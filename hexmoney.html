@@ -30,7 +30,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="images/logo-white.png" alt="LOGO"></a>
             </div>
-                <ul class="nav navbar-nav" id="menu">
+               <!-- <ul class="nav navbar-nav" id="menu">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
                         <ul class="dropdown-menu">
@@ -62,11 +62,12 @@
                           <li><a href="#">Page2</a></li>
                           <li><a href="#">Page3</a></li>
                         </ul>
-                    </li></ul><ul class="nav navbar-nav" id="menu">
-                    <li class="nav-hexbtn"> 
-                        <a href="#" class="btn-main" onclick="Approve()">Approve Metamask</a>
-                    </li>
-                </ul>
+                    </li></ul>-->
+                    <ul class="nav navbar-nav" id="menu">
+                        <li class="nav-hexbtn"> 
+                            <a href="#" class="btn-main" onclick="Approve()">Approve Metamask</a>
+                        </li>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -161,7 +162,7 @@
                 </div>
             </div>
             <div class="welcome_progressbar">
-                <b>Total HXY Transformed</b>
+                <b>HXY Transformed</b>
                 <div>
                    <div style="height: 100%; width: 100%;margin-bottom: 10px;">
                         <div class="col1">
@@ -369,31 +370,31 @@ border-radius: 8px;
                     <div class="hex-form hex-form-dividend">
                         <div class="hex-receive hex-receive-div-1">
                             <div>
-                                <input id="ethDivs" type="number" class="form-control" placeholder="Loading..." readonly>
+                                <input id="ethDivs" type="number" class="form-control" placeholder="0" readonly>
                                 <span>ETH</span>
                             </div>
 
                         </div>
                         <div class="hex-receive hex-receive-div-2">
                             <div>
-                                <input id="hexDivs" type="number" class="form-control" placeholder="Loading..." readonly>
+                                <input id="hexDivs" type="number" class="form-control" placeholder="0" readonly>
                                 <span>HEX</span>
                             </div>
                         </div>
                         <div class="hex-receive hex-receive-div-3">
                             <div>
-                                <input id="hxyDivs" type="number" class="form-control" placeholder="Loading..."readonly>
+                                <input id="hxyDivs" type="number" class="form-control" placeholder="0"readonly>
                                 <span>HXY</span>
                             </div>
                         </div>
                         <div class="hex-receive hex-receive-div-4">
                             <div>
-                                <input id="usdcDivs" type="number" class="form-control" placeholder="Loading..." readonly>
+                                <input id="usdcDivs" type="number" class="form-control" placeholder="0" readonly>
                                 <span>USDC</span>
                             </div>
                         </div>
                         <div class="hex-available">
-                            <label>Expire in</label>
+                            <label>Expires in</label>
                             <span><b id="claimCountdown"></b></span>
                         
                         </div>
@@ -473,14 +474,14 @@ border-radius: 8px;
         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeInLeft;">
             <div class="hex-table">
                 <div class="hex-table-title">
-                    <h5>Dividends</h5>
+                    <h5>Dividend Statistics</h5>
                 </div>
                 
                 <div class="table-responsive">
                     <table class="table">
                         <thead  class="overview_rate_sec_thead">
                             <tr>
-                                <th>Dividends</th>
+                                <th>Data</th>
                                 <th><img src="images/cmp-icons/04.png"> ETH</th>
                                 <th><img src="images/cmp-icons/05.png"> HXY</th>
                                 <th><img src="images/cmp-icons/01.png"> HEX</th>
@@ -650,15 +651,15 @@ border-radius: 8px;
         <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeInLeft;">
             <div class="hex-table">
                 <div class="hex-table-title">
-                    <h5>Overview</h5>
+                    <h5>HXY Overview</h5>
                 </div>
                 <div class="table-responsive-outer">
                     <div style="width:100%" class="table-responsive">
                         <table class="table">
                             <thead  class="overview_rate_sec_thead">
                                 <tr>
-                                    <th>Indicator</th>
-                                    <th>Rate</th>
+                                    <th>Data</th>
+                                    <th>Stats</th>
                                 </tr>
                             </thead>
                             <tbody class="overview_rate_sec_tbody">

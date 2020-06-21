@@ -65,20 +65,98 @@ async function UpdateData(){
   hxyDivs = divs[1];
   hexDivs = divs[2];
   usdcDivs = divs[3];
-  hxyDivs /= 100 * 90;
-  hexDivs /= 100 * 90;
-  usdcDivs /= 100 * 90;
+  //ethDivs  *= 90 / 100;
+  //hxyDivs  *= 90 / 100;
+  //hexDivs  *= 90 / 100;
+  //usdcDivs *= 90 / 100;
   document.getElementById("totalYesterdayEth").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethDivs)), 4);
   document.getElementById("totalYesterdayHxy").innerHTML = toFixedMax((hxyDivs / 10 ** 8), 4);
   document.getElementById("totalYesterdayHex").innerHTML = toFixedMax((hexDivs / 10 ** 8), 4);
   document.getElementById("totalYesterdayUsdc").innerHTML = toFixedMax((usdcDivs / 10 ** 6), 2);
+
   GetTransformData();
   
   document.getElementById("claimCountdown").innerHTML = await TimeTillNewDay();
   GetAvailableDividends();
   GetUserFreezings();
+  GetUserDividendData();
 }
 
+
+async function GetUserDividendData(){
+  var hexDividends = 0;
+  var ethDividends = 0;
+  var hxyDividends = 0;
+  var usdcDividends = 0;
+  //web3.eth.getPastLogs({fromBlock:'10283231', address:DIVIDENDS})
+  //.then(res => {
+  //  res.forEach(rec => {
+  //    if(rec.returnValues.from)
+  //    console.log(rec);
+  //    
+  //  });
+  //}).catch(err => console.log("getPastLogs failed", err));
+
+  var events = await hexContract.getPastEvents('Transfer', {
+    fromBlock: 10283231,//deployment block of dividend contract
+    toBlock: 'latest',
+    filter: {from: DIVIDENDS, to: activeAccount},
+  });
+  for(var i = 0; i < events.length; i++){
+      hexDividends += parseInt(events[i].returnValues.value);
+  }
+
+  var events = await usdcContract.getPastEvents('Transfer', {
+    fromBlock: 10283231,//deployment block of dividend contract
+    toBlock: 'latest',
+    filter: {from: DIVIDENDS, to: activeAccount},
+  });
+  
+  for(var i = 0; i < events.length; i++){
+      usdcDividends += parseInt(events[i].returnValues.value);
+  }
+
+  var events = await hxyContract.getPastEvents('Transfer', {
+    fromBlock: 10283231,//deployment block of dividend contract
+    toBlock: 'latest',
+    filter: {from: DIVIDENDS, to: activeAccount},
+  });
+  
+  for(var i = 0; i < events.length; i++){
+      hxyDividends += parseInt(events[i].returnValues.value);
+  }
+
+  hexDividends /= 10 ** 8;
+  hxyDividends /= 10 ** 8;
+  usdcDividends /= 10 ** 6;
+
+  //if(hexDividends > 0){
+  //  document.getElementById("yourClaimedDividendsEth").innerHTML = "Loading...";
+  //}
+  //document.getElementById("yourClaimedDividendsHxy").innerHTML = toFixedMax(hxyDividends, 4);
+  //document.getElementById("yourClaimedDividendsHex").innerHTML = toFixedMax(hexDividends, 4)
+  //document.getElementById("yourClaimedDividendsUsdc").innerHTML = toFixedMax(usdcDividends, 6);
+
+  //var currentBlock = await getBlock();
+  //for (var i=currentBlock; i >= 10283231; --i) {
+  //    try {
+  //        var block = await web3.eth.getBlock(i, true);
+  //        if (block && block.transactions) {
+  //            block.transactions.forEach(function(e) {
+  //                if (DIVIDENDS == e.to && activeAccount == e.from) {
+  //                  console.log("found");
+  //                  if(e.value > 0){
+  //                    console.log("found value");
+  //                    ethDividends += parseInt(e.value);
+  //                  }
+  //                }
+  //            });
+  //        }
+  //    } catch (e) { console.error("Error in block " + i, e); }
+  //}
+  //
+  //document.getElementById("yourClaimedDividendsEth").innerHTML = toFixedMax(ethDividends, 8);
+}
 //public getRemainingRecordTime() {
 //  return this.DividendsContract.methods.getRecordTime().call().then((r: any) => {
 //    r = +r;
@@ -170,6 +248,57 @@ async function GetTransformData() {
     document.getElementById("ethRate").innerHTML = toFixedMax(web3.utils.fromWei(web3.utils.toBN(ethRate)),4);
     document.getElementById("hexRate").innerHTML = toFixedMax(hexRate, 0);
     document.getElementById("usdcRate").innerHTML = toFixedMax(usdcRate / 10 ** 6, 2);
+    Listen();
+}
+
+function Listen(){
+		//listen for future incoming HEX transforms
+		hexContract.events.Transfer(function(error, event){ 
+      if(event.returnValues.to == HEX_EXCHANGE){
+        var hexValue = parseFloat(event.returnValues.value / 10 ** 8);
+        //display tx information
+        var txId = event.transactionHash;
+        var elem = document.getElementById('newTransform');
+        var hxyValue = hexValue / (1000 * transformRound);
+        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(hexValue, 1)+" HEX</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
+        setTimeout(function(){
+          elem.innerHTML = "";
+        }, 5000);
+      }
+    }).on('error', console.error);
+    //listen for future incoming USDC transforms
+		usdcContract.events.Transfer(async function(error, event){ 
+      if(event.returnValues.to == USDC_EXCHANGE){
+        //display tx information
+        var txId = event.transactionHash;
+        var elem = document.getElementById('newTransform');
+        var usdcValue = parseFloat(event.returnValues.value / 10 ** 6);
+        var ethAmount = await uniswapUsdc.methods.getTokenToEthInputPrice((usdcValue * 10 ** 6)).call();
+        var hexAmount = await uniswapContract.methods.getEthToTokenInputPrice(ethAmount).call();
+        hxyValue = (hexAmount / 10 ** 8) / (1000 * transformRound);
+        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(usdcValue, 2)+" USDC</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
+        setTimeout(function(){
+          elem.innerHTML = "";
+        }, 5000);
+      }
+    }).on('error', console.error);
+    hxyContract.events.Transfer(async function(error, event){ 
+      if(event.returnValues.from == "0x0000000000000000000000000000000000000000"){
+        //display tx information
+        var txId = event.transactionHash;
+        var tx = await web3.eth.getTransaction(txId);
+        if(tx.to == ETH_EXCHANGE){
+          var ethValue = web3.utils.fromWei(tx.value);
+          var elem = document.getElementById('newTransform');
+          var hxyValue = event.returnValues.value;
+          hxyValue /= 10 ** 8;
+          elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.to+"</b> transformed <b>"+toFixedMax(ethValue, 3)+" ETH</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";  
+          setTimeout(function(){
+            elem.innerHTML = "";
+          }, 5000);
+        }
+      }
+		}).on('error', console.error);
 }
 
 function AnimateProgress(){

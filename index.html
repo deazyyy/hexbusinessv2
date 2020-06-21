@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.1" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=2.9" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.4" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=3.6" />
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <title>HEX business - Version 2.0</title>
 </head>
@@ -26,11 +26,10 @@
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="LOGO"></a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="menu">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
+                        <a class=" dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
                         <ul class="dropdown-menu">
                           <li><a href="https://hex.win">HEX website</a></li>
                           <li><a href="https://go.hex.win">HEX lobby</a></li>
@@ -41,21 +40,21 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Our Projects</a>
                         <ul class="dropdown-menu">
                           <li><a href="hexmoney.html">hexmoney</a></li>
-                          <li><a href="#app">hexmobile</a></li>
+                          <li><a class="hexmobile_scroll_click" href="#app">hexmobile</a></li>
                           <li><a href="https://hexpool.win">hexpool</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stats</a>
                         <ul class="dropdown-menu">
-                          <li><a href="#price">price data</a></li>
-                          <li><a href="#overview">overview</a></li>
+                          <li class="hexmobile_scroll_click"><a href="#price">price data</a></li>
+                          <li class="hexmobile_scroll_click"><a href="#overview">overview</a></li>
                           <li><a href="https://hex.vision">hex.vision</a></li>
                         </ul>
                     </li>
                 
                     <li class="nav-hexbtn"> 
-                        <a href="hexmoney.html" class="btn-main" ><span>Get</span>&nbsp;hex money</a>
+                        <a href="hexsub.html" class="btn-main" ><span>Go to </span><div class="navbtn_img"></div></a>
                     </li>
             </div>
         </div>
@@ -74,7 +73,7 @@
                             <strong
                                 class="txt-rotate" style="margin-left: 10px;"
                                 data-period="1200"
-                                data-rotate='[ "hex.business", "hex.money", "hex.stake"]'></strong></h1>
+                                data-rotate='[ "hex.business", "hex money", "hex.credit"]'></strong></h1>
                         <p>hex.business is an ecosystem built entirely around HEX, <br> an ERC20 Token based on the Ethereum blockchain.</p>
                         <a href="#app" class="btn-main">Download the App</a>
                         <h6>Available on Google Play, iOS & APK</h6>
@@ -109,35 +108,35 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong> - HEX <span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
                                                 <td><p id="hexUsd"></p></td>
                                                 <td><a id="hexChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong> - Bitcoin <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong><span class="mobilehidespan"> - Bitcoin</span> <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong><span class="mobilehidespan"> - US Dollar</span></p>
                                                 </td>
                                                 <td><p id="btcUsd" ></p></td>
                                                 <td><a id="btcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - HEX <span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong> - Bitcoin</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong><span class="mobilehidespan"> - Bitcoin </span></p>
                                                 </td>
                                                 <td><p id="hexBtc"></p></td>
                                                 <td><a id="hexBtcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong> - Ethereum <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> - US Dollar</p>
+                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong><span class="mobilehidespan"> - Ethereum  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
                                                 <td><p id="ethUsd"></p></td>
                                                 <td><a id="ethChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong> - HEX <span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong> - Ethereum</p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong><span class="mobilehidespan"> - Ethereum</span></p>
                                                 </td>
                                                 <td><p id="hexEth"></p></td>
                                                 <td><a id="hexEthChange"></a></td>
@@ -244,7 +243,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row adoption_amplifier">
                         <div class="col-md-12">
                             <div class="hex-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
                                 <div class="hex-table">
@@ -290,7 +289,7 @@
     <!-- End Hex Currencies -->
 
     <!-- About Us -->
-    <section id="app" class="about-us">
+    <section id="app" class="about-us  hexmobile_scroll_sec">
         <div class="container">
             <h2 class="main-title section_heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.20s">More about hex.business</h2>
             <div class="about-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
@@ -1239,13 +1238,18 @@
                                     <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
-                                <a href="hexmoney.html" class="btn-top mobileshow">Go to hex money</a>
+                                <div class="nav-hexbtn mobileshow"> 
+		                        <a href="hexsub.html" class="btn-main btn-top"><span>Go to </span><div class="navbtn_img"></div></a>
+		                    </div>
                             </div>
                             <ul class="footer-social mobilehide">
                                 <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             </ul>
-                            <a href="hexmoney.html" class="btn-top mobilehide">Go to hex money</a>
+                            <div class="nav-hexbtn mobilehide"> 
+		                        <a href="hexsub.html" class="btn-main btn-top"><span>Go to </span><div class="navbtn_img"></div></a>
+		                    </div>
+
                         </div>
                     </div>
                     <div class="footer-blk-two">
@@ -1264,9 +1268,9 @@
                             <ul>
                                 <li><a href="https://hexlotto.com">hex lotto rocket</a></li>
                                 <li><a href="#">hex lotto stake</a></li>
-                                <li><a href="#">hex bet</a></li>
+                                <li><a href="https://uniswap.info/pair/0xadea645907dbe2b9bcb7b102695ad0c321f6b40c">hex.bet</a></li>
                                 <li><a href="#">hex play</a></li>
-                                <li><a href="#">hextra</a></li>
+                                <li><a href="https://hextra.win">hextra</a></li>
                                 <li><a href="#">hex academy</a></li>
                             </ul>
                         </div>
@@ -1275,24 +1279,11 @@
                         <div class="footer-list">
                             <h4>Our Projects</h4>
                             <ul>
-                                <li><a href="">hex.mobile</a></li>
-                                <li><a href="#">hex.credit</a></li>
-                                <li><a href="#">hex.money</a></li>
-                                <li><a href="#">hex.pool</a></li>
-                                <li><a href="#">hex.stable</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer-blk-four mobilehide">
-                        <div class="footer-list">
-                            <h4>Entertainment</h4>
-                            <ul>
-                                <li><a href="#">hex lotto rocket</a></li>
-                                <li><a href="#">hex lotto stake</a></li>
-                                <li><a href="#">hex bet</a></li>
-                                <li><a href="#">hex play</a></li>
-                                <li><a href="#">hextra</a></li>
-                                <li><a href="#">hex academy</a></li>
+                                <li><a href="#app">hex mobile</a></li>
+                                <li><a href="#">hex credit</a></li>
+                                <li><a href="hexmoney.html">hex money</a></li>
+                                <li><a href="https://hexpool.win">hex pool</a></li>
+                                <li><a href="#">hex stable</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1507,6 +1498,18 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
   document.body.appendChild(css);
 };
+    </script>
+
+
+    <script type="text/javascript">
+    	$(document).ready(function () {
+			  $('.hexmobile_scroll_click').click(function(e) {
+			  	 e.preventDefault();
+			  $('html, body').animate({
+			    scrollTop: $(".hexmobile_scroll_sec").offset().top
+			  }, 1000)
+			})
+		});
     </script>
 </body>
 </html>

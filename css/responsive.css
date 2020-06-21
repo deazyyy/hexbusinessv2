@@ -1,4 +1,202 @@
 @media(min-width:2560px){
+
+
+
+
+	.copyright-nm p{
+		padding: 35px 0;
+	}
+	.copyright-wrapper{
+		padding: 0;
+	}
+	
+
+
+
+
+	.about-sld .owl-controls .owl-dots {
+	    top: 120px;
+	}
+
+	/**** global****/
+	/**** global end *****/
+
+
+
+
+	/*** section 1*******/
+
+
+
+
+	.hex-table-title {
+	    margin-bottom: 20px;
+	}
+	.main-title{
+		font-size: 34px;
+	}
+	.section_heading {
+	    margin: 2em 0 2em 0 !important;
+	}
+	.about-details .main-title {
+		margin-bottom: 15px;
+		margin-top: 30px;
+	}
+	.app-list {
+	    /**margin: 20px 0**/
+	}
+	.about-details .app-list img {
+	    /**height: 3.5em !important;**/
+	}
+	.about-img img{
+		max-width: 20em;
+		margin-top: 5em;	
+	}
+	.about-details .title-btn{
+		margin-bottom: 20px
+	}
+	.hex-loan li p span{
+		margin-top: 5px;
+	}
+	.hex-loan li{
+		padding: 8px 15px;
+	}
+
+
+
+
+	/******** section 1 end ********/
+
+
+
+
+/***** section 2******/
+ .about-normal .about-img
+ /****** section 2 end *****/
+
+
+
+
+
+
+
+/***** hex mobile******/
+.about-sld .owl-dots{
+    top: 150px !important;
+    position: absolute;
+    left: 230px;
+}
+ /****** hex mobile end *****/
+
+
+
+
+ /***** hex credit******/
+ .about-normal .about-img{
+ 	min-height: 650px
+ }
+ .about-normal .about-img img{
+ 		/* max-width: 50%; */
+		 margin-left: auto;
+		 margin-right: auto;
+ }
+ .about-normal .about-img{
+ 	min-height: 60vh;
+ }
+ /****** hex credit end *****/
+
+
+
+
+
+
+
+
+/***** hex money ******/
+.about-transform .about-details .btn-main{
+	margin-top: 30px;
+	padding: 20px 30px;
+}
+.hextabs-table .table tr td {
+    padding: 10px 0 0;
+}
+.hextabs-table .table tr th{
+	padding: 0 0 10px
+}
+.hextabs-block h4 {
+    margin: 0 0 25px;
+}
+.hextabs-wrapper{
+	margin: 80px auto 0;
+}
+ /****** hex money end *****/
+
+
+
+/***** hex assisstant ******/
+.about-chatwrap h4{
+	margin: 0 0 20px
+}
+.about-chatblk .chat-left{
+	margin-bottom: 15px;
+}
+.about-chatblk .chat-left p{
+	line-height: 26px;
+	font-size: 18px;
+}
+.about-chatblk .chat-right{
+	padding: 15px 20px;
+}
+
+
+ /****** hex assisstant end *****/
+
+
+
+ /***** hex project  ******/
+.about-project{
+	margin-top: 5em;
+}
+.about-project .about-details p{
+	margin-bottom: 30px
+}
+.about-project .btn-main{
+	padding: 18px 40px;
+}
+.about-details{
+	margin-top: 100px;
+}
+ /****** hex project  end *****/
+
+
+/***** video container ****/
+.video-container{
+	margin-top: 100px;
+}
+
+
+/****** video container end *****/
+
+
+/*** footer****/
+footer{
+    padding-top: 0px;
+}
+
+.footer-list h4{
+	margin: 0 0 20px
+}
+.footer-list li{
+	margin-bottom: 10px;
+}
+/***** footer end *****/
+	
+
+	
+
+	
+
+
 	/*comman css*/
 	.container{
   		max-width: 100%;
@@ -7,15 +205,37 @@
 	/*comman css end*/
 	/*index*/
 	.about-details{
-		width: 564px;
+		width: 640px;
 		max-width: 100%;
 		padding-right: 0;
 	}
-	.about-details p{
+	.about-virtual .about-details{
+  		width: 590px;
+		max-width: 100%;
+	}
+	.about-virtual .about-details h2{
+		padding-right: 120px;
+	}
+	.about-details>p{
 		padding-right: 84px;
 		word-break: break-all;
 	}
+
+	.about-msg .about-details,
+	.about-normal .about-details{
+		padding-left: 0;
+		margin-left: 80px;
+	}
+	.about-msg .about-details>p,
+	.about-normal .about-details>p{
+		padding-right: 45px;
+	}
 	/*index end*/
+
+
+
+
+
 }
 
 
@@ -25,6 +245,201 @@
 
 
 @media(min-width:2000px) and (max-width:2560px){
+
+
+
+	.copyright-nm p{
+		padding: 35px 0;
+	}
+	.copyright-wrapper{
+		padding: 0;
+	}
+	
+
+
+	.about-sld .owl-controls .owl-dots {
+	    top: 120px;
+	}
+
+	/**** global****/
+	/**** global end *****/
+
+
+
+
+	/*** section 1*******/
+
+
+
+
+	.hex-table-title {
+	    margin-bottom: 20px;
+	}
+	.main-title{
+		font-size: 34px;
+	}
+	.section_heading {
+	    margin: 2em 0 2em 0 !important;
+	}
+	.about-details .main-title {
+		margin-bottom: 15px;
+		margin-top: 30px;
+	}
+	.app-list {
+	    /**margin: 20px 0**/
+	}
+	.about-details .app-list img {
+	    /**height: 3.5em !important;**/
+	}
+	.about-img img{
+		max-width: 20em;
+		margin-top: 5em;	
+	}
+	.about-details .title-btn{
+		margin-bottom: 20px
+	}
+	.hex-loan li p span{
+		margin-top: 5px;
+	}
+	.hex-loan li{
+		padding: 8px 15px;
+	}
+
+
+
+
+	/******** section 1 end ********/
+
+
+
+
+/***** section 2******/
+ .about-normal .about-img
+ /****** section 2 end *****/
+
+
+
+
+
+
+
+/***** hex mobile******/
+.about-sld .owl-dots{
+    top: 150px !important;
+    position: absolute;
+    left: 230px;
+}
+ /****** hex mobile end *****/
+
+
+
+
+ /***** hex credit******/
+ .about-normal .about-img{
+ 	min-height: 650px
+ }
+ .about-normal .about-img img{
+ 		/* max-width: 50%; */
+		 margin-left: auto;
+		 margin-right: auto;
+ }
+ .about-normal .about-img{
+ 	min-height: 60vh;
+ }
+ /****** hex credit end *****/
+
+
+
+
+
+
+
+
+/***** hex money ******/
+.about-transform .about-details .btn-main{
+	margin-top: 30px;
+	padding: 20px 30px;
+}
+.hextabs-table .table tr td {
+    padding: 10px 0 0;
+}
+.hextabs-table .table tr th{
+	padding: 0 0 10px
+}
+.hextabs-block h4 {
+    margin: 0 0 25px;
+}
+.hextabs-wrapper{
+	margin: 80px auto 0;
+}
+ /****** hex money end *****/
+
+
+
+/***** hex assisstant ******/
+.about-chatwrap h4{
+	margin: 0 0 20px
+}
+.about-chatblk .chat-left{
+	margin-bottom: 15px;
+}
+.about-chatblk .chat-left p{
+	line-height: 26px;
+	font-size: 18px;
+}
+.about-chatblk .chat-right{
+	padding: 15px 20px;
+}
+
+
+ /****** hex assisstant end *****/
+
+
+
+ /***** hex project  ******/
+.about-project{
+	margin-top: 5em;
+}
+.about-project .about-details p{
+	margin-bottom: 30px
+}
+.about-project .btn-main{
+	padding: 18px 40px;
+}
+.about-details{
+	margin-top: 100px;
+}
+ /****** hex project  end *****/
+
+
+/***** video container ****/
+.video-container{
+	margin-top: 100px;
+}
+
+
+/****** video container end *****/
+
+
+/*** footer****/
+footer{
+    padding-top: 0px;
+}
+
+.footer-list h4{
+	margin: 0 0 20px
+}
+.footer-list li{
+	margin-bottom: 10px;
+}
+/***** footer end *****/
+	
+
+	
+
+	
+
+
 	/*comman css*/
 	.container{
   		max-width: 100%;
@@ -33,7 +448,7 @@
 	/*comman css end*/
 	/*index*/
 	.about-details{
-		width: 564px;
+		width: 640px;
 		max-width: 100%;
 		padding-right: 0;
 	}
@@ -41,9 +456,22 @@
   		width: 590px;
 		max-width: 100%;
 	}
-	.about-details p{
+	.about-virtual .about-details h2{
+		padding-right: 120px;
+	}
+	.about-details>p{
 		padding-right: 84px;
 		word-break: break-all;
+	}
+
+	.about-msg .about-details,
+	.about-normal .about-details{
+		padding-left: 0;
+		margin-left: 80px;
+	}
+	.about-msg .about-details>p,
+	.about-normal .about-details>p{
+		padding-right: 45px;
 	}
 	/*index end*/
 }
@@ -56,6 +484,12 @@
 
 
 @media(min-width:1800px) and (max-width:1999px){
+	.copyright-nm p{
+		padding: 35px 0;
+	}
+	.copyright-wrapper{
+		padding: 0;
+	}
 	
 	
 	.about-sld .owl-controls .owl-dots {
@@ -5269,10 +5703,20 @@ footer{
 
 
 
-
+.hex-table .table tbody tr td .ticker{
+	font-size: 10px;
+	transform: scale(0.8);
+}
+.hex-table .table tbody tr td .ticker:before{
+	width: 10px;
+    height: 12px;
+}
 
 
 .hex-table .table tbody tr td .up{
+	transform: scale(0.8);
+}
+.hex-table .table tbody tr td .down{
 	transform: scale(0.8);
 }
 
@@ -5343,7 +5787,7 @@ footer{
 }
 
 .hex-table .table tbody tr td{
-	padding: 8px 8px 0 0;
+	padding: 8px 0px 0 0;
 }
 
 
@@ -5787,7 +6231,7 @@ footer{
 	.hex-table .table tbody tr td .down,
 	.hex-table .table tbody tr td .up,
 	.hex-table .table tbody tr td p{
-		font-size: 12px;
+		font-size: 10px;
 	}
 	.hex-table .table tbody tr td .down,
 	.hex-table .table tbody tr td .up{
@@ -6122,7 +6566,7 @@ footer{
 	.hex-table .table thead tr th,
 	.hextabs-table .table tr td p,
 	.hex-table .table tbody tr td p{
-		font-size: 12px;
+		font-size: 10px;
 	}
 	.hextabs-table .table-footer p span{
 		margin-right: 10px;
@@ -6183,4 +6627,11 @@ footer{
 		margin-bottom: 18px;
 	}
 	/*another end*/
+	.mobilehidespan{
+		display: none !important;
+	}
+	.adoption_amplifier{
+		margin-right: 0;
+    margin-left: 0;
+	}
 }

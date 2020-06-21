@@ -1707,7 +1707,7 @@ footer{
 .btn-top{
   font-size: 17px;
   font-weight: normal;
-  color: #f68c24;
+  color: #6D3AB0;
   margin-left: 0;
   transition: all 0.4s ease;
 }
@@ -1859,4 +1859,12 @@ footer{
 .navbar-default .navbar-nav>li>.btn-main:focus .navbtn_img,
 .navbar-default .navbar-nav>li>.btn-main:hover .navbtn_img{
  background-image: url(../images/logo_white.png);
+}
+
+
+
+.footer-wrapper .nav-hexbtn{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }

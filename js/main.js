@@ -260,10 +260,10 @@ function Listen(){
         var txId = event.transactionHash;
         var elem = document.getElementById('newTransform');
         var hxyValue = hexValue / (1000 * transformRound);
-        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(hexValue, 1)+" HEX</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
-        setTimeout(function(){
-          elem.innerHTML = "";
-        }, 5000);
+        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b class='addressBreak'>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(hexValue, 1)+" HEX</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
+        //setTimeout(function(){
+        //  elem.innerHTML = "";
+        //}, 6000);
       }
     }).on('error', console.error);
     //listen for future incoming USDC transforms
@@ -276,10 +276,10 @@ function Listen(){
         var ethAmount = await uniswapUsdc.methods.getTokenToEthInputPrice((usdcValue * 10 ** 6)).call();
         var hexAmount = await uniswapContract.methods.getEthToTokenInputPrice(ethAmount).call();
         hxyValue = (hexAmount / 10 ** 8) / (1000 * transformRound);
-        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(usdcValue, 2)+" USDC</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
-        setTimeout(function(){
-          elem.innerHTML = "";
-        }, 5000);
+        elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b class='addressBreak'>"+event.returnValues.from+"</b> transformed <b>"+toFixedMax(usdcValue, 2)+" USDC</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";
+        //setTimeout(function(){
+        //  elem.innerHTML = "";
+        //}, 6000);
       }
     }).on('error', console.error);
     hxyContract.events.Transfer(async function(error, event){ 
@@ -293,9 +293,9 @@ function Listen(){
           var hxyValue = event.returnValues.value;
           hxyValue /= 10 ** 8;
           elem.innerHTML = "<span style='color:black'>Latest transform...</span><br/><a style='color:black' href='https://etherscan.io/tx/"+txId+"'><b>"+event.returnValues.to+"</b> transformed <b>"+toFixedMax(ethValue, 3)+" ETH</b> for <b>"+toFixedMax(hxyValue, 3)+" HXY</b></a>";  
-          setTimeout(function(){
-            elem.innerHTML = "";
-          }, 5000);
+          //setTimeout(function(){
+          //  elem.innerHTML = "";
+          //}, 5000);
         }
       }
 		}).on('error', console.error);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,18 +8,20 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.4" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?ver=2.9.6" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css?ver=3.6" />
     <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <title>HEX business - Version 2.0</title>
 </head>
+
 <body>
 
     <!-- Header -->
     <nav class="navbar navbar-default wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.20s">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -31,30 +34,32 @@
                     <li class="dropdown">
                         <a class=" dropdown-toggle" data-toggle="dropdown" href="#">About Hex</a>
                         <ul class="dropdown-menu">
-                          <li><a href="https://hex.win">HEX website</a></li>
-                          <li><a href="https://go.hex.win">HEX lobby</a></li>
-                          <li><a href="https://hex.wiki">HEX wiki</a></li>
+                            <li><a href="https://hex.win">HEX website</a></li>
+                            <li><a href="https://go.hex.win">HEX lobby</a></li>
+                            <li><a href="https://hex.wiki">HEX wiki</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Our Projects</a>
                         <ul class="dropdown-menu">
-                          <li><a href="hexmoney.html">hexmoney</a></li>
-                          <li><a class="hexmobile_scroll_click" href="#app">hexmobile</a></li>
-                          <li><a href="https://hexpool.win">hexpool</a></li>
+                            <li><a href="hexmoney.html">hexmoney</a></li>
+                            <li><a class="hexmobile_scroll_click" href="#app">hexmobile</a></li>
+                            <li><a href="https://hexpool.win">hexpool</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stats</a>
                         <ul class="dropdown-menu">
-                          <li><a href="#price">price data</a></li>
-                          <li><a href="#overview">overview</a></li>
-                          <li><a href="https://hex.vision">hex.vision</a></li>
+                            <li><a href="#price">price data</a></li>
+                            <li><a href="#overview">overview</a></li>
+                            <li><a href="https://hex.vision">hex.vision</a></li>
                         </ul>
                     </li>
-                
-                    <li class="nav-hexbtn"> 
-                        <a href="hexmoney.html" class="btn-main" ><span>Go to </span><div class="navbtn_img"></div></a>
+
+                    <li class="nav-hexbtn">
+                        <a href="hexmoney.html" class="btn-main"><span>Go to </span>
+                            <div class="navbtn_img"></div>
+                        </a>
                     </li>
             </div>
         </div>
@@ -70,11 +75,10 @@
                         <h5><span>New</span> Now available on Google Play</h5>
                         <h1 style="display: flex;justify-content: center;align-items: center;">
                             let's talk
-                            <strong
-                                class="txt-rotate" style="margin-left: 10px;"
-                                data-period="1200"
+                            <strong class="txt-rotate" style="margin-left: 10px;" data-period="1200"
                                 data-rotate='[ "hex.business", "hex money", "hex.credit"]'></strong></h1>
-                        <p>hex.business is an ecosystem built entirely around HEX, <br> an ERC20 Token based on the Ethereum blockchain.</p>
+                        <p>hex.business is an ecosystem built entirely around HEX, <br> an ERC20 Token based on the
+                            Ethereum blockchain.</p>
                         <a href="#app" class="btn-main">Download the App</a>
                         <h6>Available on Google Play, iOS & APK</h6>
                     </div>
@@ -108,37 +112,73 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span><strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part">/</span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
+                                                    <p><span><img src="images/cmp-icons/01.png"
+                                                                alt="icon"></span><strong>HEX</strong><span
+                                                            class="mobilehidespan"> - HEX </span><span
+                                                            class="line-part">/</span><span><img
+                                                                src="images/cmp-icons/02.png"
+                                                                alt="icon"></span><strong>USD</strong> <span
+                                                            class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
-                                                <td><p id="hexUsd"></p></td>
+                                                <td>
+                                                    <p id="hexUsd"></p>
+                                                </td>
                                                 <td><a id="hexChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span> <strong>BTC</strong><span class="mobilehidespan"> - Bitcoin</span> <span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong><span class="mobilehidespan"> - US Dollar</span></p>
+                                                    <p><span><img src="images/cmp-icons/03.png" alt="icon"></span>
+                                                        <strong>BTC</strong><span class="mobilehidespan"> -
+                                                            Bitcoin</span> <span class="line-part"> / </span><span><img
+                                                                src="images/cmp-icons/02.png"
+                                                                alt="icon"></span><strong>USD</strong><span
+                                                            class="mobilehidespan"> - US Dollar</span></p>
                                                 </td>
-                                                <td><p id="btcUsd" ></p></td>
+                                                <td>
+                                                    <p id="btcUsd"></p>
+                                                </td>
                                                 <td><a id="btcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/03.png" alt="icon"></span><strong>BTC</strong><span class="mobilehidespan"> - Bitcoin </span></p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span>
+                                                        <strong>HEX</strong><span class="mobilehidespan"> - HEX
+                                                        </span><span class="line-part"> / </span><span><img
+                                                                src="images/cmp-icons/03.png"
+                                                                alt="icon"></span><strong>BTC</strong><span
+                                                            class="mobilehidespan"> - Bitcoin </span></p>
                                                 </td>
-                                                <td><p id="hexBtc"></p></td>
+                                                <td>
+                                                    <p id="hexBtc"></p>
+                                                </td>
                                                 <td><a id="hexBtcChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span> <strong>ETH</strong><span class="mobilehidespan"> - Ethereum  </span><span class="line-part"> / </span><span><img src="images/cmp-icons/02.png" alt="icon"></span><strong>USD</strong> <span class="mobilehidespan">- US Dollar </span></p>
+                                                    <p><span><img src="images/cmp-icons/04.png" alt="icon"></span>
+                                                        <strong>ETH</strong><span class="mobilehidespan"> - Ethereum
+                                                        </span><span class="line-part"> / </span><span><img
+                                                                src="images/cmp-icons/02.png"
+                                                                alt="icon"></span><strong>USD</strong> <span
+                                                            class="mobilehidespan">- US Dollar </span></p>
                                                 </td>
-                                                <td><p id="ethUsd"></p></td>
+                                                <td>
+                                                    <p id="ethUsd"></p>
+                                                </td>
                                                 <td><a id="ethChange"></a></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span> <strong>HEX</strong><span class="mobilehidespan"> - HEX </span><span class="line-part"> / </span><span><img src="images/cmp-icons/04.png" alt="icon"></span><strong>ETH</strong><span class="mobilehidespan"> - Ethereum</span></p>
+                                                    <p><span><img src="images/cmp-icons/01.png" alt="icon"></span>
+                                                        <strong>HEX</strong><span class="mobilehidespan"> - HEX
+                                                        </span><span class="line-part"> / </span><span><img
+                                                                src="images/cmp-icons/04.png"
+                                                                alt="icon"></span><strong>ETH</strong><span
+                                                            class="mobilehidespan"> - Ethereum</span></p>
                                                 </td>
-                                                <td><p id="hexEth"></p></td>
+                                                <td>
+                                                    <p id="hexEth"></p>
+                                                </td>
                                                 <td><a id="hexEthChange"></a></td>
                                             </tr>
                                         </tbody>
@@ -166,29 +206,49 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p id="hxyTotal"></p></td>
+                                                <td>
+                                                    <p><strong>Total Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hxyTotal"></p>
+                                                </td>
                                                 <td><a id="hxyTotalPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Frozen Supply</strong></p></td>
-                                                <td><p id="hxyFrozen"></p></td>
-                                                <td><a  id="hxyFrozenPercent" class="up"></a></td>
+                                                <td>
+                                                    <p><strong>Frozen Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hxyFrozen"></p>
+                                                </td>
+                                                <td><a id="hxyFrozenPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Locked Supply</strong></p></td>
-                                                <td><p id="hxyLocked"></p></td>
+                                                <td>
+                                                    <p><strong>Locked Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hxyLocked"></p>
+                                                </td>
                                                 <td><a id="hxyLockedPercent" class="down"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Circulating Supply</strong></p></td>
-                                                <td><p id="hxyCirculating"></p></td>
+                                                <td>
+                                                    <p><strong>Circulating Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hxyCirculating"></p>
+                                                </td>
                                                 <td><a id="hxyCirculatingPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Transform rate</strong></p></td>
-                                                <td><p id="hxyPrice"></p></td>
-                                                <td><a id="hxyPriceChange" ></a></td>
+                                                <td>
+                                                    <p><strong>Transform rate</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hxyPrice"></p>
+                                                </td>
+                                                <td><a id="hxyPriceChange"></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -213,28 +273,48 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><p><strong>Total Supply</strong></p></td>
-                                                <td><p id="hexTotal" ></p></td>
+                                                <td>
+                                                    <p><strong>Total Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hexTotal"></p>
+                                                </td>
                                                 <td><a id="hexTotalPercent" class="up"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Staked Supply</strong></p></td>
-                                                <td><p id="hexStaked"></p></td>
-                                                <td><a  id="hexStakedPercent"></a></td>
+                                                <td>
+                                                    <p><strong>Staked Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hexStaked"></p>
+                                                </td>
+                                                <td><a id="hexStakedPercent"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Circulating Supply</strong></p></td>
-                                                <td><p id="hexCirculating"></p></td>
+                                                <td>
+                                                    <p><strong>Circulating Supply</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hexCirculating"></p>
+                                                </td>
                                                 <td><a id="hexCirculatingPercent"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>AA HEX/ETH rate</strong></p></td>
-                                                <td><p id="aaHexRate"></p></td>
+                                                <td>
+                                                    <p><strong>AA HEX/ETH rate</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="aaHexRate"></p>
+                                                </td>
                                                 <td><a id="aaHexChange"></a></td>
                                             </tr>
                                             <tr>
-                                                <td><p><strong>Current price</strong></p></td>
-                                                <td><p id="hexPrice"></p></td>
+                                                <td>
+                                                    <p><strong>Current price</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="hexPrice"></p>
+                                                </td>
                                                 <td><a id="hexPriceChange"></a></td>
                                             </tr>
                                         </tbody>
@@ -243,41 +323,102 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row adoption_amplifier">
-                        <div class="col-md-12">
-                            <div class="hex-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
-                                <div class="hex-table">
-                                    <div class="hex-table-title">
-                                        <h5>Adoption Amplifier</h5>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Data</th>
-                                                    <th>Stats</th>
-                                                    <th>Change</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><p><strong>AA Pool val</strong></p></td>
-                                                    <td><p id="aaPool"></p></td>
-                                                    <td><a id="aaPoolChange" class="limitWidth"></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><p><strong>AA HEX/ETH rate</strong></p></td>
-                                                    <td><p id="aaHexRate2"></p></td>
-                                                    <td><a id="aaHexChange2" class="limitWidth"></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><p><strong>AA Closing</strong></p></td>
-                                                    <td><p id="aaClosing">00:00 UTC</p></td>
-                                                    <td><a id="aaClosingTicker" class="ticker limitWidth"></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                </div>
+                <div class="row adoption_amplifier">
+                    <div class="col-md-6">
+                        <div class="hex-block wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
+                            <div class="hex-table">
+                                <div class="hex-table-title">
+                                    <h5>Gas Stats</h5>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Transaction Speed</th>
+                                                <th>Gas Price</th>
+                                                <th>Confirmation Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Fast</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="gasFast"></p>
+                                                </td>
+                                                <td><a id="gasFastConf" class="ticker"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Normal</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="gasNorm"></p>
+                                                </td>
+                                                <td><a id="gasNormConf" class="ticker"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Slow</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="gasSlow"></p>
+                                                </td>
+                                                <td><a id="gasSlowConf" class="ticker"></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="hex-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
+                            <div class="hex-table">
+                                <div class="hex-table-title">
+                                    <h5>Adoption Amplifier</h5>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Data</th>
+                                                <th>Stats</th>
+                                                <th>Change</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>AA Pool val</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="aaPool"></p>
+                                                </td>
+                                                <td><a id="aaPoolChange" class="limitWidth"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>AA HEX/ETH rate</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="aaHexRate2"></p>
+                                                </td>
+                                                <td><a id="aaHexChange2" class="limitWidth"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>AA Closing</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p id="aaClosing">00:00 UTC</p>
+                                                </td>
+                                                <td><a id="aaClosingTicker" class="ticker limitWidth"></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -291,30 +432,41 @@
     <!-- About Us -->
     <section id="app" class="about-us  hexmobile_scroll_sec">
         <div class="container">
-            <h2 class="main-title section_heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.20s">More about hex.business</h2>
+            <h2 class="main-title section_heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.20s">More
+                about hex.business</h2>
             <div class="about-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
                 <div class="about-sld">
                     <div class="owlCarousel" id="about-slider">
                         <div class="items">
                             <div class="row">
                                 <div class="col-md-6 col-md-push-6">
-                                    <div class="about-img wow fadeInRight mobilehide" data-wow-duration="2s" data-wow-delay="0.40s">
+                                    <div class="about-img wow fadeInRight mobilehide" data-wow-duration="2s"
+                                        data-wow-delay="0.40s">
                                         <img src="images/mobile-icon.png" alt="mobile-icon">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-md-pull-6">
-                                    <div class="about-details wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
+                                    <div class="about-details wow fadeInLeft" data-wow-duration="2s"
+                                        data-wow-delay="0.40s">
                                         <h5 class="title-btn">hex mobile</h5>
                                         <h2 class="main-title main-title-sub">Simply buy and stake<br>HEX assets</h2>
-                                        <p>hexmobile is an app that has been designed to help onboard users new to HEX and HXY. Using a QR code, the process is streamlined so even newcomers to the world of crypto will find it straight forward to use.</p>
-                                        <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="2s" data-wow-delay="0.40s">
-                                            <img src="images/mobile-icon.png" alt="mobile-icon"> 
+                                        <p>hexmobile is an app that has been designed to help onboard users new to HEX
+                                            and HXY. Using a QR code, the process is streamlined so even newcomers to
+                                            the world of crypto will find it straight forward to use.</p>
+                                        <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="2s"
+                                            data-wow-delay="0.40s">
+                                            <img src="images/mobile-icon.png" alt="mobile-icon">
                                         </div>
                                         <ul class="app-list">
-                                            <li><a href="https://testflight.apple.com/join/wTYlFffl"><img src="images/apple-store.png" alt="store-btn"></a></li>
-                                            <li><a href="https://play.google.com/store/apps/details?id=com.hexbusiness.hexmobile"><img src="images/play-strore.png" alt="store-btn"></a></li>
+                                            <li><a href="https://testflight.apple.com/join/wTYlFffl"><img
+                                                        src="images/apple-store.png" alt="store-btn"></a></li>
+                                            <li><a
+                                                    href="https://play.google.com/store/apps/details?id=com.hexbusiness.hexmobile"><img
+                                                        src="images/play-strore.png" alt="store-btn"></a></li>
                                         </ul>
-                                        <span class="android-note">or download APK for <img src="images/icons/android-icon.png" alt="android-icon"> android <a href="https://hexbusiness.net/APK/hexmobileAndroid.apk">here</a>.</span>
+                                        <span class="android-note">or download APK for <img
+                                                src="images/icons/android-icon.png" alt="android-icon"> android <a
+                                                href="https://hexbusiness.net/APK/hexmobileAndroid.apk">here</a>.</span>
                                     </div>
                                 </div>
                             </div>
@@ -322,44 +474,53 @@
                         <div class="items">
                             <div class="row">
                                 <div class="col-md-6 col-md-push-6">
-                                    <div class="about-img wow fadeInLeft mobilehide" data-wow-duration="2s" data-wow-delay="0.40s">
+                                    <div class="about-img wow fadeInLeft mobilehide" data-wow-duration="2s"
+                                        data-wow-delay="0.40s">
                                         <img src="images/mobile-icon.png" alt="mobile-icon">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-md-pull-6">
-                                    <div class="about-details mt-zero wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
+                                    <div class="about-details mt-zero wow fadeInRight" data-wow-duration="2s"
+                                        data-wow-delay="0.40s">
                                         <h5 class="title-btn">hex mobile</h5>
                                         <h2 class="main-title main-title-sub">Simply buy and stake<br>HEX assets</h2>
                                         <p>These are just a few of the advantages of <strong>hex.mobile.</strong></p>
-                                        <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="2s" data-wow-delay="0.40s">
-                                            <img src="images/mobile-icon.png" alt="mobile-icon"> 
+                                        <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="2s"
+                                            data-wow-delay="0.40s">
+                                            <img src="images/mobile-icon.png" alt="mobile-icon">
                                         </div>
                                         <ul class="hex-loan">
                                             <li>
                                                 <img src="images/icons/pigi-bank.png" alt="icons" class="nor-img">
-                                                <p>Minting while spending <span>Mint HXY for every HEX AA lobby transform.</span></p>
-                                            </li>  
+                                                <p>Minting while spending <span>Mint HXY for every HEX AA lobby
+                                                        transform.</span></p>
+                                            </li>
                                             <li>
                                                 <img src="images/icons/qr-code.png" alt="icon" class="nor-img">
-                                                
+
                                                 <p>QR Code<span>Scannable QR Code reader</span></p>
                                             </li>
                                             <li>
                                                 <img src="images/icons/wallet.png" alt="icon" class="nor-img">
-                                                
+
                                                 <p>Wallet<span>Integrated wallet or import your own.</span></p>
                                             </li>
                                             <li>
                                                 <img src="images/icons/graph.png" alt="icon" class="nor-img">
-                                                
+
                                                 <p>Stats<span>Live Stats supplied by hex vision</span></p>
                                             </li>
                                         </ul>
                                         <ul class="app-list">
-                                            <li><a href="https://testflight.apple.com/join/wTYlFffl"><img src="images/apple-store.png" alt="store-btn"></a></li>
-                                            <li><a href="https://play.google.com/store/apps/details?id=com.hexbusiness.hexmobile"><img src="images/play-strore.png" alt="store-btn"></a></li>
+                                            <li><a href="https://testflight.apple.com/join/wTYlFffl"><img
+                                                        src="images/apple-store.png" alt="store-btn"></a></li>
+                                            <li><a
+                                                    href="https://play.google.com/store/apps/details?id=com.hexbusiness.hexmobile"><img
+                                                        src="images/play-strore.png" alt="store-btn"></a></li>
                                         </ul>
-                                        <span class="android-note">or download APK for <img src="images/icons/android-icon.png" alt="android-icon"> android <a href="https://hexbusiness.net/APK/hexmobileAndroid.apk">here</a>.</span>
+                                        <span class="android-note">or download APK for <img
+                                                src="images/icons/android-icon.png" alt="android-icon"> android <a
+                                                href="https://hexbusiness.net/APK/hexmobileAndroid.apk">here</a>.</span>
                                     </div>
                                 </div>
                             </div>
@@ -378,9 +539,11 @@
                         <div class="about-details wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.60s">
                             <h5 class="title-btn">hex.credit</h5>
                             <h2 class="main-title">Better APR rates than a bank</h2>
-                            <p><strong>hex.credIt</strong> is a defi lending platform for <strong>HEX</strong> where participants get to provide either <strong>HEX</strong> or ETH.</p>
+                            <p><strong>hex.credIt</strong> is a defi lending platform for <strong>HEX</strong> where
+                                participants get to provide either <strong>HEX</strong> or ETH.</p>
 
-                            <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="1s" data-wow-delay="0.60s">
+                            <div class="about-img wow fadeInLeft mobileshow" data-wow-duration="1s"
+                                data-wow-delay="0.60s">
                                 <img src="images/card-img.png" alt="mobile-icon">
                             </div>
 
@@ -388,22 +551,26 @@
                                 <li>
                                     <img src="images/icons/pigi-bank.png" alt="icons" class="nor-img">
                                     <img src="images/icons/pigi-bank.png" alt="icons" class="hov-img">
-                                    <p>Minted upon every deposit <span>HEX Money (HXY) minted upon every deposit.</span></p>
-                                </li>  
+                                    <p>Minted upon every deposit <span>HEX Money (HXY) minted upon every deposit.</span>
+                                    </p>
+                                </li>
                                 <li>
                                     <img src="images/icons/loan-01.png" alt="icon" class="nor-img">
                                     <img src="images/icons/greek.png" alt="icon" class="hov-img">
-                                    <p>Loan for ETH providers<span>1-6 month <strong>HEX</strong> loans/3-6 for <strong>ETH</strong> providers.</span></p>
+                                    <p>Loan for ETH providers<span>1-6 month <strong>HEX</strong> loans/3-6 for
+                                            <strong>ETH</strong> providers.</span></p>
                                 </li>
                                 <li>
                                     <img src="images/icons/loan-02.png" alt="icon" class="nor-img">
                                     <img src="images/icons/calculator.png" alt="icon" class="hov-img">
-                                    <p>Interest paid in HEX<span>Attractive interest paid in <strong>HEX</strong> for <strong>ETH</strong> providers.</span></p>
+                                    <p>Interest paid in HEX<span>Attractive interest paid in <strong>HEX</strong> for
+                                            <strong>ETH</strong> providers.</span></p>
                                 </li>
                                 <li>
                                     <img src="images/icons/loan-03.png" alt="icon" class="nor-img">
                                     <img src="images/icons/0.png" alt="icon" class="hov-img">
-                                    <p>Zero fees<span>Zero fees for <strong>ETH</strong> providers if the liquidity is not used.</span></p>
+                                    <p>Zero fees<span>Zero fees for <strong>ETH</strong> providers if the liquidity is
+                                            not used.</span></p>
                                 </li>
                             </ul>
                         </div>
@@ -514,7 +681,8 @@
                                                     </div>
                                                 </div>
                                             </div-->
-                                            <img src="images/hexmoney.png" class="hexmoneyimage" style="width: 100% !important;max-width: none !important;">
+                                            <img src="images/hexmoney.png" class="hexmoneyimage"
+                                                style="width: 100% !important;max-width: none !important;">
                                             <div class="about-details mobileshow">
                                                 <a href="./hexmoney.html" class="btn-main">Get hex money</a>
                                             </div>
@@ -525,7 +693,9 @@
                                     <div class="about-details">
                                         <h5 class="title-btn">hex money</h5>
                                         <h2 class="main-title">Freeze and<br>Unfreeze HXY</h2>
-                                        <p>hex money is an incentive token you can earn from using HEX at any hex.business dapp. Liquid HEX dividends & HEX money interest can also be earned by freezing HEX money. </p>
+                                        <p>hex money is an incentive token you can earn from using HEX at any
+                                            hex.business dapp. Liquid HEX dividends & HEX money interest can also be
+                                            earned by freezing HEX money. </p>
                                         <a href="./hexmoney.html" class="btn-main mobilehide">Get hex money</a>
                                     </div>
                                 </div>
@@ -897,7 +1067,7 @@
                                         </div>
                                     </div>
                                 </div>-->
-                                <!--div class="col-md-6 assistant_btn2_box">
+            <!--div class="col-md-6 assistant_btn2_box">
                                     <div class="about-virtual">
                                         <div class="about-details wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
                                             <h5 class="title-btn">hex.assistant</h5>
@@ -981,9 +1151,9 @@
                                         </div>
                                     </div>
                                 </div-->
-                            <!--</div>
+            <!--</div>
                         </div>-->
-                        <!--div class="items assistant_btn2_box">
+            <!--div class="items assistant_btn2_box">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="about-img wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
@@ -1172,7 +1342,12 @@
                         <div class="about-details wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.20s">
                             <h5 class="title-btn">hex projects</h5>
                             <h2 class="main-title">Get to know<br>our hex projects</h2>
-                            <p>hex.business is a DeFi platform built on HEX and powered by the Ethereum network.<br/>Our collection of crypto tools, games and<br>entertainment platforms aim to give you financial freedom via cutting edge DApps and DeFi services throughout our ecosystem.<br/>HEX Money (HXY) is the core financial instrument to our network, incentivising loyal participants in one of the best loyalty reward programs in the cryptocurrency space!</p>
+                            <p>hex.business is a DeFi platform built on HEX and powered by the Ethereum
+                                network.<br />Our collection of crypto tools, games and<br>entertainment platforms aim
+                                to give you financial freedom via cutting edge DApps and DeFi services throughout our
+                                ecosystem.<br />HEX Money (HXY) is the core financial instrument to our network,
+                                incentivising loyal participants in one of the best loyalty reward programs in the
+                                cryptocurrency space!</p>
                             <a href="hexmoney.html" class="btn-main mobilehide">Get hex money</a>
                         </div>
                     </div>
@@ -1189,14 +1364,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="video-block wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.40s">
-                            <iframe width="100%" height="449" src="https://www.youtube.com/embed/qFdVVCw1AW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="449" src="https://www.youtube.com/embed/qFdVVCw1AW0"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="video-details wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.40s">
                             <h2 class="main-title">Why we built on HEX.</h2>
 
-                            <p>“HEX is the first cryptocurrency in the world with a chart of <b>future</b> sellable market supply”</p>
+                            <p>“HEX is the first cryptocurrency in the world with a chart of <b>future</b> sellable
+                                market supply”</p>
 
                             <h5>Richard Heart – <span>Founder of HEX</span></h5>
                         </div>
@@ -1215,7 +1394,8 @@
                     <h2 class="main-title">Join 8.738k+ Users <br> on our Telegram Group</h2>
                 </div>
                 <div class="join-btn wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.40s">
-                    <a href="https://t.me/hexmobileapp" class="btn-main">Join <i class="fa fa-paper-plane"></i> Telegram</a>
+                    <a href="https://t.me/hexmobileapp" class="btn-main">Join <i class="fa fa-paper-plane"></i>
+                        Telegram</a>
                 </div>
             </div>
         </div>
@@ -1232,23 +1412,28 @@
                             <a href="#" class="ft-logo">
                                 <img src="images/logo.png" alt="logo">
                             </a>
-                            <p>hex.business is an ecosystem built entirely around HEX, an ERC20 Token based on the Ethereum blockchain. </p>
+                            <p>hex.business is an ecosystem built entirely around HEX, an ERC20 Token based on the
+                                Ethereum blockchain. </p>
                             <div class=" mobileshow-footer">
                                 <ul class="footer-social mobileshow">
                                     <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
-                                <div class="nav-hexbtn mobileshow"> 
-		                        <a href="hexmoney.html" class="btn-main btn-top"><span>Go to </span><div class="navbtn_img"></div></a>
-		                    </div>
+                                <div class="nav-hexbtn mobileshow">
+                                    <a href="hexmoney.html" class="btn-main btn-top"><span>Go to </span>
+                                        <div class="navbtn_img"></div>
+                                    </a>
+                                </div>
                             </div>
                             <ul class="footer-social mobilehide">
                                 <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             </ul>
-                            <div class="nav-hexbtn mobilehide"> 
-		                        <a href="hexmoney.html" class="btn-main btn-top"><span>Go to </span><div class="navbtn_img"></div></a>
-		                    </div>
+                            <div class="nav-hexbtn mobilehide">
+                                <a href="hexmoney.html" class="btn-main btn-top"><span>Go to </span>
+                                    <div class="navbtn_img"></div>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -1268,11 +1453,30 @@
                             <ul>
                                 <li><a href="https://hexlotto.com">hex lotto rocket</a></li>
                                 <li><a href="#">hex lotto stake</a></li>
-                                <li><a href="https://uniswap.info/pair/0xadea645907dbe2b9bcb7b102695ad0c321f6b40c">hex.bet</a></li>
+                                <li><a
+                                        href="https://uniswap.info/pair/0xadea645907dbe2b9bcb7b102695ad0c321f6b40c">hex.bet</a>
+                                </li>
                                 <li><a href="#">hex play</a></li>
                                 <li><a href="https://hextra.win">hextra</a></li>
                                 <li><a href="#">hex academy</a></li>
                             </ul>
+
+                        </div>
+                    </div>
+                    <div class="footer-blk-four mobilehide">
+                        <div class="footer-list">
+                            <h4>Entertainment</h4>
+                            <ul>
+                                <li><a href="https://hexlotto.com">hex lotto rocket</a></li>
+                                <li><a href="#">hex lotto stake</a></li>
+                                <li><a
+                                        href="https://uniswap.info/pair/0xadea645907dbe2b9bcb7b102695ad0c321f6b40c">hex.bet</a>
+                                </li>
+                                <li><a href="#">hex play</a></li>
+                                <li><a href="https://hextra.win">hextra</a></li>
+                                <li><a href="#">hex academy</a></li>
+                            </ul>
+
                         </div>
                     </div>
                     <div class="footer-blk-three">
@@ -1299,72 +1503,75 @@
                 </div>
             </div>
             <div class="copyright-wrapper wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.40s">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="copyright-nm">
-                            <p>© 2020 <img src="images/icons/lemon-icon.png" alt="icon"> <a href="#">happylemon</a>. All rights reserved.</p>
-                        </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="copyright-nm">
+                        <p>© 2020 <img src="images/icons/lemon-icon.png" alt="icon"> <a href="#">happylemon</a>. All
+                            rights reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </footer>
     <!-- Footer end -->
-    <script type="text/javascript" src="js/jquery.min.js"></script> 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/web3.min.js"></script>
-    <script type="text/javascript" src="js/priceData.js"></script>
+    <script type="text/javascript" src="js/priceData.js?ver=1.1.2"></script>
     <script type="text/javascript">
         //wow animation js
         new WOW().init();
 
-        $(function() {
-          $('a[href*=#]').on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-          });
+        $(function () {
+            $('a[href*=#]').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 500, 'linear');
+            });
         });
 
         $('#about-slider').owlCarousel({
-            loop:true,
+            loop: true,
             margin: 60,
             items: 1,
             smartSpeed: 1000,
             autoplay: false,
-            autoplayTimeout: 5000, 
+            autoplayTimeout: 5000,
             slideSpeed: 2000,
             paginationSpeed: 2000,
             singleItem: true,
             // animateIn: 'fadeIn',
             // animateOut: 'fadeOut',
             dots: true,
-            nav:false,
-            responsive:{
-                0:{
-                    items:1,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
                 },
-                768:{
-                    items:1,
+                768: {
+                    items: 1,
                 },
-                991:{
-                    items:1,
+                991: {
+                    items: 1,
                 },
-                1100:{
-                    items:1,
+                1100: {
+                    items: 1,
                 },
-                1200:{
-                    items:1,
+                1200: {
+                    items: 1,
                 },
             }
         })
         $('#about-transform').owlCarousel({
-            loop:true,
+            loop: true,
             margin: 60,
             items: 1,
             smartSpeed: 1000,
             autoplay: false,
-            autoplayTimeout: 5000, 
+            autoplayTimeout: 5000,
             slideSpeed: 2000,
             paginationSpeed: 2000,
             singleItem: true,
@@ -1372,144 +1579,150 @@
             nav: true,
             // animateIn: 'fadeIn',
             // animateOut: 'fadeOut',
-            responsive:{
-                0:{
-                    items:1,
+            responsive: {
+                0: {
+                    items: 1,
                 },
-                768:{
-                    items:1,
+                768: {
+                    items: 1,
                 },
-                991:{
-                    items:1,
+                991: {
+                    items: 1,
                 },
-                1100:{
-                    items:1,
+                1100: {
+                    items: 1,
                 },
-                1200:{
-                    items:1,
+                1200: {
+                    items: 1,
                 },
             }
         })
         $('#chat-slider').owlCarousel({
-            loop:true,
+            loop: true,
             margin: 60,
             items: 1,
             smartSpeed: 1000,
             autoplay: true,
-            autoplayTimeout: 5000, 
+            autoplayTimeout: 5000,
             slideSpeed: 2000,
             paginationSpeed: 2000,
             singleItem: true,
             // animateIn: 'fadeIn',
             // animateOut: 'fadeOut',
             dots: false,
-            nav:false,
-            responsive:{
-                0:{
-                    items:1,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
                 },
-                768:{
-                    items:1,
+                768: {
+                    items: 1,
                 },
-                991:{
-                    items:1,
+                991: {
+                    items: 1,
                 },
-                1100:{
-                    items:1,
+                1100: {
+                    items: 1,
                 },
-                1200:{
-                    items:1,
+                1200: {
+                    items: 1,
                 },
             }
         })
-         $(".assistant_btn2_box").hide();
-        $("#assistant_btn1").click(function(){
+        $(".assistant_btn2_box").hide();
+        $("#assistant_btn1").click(function () {
             $('.assistant_btn1_box').hide();
             $('.assistant_btn2_box').show();
-           $('.about-msg').find('.about-details').removeClass('wow');
-             $('.about-details').css({"animation-duration": "0s !important", "animation-delay": "0s !important"});
-              $('.about-msg').removeClass('wow');
-              $('.about-msg').removeClass('fadeInRight');
+            $('.about-msg').find('.about-details').removeClass('wow');
+            $('.about-details').css({
+                "animation-duration": "0s !important",
+                "animation-delay": "0s !important"
+            });
+            $('.about-msg').removeClass('wow');
+            $('.about-msg').removeClass('fadeInRight');
         });
-        $("#assistant_btn2").click(function(){
+        $("#assistant_btn2").click(function () {
             $('.assistant_btn2_box').hide();
             $('.assistant_btn1_box').show();
-              $('.about-msg').find('.about-details').removeClass('wow');
-             $('.about-msg').find('.about-details').removeClass('fadeInRight');
-              $('.about-msg').removeClass('wow');
-              $('.about-msg').removeClass('fadeInRight');
-         
+            $('.about-msg').find('.about-details').removeClass('wow');
+            $('.about-msg').find('.about-details').removeClass('fadeInRight');
+            $('.about-msg').removeClass('wow');
+            $('.about-msg').removeClass('fadeInRight');
+
         });
     </script>
     <script>
-        var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
+        var TxtRotate = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
 
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+        TxtRotate.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
 
-  this.el.innerHTML = '<strong class="wrap">'+this.txt+'</strong>';
+            this.el.innerHTML = '<strong class="wrap">' + this.txt + '</strong>';
 
-  var that = this;
-  var delta = 300 - Math.random() * 100;
+            var that = this;
+            var delta = 300 - Math.random() * 100;
 
-  if (this.isDeleting) { delta /= 2; }
+            if (this.isDeleting) {
+                delta /= 2;
+            }
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
-  document.body.appendChild(css);
-};
+        window.onload = function () {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-rotate');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
+            document.body.appendChild(css);
+        };
     </script>
 
 
     <script type="text/javascript">
-    	$(document).ready(function () {
-			  $('.hexmobile_scroll_click').click(function(e) {
-			  	 e.preventDefault();
-			  $('html, body').animate({
-			    scrollTop: $(".hexmobile_scroll_sec").offset().top
-			  }, 1000)
-			})
-		});
+        $(document).ready(function () {
+            $('.hexmobile_scroll_click').click(function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $(".hexmobile_scroll_sec").offset().top
+                }, 1000)
+            })
+        });
     </script>
 </body>
+
 </html>

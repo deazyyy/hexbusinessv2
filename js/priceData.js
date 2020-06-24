@@ -1251,7 +1251,25 @@ function GetData(){
     };
     xhttp.open("GET", "https://hexvisionbusinessapi.azurewebsites.net/api/extendedStats", true);
     xhttp.send();
+
+    var xhttp2 = new XMLHttpRequest();
+    xhttp2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
+           var json = JSON.parse(xhttp2.responseText);
+           console.log(json);
+           document.getElementById("gasFast").innerHTML = json.fastest / 10 + " gwei";
+           document.getElementById("gasFastConf").innerHTML = (60 * json.fastestWait) + " seconds";
+           document.getElementById("gasNorm").innerHTML = json.average / 10 + " gwei";
+           document.getElementById("gasNormConf").innerHTML = json.avgWait + " minutes";
+           document.getElementById("gasSlow").innerHTML = json.safeLow / 10 + " gwei";
+           document.getElementById("gasSlowConf").innerHTML = json.safeLowWait + " minutes";
+        }
+    };
+    xhttp2.open("GET", "https://ethgasstation.info/api/ethgasAPI.json?api-key=7e4087ffad6eb1dbe6334260f0a528e3f2fb7a4f381959bfd50b32231269", true);
+    xhttp2.send();
 }
+
 
 function CalcTimeTill(timestamp) {
   var now = Date.now();

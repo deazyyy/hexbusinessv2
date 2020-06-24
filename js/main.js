@@ -415,7 +415,7 @@ async function GetAvailableDividends() {
       console.log("alreadyClaimed");
       document.getElementById("claimCountdown").innerHTML = "Claimed";
    }
-   else{
+  else{
      dividendsContract.methods.getAvailableDividends(activeAccount).call().then((result) => {
        result.map((dividend, index) => {
          console.log(dividend);
@@ -454,7 +454,6 @@ async function hasClaimed(){
     console.log(_today / 1000);
     console.log((_tomorrow / 1000));
     if(parseInt(lastClaim) > (_today / 1000) && parseInt(lastClaim) < (_tomorrow / 1000)){
-        console.log("heelo");
         return true;
     }
     else{

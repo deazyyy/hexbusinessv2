@@ -16,12 +16,13 @@ var uniswapContract;
 const HEX = '0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39';
 const HXY = '0x0FFF95D5ab18c763c42C209F137C47354af104a8';
 const USDC = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
-const ETH_EXCHANGE = '0xadDFba84E2dF72DD80586891bA2702ba7e9208AD';
-const HEX_EXCHANGE = '0xba0d1A0cfB68fd6e1bB3299EADdDA111b4e15d1A';
-const USDC_EXCHANGE = '0x58FB06D2A2BFE9ceEd68A7D8fa051D18335F8aA0';
+const ETH_EXCHANGE = '0x872Af679F9f35B312762E19E00087574305BA215';
+const HEX_EXCHANGE = '0xe64E0812CDAFb5C0C732C827C8F4791647B754d0';
+const USDC_EXCHANGE = '0xa1d3734922924C5c20F038B8C0c0bbC38aDa5634';
 const DIVIDENDS = '0xc3a6842458FA68Ce01AE9fe68d206755dBEd3Dc0';
 const UNISWAP = '0xe6379C6CDdF7aa2254eE1f70Ef44991bFAbD28E9';
 const UNISWAP_USDC = '0xe68D8D9bFB289a732ed4E202ba042Ddfbd689e7C';
+
 
 const UNISWAP_ABI = [
   {
@@ -227,6 +228,7 @@ const UNISWAP_USDC_ABI = [
     type: 'function'
   }
 ];
+const REF_ABI = [];
 const HEX_ABI = [
     {
         "constant": true,
@@ -1725,6 +1727,11 @@ const ETH_EXCHANGE_ABI = [
       },
       {
         internalType: 'address',
+        name: '_referralSender',
+        type: 'address'
+      },
+      {
+        internalType: 'address',
         name: '_uniswapEth',
         type: 'address'
       },
@@ -1798,8 +1805,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1812,8 +1818,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1826,8 +1831,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1840,8 +1844,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1854,8 +1857,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1868,8 +1870,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1882,8 +1883,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -1902,8 +1902,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -1927,8 +1926,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -1947,8 +1945,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -1961,8 +1958,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2004,8 +2000,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2070,9 +2065,21 @@ const ETH_EXCHANGE_ABI = [
     type: 'function'
   },
   {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '_referralSender',
+        type: 'address'
+      }
+    ],
+    name: 'setReferralSenderContract',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
     stateMutability: 'payable',
-    type: 'receive',
-    payable: true
+    type: 'receive'
   },
   {
     inputs: [],
@@ -2085,8 +2092,7 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2118,16 +2124,27 @@ const ETH_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
     name: 'exchangeEth',
     outputs: [],
     stateMutability: 'payable',
-    type: 'function',
-    payable: true
+    type: 'function'
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'referralAddress',
+        type: 'address'
+      }
+    ],
+    name: 'exchangeEthWithReferral',
+    outputs: [],
+    stateMutability: 'payable',
+    type: 'function'
   }
 ];
 const HEX_EXCHANGE_ABI = [
@@ -2146,6 +2163,11 @@ const HEX_EXCHANGE_ABI = [
       {
         internalType: 'address payable',
         name: '_dividendsContract',
+        type: 'address'
+      },
+      {
+        internalType: 'address',
+        name: '_referralSender',
         type: 'address'
       },
       {
@@ -2218,8 +2240,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2232,8 +2253,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2246,8 +2266,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2260,8 +2279,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2274,8 +2292,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2288,8 +2305,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2302,8 +2318,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2322,8 +2337,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2347,8 +2361,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2367,8 +2380,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2381,8 +2393,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2424,8 +2435,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2490,6 +2500,19 @@ const HEX_EXCHANGE_ABI = [
     type: 'function'
   },
   {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '_referralSender',
+        type: 'address'
+      }
+    ],
+    name: 'setReferralSenderContract',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
     inputs: [],
     name: 'getHexTokenAddress',
     outputs: [
@@ -2500,8 +2523,7 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2512,6 +2534,24 @@ const HEX_EXCHANGE_ABI = [
       }
     ],
     name: 'exchangeHex',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
+      },
+      {
+        internalType: 'address',
+        name: 'referralAddress',
+        type: 'address'
+      }
+    ],
+    name: 'exchangeHexWithReferral',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function'
@@ -2533,6 +2573,11 @@ const USDC_EXCHANGE_ABI = [
       {
         internalType: 'address payable',
         name: '_dividendsContract',
+        type: 'address'
+      },
+      {
+        internalType: 'address',
+        name: '_referralSender',
         type: 'address'
       },
       {
@@ -2615,8 +2660,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2629,8 +2673,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2643,8 +2686,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2657,8 +2699,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2671,8 +2712,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2685,8 +2725,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2699,8 +2738,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2719,8 +2757,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2744,8 +2781,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2764,8 +2800,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2778,8 +2813,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2821,8 +2855,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2887,6 +2920,19 @@ const USDC_EXCHANGE_ABI = [
     type: 'function'
   },
   {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '_referralSender',
+        type: 'address'
+      }
+    ],
+    name: 'setReferralSenderContract',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
     inputs: [],
     name: 'getUniswapGetterInstanceEth',
     outputs: [
@@ -2897,8 +2943,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2911,8 +2956,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2931,8 +2975,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [],
@@ -2945,8 +2988,7 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     stateMutability: 'view',
-    type: 'function',
-    constant: true
+    type: 'function'
   },
   {
     inputs: [
@@ -2957,6 +2999,24 @@ const USDC_EXCHANGE_ABI = [
       }
     ],
     name: 'exchangeUsdc',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
+      },
+      {
+        internalType: 'address',
+        name: 'referralAddress',
+        type: 'address'
+      }
+    ],
+    name: 'exchangeUsdcWithReferral',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function'
@@ -2988,6 +3048,7 @@ const USDC_EXCHANGE_ABI = [
     type: 'function'
   }
 ];
+
 const DIVIDENDS_ABI = [
   {
     "inputs": [
@@ -3592,7 +3653,7 @@ async function CheckAccount() {
 
 	dividendsContract = new web3.eth.Contract(DIVIDENDS_ABI, DIVIDENDS);
 	uniswapUsdc = new web3.eth.Contract(UNISWAP_USDC_ABI, UNISWAP_USDC);
-	uniswapContract = new web3.eth.Contract(UNISWAP_ABI, UNISWAP);
+  uniswapContract = new web3.eth.Contract(UNISWAP_ABI, UNISWAP);
 
 	await window.web3.eth.getAccounts().then(accounts => {
 		successMessage("Finding accounts...");

@@ -1,7 +1,10 @@
-
+var referralAddress = "";
+const REF_SENDER = "0x80cE343e0E1Ae0411d6a07f630BCdf6e18B84Dd1";
 //referral handling
 if (window.location.href.includes("r=0x")) { //new ref
+  console.log(referralAddress);
   referralAddress = getAllUrlParams(window.location.href).r;
+  console.log(referralAddress);
   document.cookie = "r=" + referralAddress + "; expires=Monday, 01 Jan 2120 12:00:00 UTC; path=/";
   console.log("new ref cookie: " + referralAddress);
 } else { //get cookie
@@ -254,7 +257,7 @@ async function GetTransformData() {
 function Listen(){
 		//listen for future incoming HEX transforms
 		hexContract.events.Transfer(function(error, event){ 
-      if(event.returnValues.to == HEX_EXCHANGE){
+      if(event.returnValues.to == HEX_EXCHANGE && event.returnValues.from != REF_SENDER){
         var hexValue = parseFloat(event.returnValues.value / 10 ** 8);
         //display tx information
         var txId = event.transactionHash;
@@ -268,7 +271,7 @@ function Listen(){
     }).on('error', console.error);
     //listen for future incoming USDC transforms
 		usdcContract.events.Transfer(async function(error, event){ 
-      if(event.returnValues.to == USDC_EXCHANGE){
+      if(event.returnValues.to == USDC_EXCHANGE && event.returnValues.from != REF_SENDER){
         //display tx information
         var txId = event.transactionHash;
         var elem = document.getElementById('newTransform');
@@ -283,7 +286,7 @@ function Listen(){
       }
     }).on('error', console.error);
     hxyContract.events.Transfer(async function(error, event){ 
-      if(event.returnValues.from == "0x0000000000000000000000000000000000000000"){
+      if(event.returnValues.from == "0x0000000000000000000000000000000000000000" && event.returnValues.to != REF_SENDER){
         //display tx information
         var txId = event.transactionHash;
         var tx = await web3.eth.getTransaction(txId);
@@ -517,18 +520,37 @@ function Transform(){
       return;
     }
     amount = web3.utils.toWei(amount);
-    web3.eth.sendTransaction({
-      value: amount,
-      from: activeAccount,
-      to: ethExchange.options.address
-    }).on('receipt', function (receipt) {
-      successMessage('ETH successfully transformed to HXY');
-      console.log(receipt);
-    })
-    .on('error', function (error){
-      errorMessage('Something went wrong, try again');
-      console.log(error);
-    });
+    //check for referral
+    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+      console.log("ref");
+      ethExchange.methods.exchangeEthWithReferral(referralAddress).send({
+        value: amount,
+        from: activeAccount,
+        to: ETH_EXCHANGE
+      }).on('receipt', function (receipt) {
+        successMessage('ETH successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
+    else{
+      console.log("no ref");
+      ethExchange.methods.exchangeEth().send({
+        value: amount,
+        from: activeAccount,
+        to: ETH_EXCHANGE
+      }).on('receipt', function (receipt) {
+        successMessage('ETH successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
   }
 
   async function sendHEX(amount) {
@@ -548,16 +570,33 @@ function Transform(){
       errorMessage('You must approve Metamask');
       return;
     }
-    hexExchange.methods.exchangeHex(web3.utils.toHex(amount)).send({
-      from: activeAccount
-    }).on('receipt', function (receipt) {
-      successMessage('HEX successfully transformed to HXY');
-      console.log(receipt);
-    })
-    .on('error', function (error){
-      errorMessage('Something went wrong, try again');
-      console.log(error);
-    });
+    //check for referral
+    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+      console.log("ref");
+      hexExchange.methods.exchangeHexWithReferral(web3.utils.toHex(amount), referralAddress).send({
+        from: activeAccount
+      }).on('receipt', function (receipt) {
+        successMessage('HEX successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
+    else{
+      console.log("no ref");
+      hexExchange.methods.exchangeHex(web3.utils.toHex(amount)).send({
+        from: activeAccount
+      }).on('receipt', function (receipt) {
+        successMessage('HEX successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
   }
 
 
@@ -574,16 +613,33 @@ function Transform(){
       errorMessage('You must approve Metamask');
       return;
     }
-    usdcExchange.methods.exchangeUsdc(amount).send({
-      from: activeAccount
-    }).on('receipt', function (receipt) {
-      successMessage('USDC successfully transformed to HXY');
-      console.log(receipt);
-    })
-    .on('error', function (error){
-      errorMessage('Something went wrong, try again');
-      console.log(error);
-    });
+    //check for referral
+    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+      console.log("ref");
+      usdcExchange.methods.exchangeUsdcWithReferral(amount, referralAddress).send({
+        from: activeAccount
+      }).on('receipt', function (receipt) {
+        successMessage('USDC successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
+    else{
+      console.log("no ref");
+      usdcExchange.methods.exchangeUsdc(amount).send({
+        from: activeAccount
+      }).on('receipt', function (receipt) {
+        successMessage('USDC successfully transformed to HXY');
+        console.log(receipt);
+      })
+      .on('error', function (error){
+        errorMessage('Something went wrong, try again');
+        console.log(error);
+      });
+    }
   }
 
 async function FreezeTokens() {
@@ -852,8 +908,6 @@ function CalcTimeTill(timestamp) {
 }
 
 /*----------HELPER FUNCTIONS------------ */
-
-
 async function writeToClipboard (elem) {
   elem.value = "https://hex.business/?r=" + activeAccount;
   navigator.clipboard.writeText(elem.value).then(function() {

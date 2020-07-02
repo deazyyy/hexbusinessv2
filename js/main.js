@@ -1,6 +1,6 @@
 var referralAddress = "";
 const REF_SENDER = "0x80cE343e0E1Ae0411d6a07f630BCdf6e18B84Dd1";
-//referral handling
+/*//referral handling
 if (window.location.href.includes("r=0x")) { //new ref
   console.log(referralAddress);
   referralAddress = getAllUrlParams(window.location.href).r;
@@ -16,7 +16,7 @@ if (window.location.href.includes("r=0x")) { //new ref
     referralAddress = "0x0000000000000000000000000000000000000000";
     console.log("ref: " + referralAddress);
   }
-}
+}*/
 
 //mobile setup
 if (isDeviceMobile()) {
@@ -326,7 +326,8 @@ async function GetBalance() {
 	var eth = await web3.eth.getBalance(activeAccount);
   eth /= 10 ** 18;
 	document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
-	document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
+  document.getElementById("hxyAvailable").innerHTML = toFixedMax((hxy - (frozenTokens / 10 ** 8)),8);
+  document.getElementById("freezeAmount").value = (parseFloat(toFixedMax((hxy - (frozenTokens / 10 ** 8)),8)));
 	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);
 	document.getElementById("usdcBalance").innerHTML = toFixedMax(usdc, 2);
 	document.getElementById("ethBalance").innerHTML = toFixedMax(eth, 8);
@@ -521,7 +522,7 @@ function Transform(){
     }
     amount = web3.utils.toWei(amount);
     //check for referral
-    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+    /*if(referralAddress != "0x0000000000000000000000000000000000000000"){
       console.log("ref");
       ethExchange.methods.exchangeEthWithReferral(referralAddress).send({
         value: amount,
@@ -536,7 +537,7 @@ function Transform(){
         console.log(error);
       });
     }
-    else{
+    else{*/
       console.log("no ref");
       ethExchange.methods.exchangeEth().send({
         value: amount,
@@ -550,7 +551,7 @@ function Transform(){
         errorMessage('Something went wrong, try again');
         console.log(error);
       });
-    }
+    //}
   }
 
   async function sendHEX(amount) {
@@ -571,7 +572,7 @@ function Transform(){
       return;
     }
     //check for referral
-    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+    /*if(referralAddress != "0x0000000000000000000000000000000000000000"){
       console.log("ref");
       hexExchange.methods.exchangeHexWithReferral(web3.utils.toHex(amount), referralAddress).send({
         from: activeAccount
@@ -584,7 +585,7 @@ function Transform(){
         console.log(error);
       });
     }
-    else{
+    else{*/
       console.log("no ref");
       hexExchange.methods.exchangeHex(web3.utils.toHex(amount)).send({
         from: activeAccount
@@ -596,7 +597,7 @@ function Transform(){
         errorMessage('Something went wrong, try again');
         console.log(error);
       });
-    }
+    //}
   }
 
 
@@ -614,7 +615,7 @@ function Transform(){
       return;
     }
     //check for referral
-    if(referralAddress != "0x0000000000000000000000000000000000000000"){
+    /*if(referralAddress != "0x0000000000000000000000000000000000000000"){
       console.log("ref");
       usdcExchange.methods.exchangeUsdcWithReferral(amount, referralAddress).send({
         from: activeAccount
@@ -627,7 +628,7 @@ function Transform(){
         console.log(error);
       });
     }
-    else{
+    else{*/
       console.log("no ref");
       usdcExchange.methods.exchangeUsdc(amount).send({
         from: activeAccount
@@ -639,7 +640,7 @@ function Transform(){
         errorMessage('Something went wrong, try again');
         console.log(error);
       });
-    }
+    //}
   }
 
 async function FreezeTokens() {

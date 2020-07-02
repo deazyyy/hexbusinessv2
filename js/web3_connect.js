@@ -228,7 +228,6 @@ const UNISWAP_USDC_ABI = [
     type: 'function'
   }
 ];
-const REF_ABI = [];
 const HEX_ABI = [
     {
         "constant": true,

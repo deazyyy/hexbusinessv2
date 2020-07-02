@@ -1,4 +1,4 @@
-var referralAddress = "";
+/*var referralAddress = "";
 //referral handling
 if (window.location.href.includes("r=0x")) { //new ref
   referralAddress = getAllUrlParams(window.location.href).r;
@@ -7,7 +7,7 @@ if (window.location.href.includes("r=0x")) { //new ref
   //console.log("new ref cookie: " + referralAddress);
   window.location.assign("hexmoney.html?r="+referralAddress.toString());
 }
-
+*/
 
 const infura = "https://mainnet.infura.io/v3/dd681b4563134685a4e5cf4519513222";
 

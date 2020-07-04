@@ -599,6 +599,36 @@ p{
   margin-right: 10px;
 }
 
+.hex-table .table tbody tr td .ticker2{
+  position: relative;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+  width: "100%";
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding: 7px;
+  background-color: #f7e6e6;
+  border-radius: 50px;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hex-table .table tbody tr td .ticker2:before{
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/icons/hourglass.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  margin-right: 10px;
+}
+
 .limitWidth{
   max-width: 200px;
 }
@@ -1810,23 +1840,23 @@ footer{
 }
 
 .hexmoneyimage{
-	width: 100% !important;
-	max-width: none !important;
-	margin: 2em 0em 2em 1em !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 2em 0em 2em 1em !important;
 }
 
 .mobileshow{
-		display: none;
-	}
+    display: none;
+  }
 
 .mobileshow-footer{
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 .mobileshow-footer .footer-social{
-	margin-bottom: 0;
-	width: auto;
-	margin-right: 20px;
+  margin-bottom: 0;
+  width: auto;
+  margin-right: 20px;
 }
 
 /**/
@@ -1867,4 +1897,73 @@ footer{
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.about-transform-hex-below .about-details .btn-main:before{
+  content: '';
+  position: relative;
+  display: block;
+  width: 24px;
+  height: auto;
+  background-image: url('../images/refresh.png') !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  float: left;
+  margin-right: 10px;
+}
+
+.about-transform-hex-below .about-img{
+  align-items: center;
+  margin-top: 0px;
+  min-height: auto;
+  padding: 60px 0;
+  position: relative;
+  left: -100px;
+}
+.about-transform-hex-below .about-details{
+  margin-top: 80px !important;
+}
+.about-transform-hex-below .btn-main{
+  background-color: #312d35 !important;
+  border-color: #312d35 !important;
+}
+.about-transform-hex-below .about-details .main-title{
+   background: -webkit-linear-gradient( right, #e5d575,#976717);    
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  line-height: 34px
+}
+
+.hexbet_logo{
+  border-radius: 8px;
+  background-color: #312e36;
+  height: 100%;
+  padding: 5px 10px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.hexbet_logo img{
+  width: 100%;
+  height: auto;
+
+}
+
+.about-normal .btn-main{
+  margin-top: 25px;
+  margin-left: 15px
 }

@@ -4791,6 +4791,12 @@ footer{
 		margin-top: 0;
 	}
 	/*another end*/
+	.about-transform-hex-below  .hexmoneyimage{
+	  margin:0 !important;
+	}
+	.about-transform-hex-below .about-img{
+	  left: 0px !important;
+	}
 }
 
 
@@ -4807,6 +4813,12 @@ footer{
 
 
 @media(min-width:448px) and (max-width:767px){
+	.about-transform-hex-below  .hexmoneyimage{
+	  margin:0 !important;
+	}
+	.about-transform-hex-below .about-img{
+	  left: 0px !important;
+	}
 	.section_heading {
 	    margin: 1em 0 1em 0 !important;
 	}
@@ -5681,7 +5693,12 @@ footer{
 
 
 @media(max-width:447px){
-
+	.about-transform-hex-below  .hexmoneyimage{
+	  margin:0 !important;
+	}
+	.about-transform-hex-below .about-img{
+	  left: 0px !important;
+	}
 
 	.mobileshow{
 		display: block;
@@ -6633,5 +6650,16 @@ footer{
 	.adoption_amplifier{
 		margin-right: 0;
     margin-left: 0;
+	}
+	.about-transform-hex-below .about-details .main-title {
+	    font-size: 24px;
+	    line-height: 30px;
+	}
+	.hexbet_logo{
+		height: 30px !important;
+		width: 120px;
+	}
+	.hexbet_logo img{
+		    height: 100% !important;
 	}
 }

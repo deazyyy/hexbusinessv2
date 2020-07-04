@@ -1,0 +1,851 @@
+@media(min-width:2560px){
+	/* comman */
+	.container{
+		width: 1340px;
+	}
+	/* comman end */
+	/* Index */
+	/* Index end */
+}
+@media(min-width:2000px) and (max-width:2560px){
+	/* comman */
+	.container{
+		width: 1340px;
+	}
+	/* comman end */
+	/* Index */
+	/* Index end */
+}
+@media(min-width:1800px) and (max-width:1999px){
+	/* comman */
+	.container{
+		width: 1340px;
+	}
+	/* comman end */
+	/* Index */
+	/* Index end */
+}
+@media(min-width:1551px) and (max-width:1799px){
+	/* comman */
+	.container{
+		width: 1340px;
+	}
+	/* comman end */
+	/* Index */
+	/* Index end */
+}
+@media(min-width:1351px) and (max-width:1550px){
+	/* comman */
+	.container{
+		width: 1340px;
+	}
+	/* comman end */
+	/* Index */
+	/* Index end */
+}
+@media(min-width:1200px) and (max-width:1350px){
+	/* comman */
+	/* comman end */
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+	.header-wrapper{
+		padding: 50px 0 25px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 30px;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 450px!important;
+	}
+	/* Index end */
+	
+}
+@media(min-width:1025px) and (max-width:1199px){
+	/* comman */
+	/* comman end */
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+
+	.header-wrapper{
+		padding: 10px 0 25px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 30px;
+	}
+
+	.pablo-list li{
+		font-size: 13px;
+	}
+
+	.pairs-process,
+	.pairs-list,
+	.pairs-btn{
+		display: table;
+		margin: 0 auto;
+		float: none;
+	}
+	.pairs-btn{
+		margin-bottom: 20px;
+	}
+	.pairs-list li:first-child{
+		margin-top: 20px;
+	}
+	.pairs-list{
+		margin-bottom: 30px;
+	}
+	.pairs-process{
+		margin: 0 auto;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 450px!important;
+	}
+
+	.hxnet-table .table tbody tr td{
+		min-width: unset;
+		padding: 20px 10px;
+	}
+	.hxnet-table .table tbody tr td p{
+		line-height: 40px;
+	}
+	.hxnet-table .table thead tr th.btn-head,
+	.hxnet-table .table tbody tr td.btn-tb{
+		width: 420px;
+	}
+
+	.chart-sid-ft>p{
+		margin-bottom: 10px;
+	}
+	.chart-sid-ft li{
+		padding: 0;
+		margin-bottom: 10px;
+		border-right: none;
+	}
+	.chart-sid-ft li p{
+		height: auto;
+	}
+
+	.ref-ft-wrapper{
+		padding: 15px 25px;
+	}
+	/* Index end */
+}
+@media(min-width:992px) and (max-width:1024px){
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+
+	.header-wrapper{
+		padding: 10px 0 25px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 30px;
+	}
+
+	.pablo-list li{
+		font-size: 13px;
+	}
+
+	.pairs-process,
+	.pairs-list,
+	.pairs-btn{
+		display: table;
+		margin: 0 auto;
+		float: none;
+	}
+	.pairs-btn{
+		margin-bottom: 20px;
+	}
+	.pairs-list li:first-child{
+		margin-top: 20px;
+	}
+	.pairs-list{
+		margin-bottom: 30px;
+	}
+	.pairs-process{
+		margin: 0 auto;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 400px!important;
+	}
+
+	.hxnet-table .table tbody tr td{
+		min-width: unset;
+		padding: 20px 10px;
+	}
+	.hxnet-table .table tbody tr td p{
+		line-height: 40px;
+	}
+	.hxnet-table .table thead tr th.btn-head,
+	.hxnet-table .table tbody tr td.btn-tb{
+		width: 420px;
+	}
+
+	.chart-sidebar{
+		width: 35%;
+	}
+	.chart-block{
+		width: 62%;
+	}
+	.chart-sid-ft>p{
+		margin-bottom: 10px;
+	}
+	.chart-sid-ft li{
+		padding: 0;
+		margin-bottom: 10px;
+		border-right: none;
+	}
+	.chart-sid-ft li p{
+		height: auto;
+	}
+
+	.ref-ft-wrapper{
+		padding: 15px 25px;
+	}
+	/* Index end */
+}
+@media(min-width:768px) and (max-width:991px){
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+
+	.header-wrapper{
+		padding: 10px 0 20px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 30px;
+	}
+
+	.pablo-list li{
+		width: 23%;
+		line-height: 20px;
+		font-size: 13px;
+		margin-bottom: 10px;
+	}
+
+	.pairs-process,
+	.pairs-list,
+	.pairs-btn{
+		display: table;
+		margin: 0 auto;
+		float: none;
+	}
+	.pairs-btn{
+		margin-bottom: 20px;
+	}
+	.pairs-list li:first-child{
+		margin-top: 20px;
+	}
+	.pairs-list{
+		margin-bottom: 30px;
+	}
+	.pairs-process{
+		margin: 0 auto;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 400px!important;
+	}
+
+	.hxnet-table .table tbody tr td{
+		min-width: unset;
+		padding: 20px 10px;
+	}
+	.hxnet-table .table tbody tr td p{
+		line-height: 40px;
+	}
+	.hxnet-table .table thead tr th.btn-head,
+	.hxnet-table .table tbody tr td.btn-tb{
+		width: 420px;
+	}
+	.hxnet-table  .btn-lock{
+	  width: 162px;
+	  margin-right: 45px;
+	  height: 30px;
+	  display: flex;
+	  align-items: center;
+	  background-image: url('../../images/hexbet/shape/btn-silver.png');
+	}
+	.hxnet-table  .btn-lock:before{
+	  background-image: url('../../images/hexbet/shape/btn-sil-shape.png');
+	}
+	.hxnet-table  .btn-unlock{
+	  width: 285px;
+	  height: 30px;
+	  display: flex;
+	  align-items: center;
+	      justify-content: center;
+	  background-image: url('../../images/hexbet/shape/btn-trans.png');
+	}
+	.hxnet-table .dtr-title{color: #fff}
+	.hxnet-table  .btn-unlock:before{
+	  background-image: url('../../images/hexbet/shape/btn-trs-shape.png');
+	}
+	.hxnet-table .dtr-data{
+		display: flex;
+	}
+
+	.chart-top ul{
+		margin-bottom: 20px;
+	}
+	.chart-sidebar{
+		width: 40%;
+	}
+	.chart-block{
+		width: 57%;
+	}
+	.chart-sid-ft>p{
+		margin-bottom: 10px;
+	}
+	.chart-sid-ft li{
+		padding: 0;
+		margin-bottom: 10px;
+		border-right: none;
+	}
+	.chart-sid-ft li p{
+		height: auto;
+	}
+
+	.ref-ft-wrapper{
+		padding: 25px 25px 15px;
+	}
+	.ft-link,
+	.ref-ft-wrapper p{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.ref-ft-wrapper p span{
+		margin-top: 10px;
+	}
+	.ft-link img{
+		display: inline-block;
+	}
+	/* Index end */
+}
+@media(min-width:448px) and (max-width:767px){
+	/* comman */
+	.btn-main{
+		padding: 15px 60px;
+	}
+	/* comman end */
+	/* top */
+	.top-btn .btn-main{
+		margin-top: 0;
+	}
+	/* top end */
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+
+	.header-wrapper{
+		padding: 10px 0 20px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 30px;
+	}
+
+	.pairs-list{
+		width: 100%;
+	}
+	.pairs-list li:last-child{
+		margin: 0 auto;
+	}
+	
+
+	.pablo-list li{
+		width: 48%;
+		margin-right: 2%;
+		line-height: 20px;
+		font-size: 13px;
+		margin-bottom: 10px;
+		border: none;
+		padding: 0;
+	}
+	.pablo-list li:first-child {
+	    margin: 0px;
+	    margin-right: 2%;
+	    border-right: none;
+	}
+	.pablo-list li:nth-child(2n){
+		margin-right: 0;
+		border: none;
+	}
+
+	.pairs-process,
+	.pairs-list,
+	.pairs-btn{
+		display: table;
+		margin: 0 auto;
+		float: none;
+	}
+	.pairs-btn{
+		margin-bottom: 20px;
+	}
+	.pairs-list{
+		margin-bottom: 30px;
+	}
+	.pairs-list li{
+		display: table;
+		text-align: center;
+		width: 80%;
+		margin: 0 auto 10px;
+		float: none;
+	}
+	.pairs-list li:first-child{
+		margin-top: 0;
+	}
+	
+	.pairs-process{
+		margin: 0 auto;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 400px!important;
+	}
+
+	.hxnet-table .table tbody tr td{
+		min-width: unset;
+		padding: 20px 10px;
+	}
+	.hxnet-table .table tbody tr td p{
+		line-height: 40px;
+	}
+	.hxnet-table .table thead tr th.btn-head,
+	.hxnet-table .table tbody tr td.btn-tb{
+		width: 420px;
+	}
+	.hxnet-table  .btn-lock{
+	  width: 50%;
+	  margin-right: 15px;
+	  justify-content: center;
+	  height: 30px;
+	  display: flex;
+	  align-items: center;
+	  background-image: url('../../images/hexbet/shape/btn-silver.png');
+	}
+	.hxnet-table  .btn-lock:before{
+	  background-image: url('../../images/hexbet/shape/btn-sil-shape.png');
+	}
+	.hxnet-table  .btn-unlock{
+	  width: 50%;
+	  height: 30px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-image: url('../../images/hexbet/shape/btn-trans.png');
+	}
+	.hxnet-table .dtr-title{color: #fff}
+	.hxnet-table  .btn-unlock:before{
+	  background-image: url('../../images/hexbet/shape/btn-trs-shape.png');
+	}
+	.hxnet-table .dtr-data{
+		display: flex;
+	}
+	.transform-wrapper{
+		padding: 28px 50px;
+	}
+
+	.chart-top ul{
+		margin-bottom: 20px;
+	}
+	.chart-top li{
+		float: none;
+		margin: 0 auto 10px;
+	}
+	.chart-top h4{
+		text-align: center;
+	}
+	.chart-wrapper{
+		display: block;
+	}
+	.chart-sidebar{
+		width: 100%;
+		margin-bottom: 40px;
+	}
+	.chart-block{
+		width: 100%;
+		margin: 0;
+	}
+	.chart-sid-ft>p{
+		margin-bottom: 10px;
+	}
+	.chart-sid-ft li{
+		padding: 0;
+		margin-bottom: 10px;
+		border-right: none;
+	}
+	.chart-sid-ft li p{
+		height: auto;
+	}
+
+	.ref-ft-wrapper{
+		width: 90%;
+		display: table;
+		margin: 0 auto;
+		padding: 25px 25px 15px;
+	}
+	.ft-link,
+	.ref-ft-wrapper p{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.ref-ft-wrapper p span{
+		margin-top: 20px;
+		margin-left: 0;
+		width: auto;
+		font-size: 12px;
+		line-height: 20px;
+		float: none;
+		padding: 20px;
+		word-break: break-all;
+		justify-content: unset;
+	}
+	.ft-link img{
+		display: inline-block;
+	}
+	/* Index end */
+}
+@media(max-width:447px){
+	/* comman */
+	.btn-main{
+		padding: 10px 28px;
+		font-size: 12px;
+	}
+	/* comman end */
+	/* top */
+	.top-btn .btn-main{
+		margin-top: 10px;
+	}
+	.top-logo .logo img{
+		width: 100px;
+		margin-top: 10px;
+	}
+	/* top end */
+	/* header */
+	.pairs-btn{
+		padding-top: 8px;
+	}
+	.pairs-process{
+		margin-top: 10px;
+	}
+
+	.header-wrapper{
+		padding: 10px 0 20px;
+	}
+	.header-pablo{
+		display: block;
+		padding-top: 20px;
+	}
+	.pablo-list,
+	.welcome-pablo{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.welcome-pablo{
+		margin: 0 auto 10px;
+	}
+
+	.pairs-list{
+		width: 100%;
+	}
+	.pairs-list li:last-child{
+		margin: 0 auto;
+	}
+	
+
+	.pablo-list li{
+		width: 100%;
+		margin-right: 0%;
+		line-height: 20px;
+		font-size: 13px;
+		margin-bottom: 10px;
+		border: none;
+		padding: 0;
+		text-align: center;
+	}
+	.pablo-list li p{
+		justify-content: center;
+	}
+	.pablo-list li:first-child {
+	    margin: 0px;
+	    margin-right: 0%;
+	    border-right: none;
+	    margin-bottom: 10px;
+	}
+	.pablo-list li:nth-child(2n){
+		margin-right: 0;
+		border: none;
+	}
+
+	.pairs-process,
+	.pairs-list,
+	.pairs-btn{
+		display: table;
+		margin: 0 auto;
+		float: none;
+	}
+	.pairs-btn{
+		margin-bottom: 10px;
+	}
+	.pairs-list{
+		margin-bottom: 30px;
+	}
+	.pairs-list li{
+		display: table;
+		text-align: center;
+		width: 90%;
+		margin: 0 auto 10px;
+		float: none;
+	}
+	.pairs-list li:first-child{
+		margin-top: 0;
+	}
+	
+	.pairs-process{
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.pairs-process h4{
+		margin-top: 0;
+		font-size: 12px;
+	}
+	/* header end*/
+	/* Index */
+	#myChart{
+		height: 275px!important;
+	}
+
+	.hxnet-table .table tbody tr td{
+		min-width: unset;
+		padding: 20px 10px;
+	}
+	.hxnet-table .table tbody tr td p{
+		line-height: 40px;
+	}
+	.hxnet-table .table thead tr th.btn-head,
+	.hxnet-table .table tbody tr td.btn-tb{
+		width: 420px;
+	}
+	.hxnet-table  .btn-lock{
+	  width: 50%;
+	  margin-right: 15px;
+	  justify-content: center;
+	  height: 30px;
+	  display: flex;
+	  align-items: center;
+	  background-image: url('../../images/hexbet/shape/btn-silver.png');
+	}
+	.hxnet-table  .btn-lock:before{
+	  background-image: url('../../images/hexbet/shape/btn-sil-shape.png');
+	}
+	.hxnet-table  .btn-unlock{
+	  width: 50%;
+	  height: 30px;
+	  display: flex;
+	  align-items: center;
+	      justify-content: center;
+	  background-image: url('../../images/hexbet/shape/btn-trans.png');
+	}
+	.hxnet-table .dtr-title{color: #fff}
+	.hxnet-table  .btn-unlock:before{
+	  background-image: url('../../images/hexbet/shape/btn-trs-shape.png');
+	}
+	.hxnet-table .dtr-data{
+		display: flex;
+	}
+	.transform-wrapper{
+		padding: 28px 30px;
+	}
+	.transform-wrapper h4{
+		font-size: 12px;
+	}
+
+	.chart-top ul{
+		margin-bottom: 20px;
+	}
+	.chart-top li{
+		float: none;
+		margin: 0 auto 10px;
+	}
+	.chart-top h4{
+		text-align: center;
+	}
+	.chart-wrapper{
+		display: block;
+	}
+	.chart-sidebar{
+		width: 100%;
+		margin-bottom: 40px;
+	}
+	.chart-block{
+		width: 100%;
+		margin: 0;
+	}
+	.chart-sid-ft>p{
+		margin-bottom: 10px;
+	}
+	.chart-sid-ft li{
+		padding: 0;
+		margin-bottom: 10px;
+		border-right: none;
+	}
+	.chart-sid-ft li p{
+		height: auto;
+	}
+
+
+	.hxnet-table h4{
+		font-size: 18px;
+	}
+
+	.ch-sid-ltblk h4{
+		font-size: 20px;
+	}
+	.crt-title p{
+		font-size: 12px;
+	}
+	.crt-title p span{
+	}
+
+	.ref-ft-wrapper{
+		width: 90%;
+		display: table;
+		margin: 0 auto;
+		padding: 25px 25px 15px;
+	}
+	.ft-link,
+	.ref-ft-wrapper p{
+		float: none;
+		display: table;
+		margin: 0 auto;
+	}
+	.ref-ft-wrapper p span{
+		margin-top: 20px;
+		margin-left: 0;
+		width: auto;
+		font-size: 12px;
+		line-height: 20px;
+		float: none;
+		padding: 20px;
+		word-break: break-all;
+		justify-content: unset;
+	}
+	.ft-link img{
+		display: inline-block;
+	}
+
+	.crt-title li{
+		padding: 0 8px;
+	}
+	.crt-title p span,
+	.crt-title p{
+		font-size: 12px;
+	}
+
+	.ft-link{
+		font-size: 12px;
+		margin-top: 10px;
+	}
+	.ft-link img{
+		width: 42px;
+	}
+	/* Index end */
+	/* table */
+	.hxb-overview-wrapper .hxnet-table .table tbody tr td:last-child, .hxb-overview-wrapper .hxnet-table .table thead tr th:last-child{
+		float: none;
+	}
+	table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before{
+		top: 30px;
+	}
+
+	table.dataTable tr.child ul{
+		width: 100%;
+	}
+	table.dataTable tr.child span.dtr-title{
+		color: #fff;
+	}
+	/* table end */
+}

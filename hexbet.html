@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/hexbet/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/hexbet/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/hexbet/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/hexbet/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/hexbet/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/hexbet/dataTables.responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/hexbet/style.css?ver=1.37" />
+    <link rel="stylesheet" type="text/css" href="css/hexbet/responsive.css?ver=1.27" />
+    <link rel="icon" href="images/hexbet/favicon.png" type="image/gif" sizes="16x16">
+    <title>Home - Hex.Bet</title>
+</head>
+<body>
+    <!-- Error / Success-->
+    <div id="errorMsg"></div>
+    <div id="successMsg"></div>
+    <!-- Top -->
+    <section class="top wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container">
+            <div class="top-wrapper">
+                <div class="row">
+                   <div class="col-md-6 col-sm-6 col-xs-5">
+                       <div class="top-logo">
+                           <a href="#" class="logo"><img src="images/hexbet/logo.png" alt="logo"></a>
+                       </div>
+                   </div> 
+                   <div class="col-md-6 col-sm-6 col-xs-7">
+                        <div class="top-btn">
+                           <a href="#lock" class="btn-main">lock now</a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Top -->
+
+    <!-- Header -->
+    <header class="wow fadeIn " data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container headerTop">
+            <div class="header-wrapper">
+                <div class="header-pairs">
+                    <div class="dropdown pairs-btn">
+                        <button class="btn btn-primary pairstatScroll" type="button">
+                            <span class="caret"></span>
+                            PAIRSTATS
+                        </button>
+                        <!--ul class="dropdown-menu">
+                            <li><a href="#">PAIRSTATS 1</a></li>
+                            <li><a href="#">PAIRSTATS 2</a></li>
+                            <li><a href="#">PAIRSTATS 3</a></li>
+                        </ul-->
+                    </div>
+                    <ul class="pairs-list">
+                        <li>1000 HXB =</li>
+                        <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 500.000 <span>hex</span></p></li>
+                        <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 0.02 <span>eth</span></p></li>
+                        <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 0.5 <span>hxy</span></p></li>
+                        <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 2.500 <span>usdc</span></p></li>
+                    </ul>
+                    <div class="pairs-process">
+                        <h4>TRANSFORMED HXB</h4>
+                        <div class="pairs-process-blk">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:40%"></div>
+                            </div>
+                            <span>0/10000000000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-pablo">
+                    <div class="welcome-pablo">
+                        <p><span>Welcome</span> <img src="images/hexbet/icons/pablo-img.png" alt="img"> <b id="userAddress" class="addressBreak"></b></p>
+                    </div>
+                    <ul class="pablo-list">
+                        <li>
+                            Your wallet balance:
+                        </li>
+                        <li>
+                            <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="hxyBalance">0</b><span>hxy</span></p>
+                        </li>
+                        <li>
+                            <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="hxbBalance">0</b> <span>hxb</span></p>
+                        </li>
+                        <li>
+                            <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="hexBalance">0</b> <span>hex</span></p>
+                        </li>
+                        <li>
+                            <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="ethBalance">0</b> <span>eth</span></p>
+                        </li>
+                        <li>
+                            <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="usdcBalance">0</b> <span>usdc</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Transform -->
+    <section class="transform-container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+
+        <div class="container">
+
+            <div class="transform-wrapper">
+                <h4 style="font-weight: 700; color:white;"><img style="height:25px;" src="images/hexbet/icons/i-icon.png" alt="box"> TRANSFORMS COMING SOON</h4>
+                <span class="trans-i"><img src="images/hexbet/icons/i-icon.png"></span>
+                <h4><img src="images/hexbet/icons/box.png" alt="box"> TRANSFORM <strong>
+                <span class="txt-rotate" data-period="1200" data-rotate='[ "HXY", "HEX", "ETH", "USDC"]'></span>
+
+                TO HXB</strong></h4>
+                <div class="transform-blk">
+                    <div class="form-group">
+                        <label>Send</label>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                <img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 
+                                100.000 <small>HXY</small>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">10000000.0 <small>hex</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">1.000 <small>eth</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">1000.000 <small>usdc</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">100.000 <small>hxy</small>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                <img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 
+                                100.000 <small>hxb</small>
+                                <span class="caret"></span>
+                            </button>
+                            <!--<ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">1.000 <small>hex</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">1.000 <small>hex</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/hexbet/icons/pairs-icon.png" alt="icon">1.000 <small>hex</small>
+                                    </a>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="trsn-rec">
+                            <label>Receive </label>
+                            <p>
+                                <img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 
+                                100.000 <span>hxb</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="transform-btn">
+                            <button href="#" class="btn-main">transform</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Transform -->
+
+    <!-- Lock Unlock -->
+    <section id="lock" class="lock-unlock wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container">
+            <div class="lock-unlock-wrapper">
+                <div class="hxnet-table">
+                    <h4>LOCK & UNLOCK HXB</h4>
+                    <table class="table dt-responsive">
+                        <thead>
+                            <tr>
+                                <th>Locked</th>
+                                <th>Interest</th>
+                                <th>Lock Amount</th>
+                                <th>Lock Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="lockedAmount">0</b> <span>hxb</span></p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="lockedInterest">0</b><span>hxb</span></p></td>
+                                <td><input style="font-weight: 700;" type="number" min="0" value="0" id="lockAmount"/></td>
+                                <td class="btn-tb">
+                                    <a onclick="LockTokens()" class="btn-main btn-lock">LOCK</a>
+                                    <a onclick="UnlockTokens()" class="btn-main btn-unlock">UNLOCK</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p>Time Till Unlock</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="timeTillUnlock"></b></p></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><p>Total Interest Earned</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="totalInterestEarned">0</b> <span>hxb</span></p></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Lock Unlock -->
+
+    <!-- Chart -->
+    <!--<section class="chart-container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container">
+            <div class="chart-top">
+                <ul>
+                    <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icons"> 1 <span>HEX =</span> 0.300 <span>ETH</span> <span>(</span>$0.001 <span>)</span></p></li>
+                    <li><p><img src="images/hexbet/icons/pairs-icon.png" alt="icons"> 1 <span>HEX =</span> 0.300 <span>ETH</span> <span>(</span>$0.001 <span>)</span></p></li>
+                </ul>
+                <h4><img src="images/hexbet/icons/box.png" alt="box"> pair <strong>stats</strong></h4>
+            </div>
+            <div class="chart-wrapper">
+                <div class="chart-sidebar">
+                    <div class="chart-sid-list">
+                        <div class="ch-sid-ltblk">
+                            <p>Total Liquidity <span class="up">+666.111 %</span></p>
+                            <h4><span>$</span> 124.427</h4>
+                        </div>
+                        <div class="ch-sid-ltblk">
+                            <p>Volume 24h <span class="up">+7.77 %</span></p>
+                            <h4><span>$</span> 19.133</h4>
+                        </div>
+                        <div class="ch-sid-ltblk">
+                            <p>Fees 24h <span class="down">-0.13 %</span></p>
+                            <h4><span>$</span> 58.53</h4>
+                        </div>
+                        <div class="ch-sid-ltblk">
+                            <p>Transactions 24h<span class="up">-3.33 %</span></p>
+                            <h4>65</h4>
+                        </div>
+                    </div>
+                    <div class="chart-sid-ft">
+                        <p>Pooled Tokens</p>
+                        <ul>
+                            <li>
+                                <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 999.937.999 <span>hex</span></p>
+                            </li>
+                            <li>
+                                <p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> 937.999 <span>hxb</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chart-block">
+                    <ul class="crt-title">
+                        <div> 
+                            <ul class="nav nav-pills" role="tablist">
+                                <li class="nav-item active">
+                                  <a class="nav-link" data-toggle="pill" href="#home">Liquify</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="pill" href="#menu1">Volume</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div> 
+                            <ul class="nav nav-pills" role="tablist">
+                                <li class="nav-item active">
+                                  <a class="nav-link " data-toggle="pill" href="#home">1 Week</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="pill" href="#menu1">All Time</a>
+                                </li>
+                            </ul>
+                        </div>
+                    --><!--li><p>Liquidy <span>Volume</span></p></li>
+                        <li><p>1 Week <span>All time</span></p></li-->
+                   <!-- </ul>
+                    <canvas id="myChart" height="400" width="100%"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- End Chart -->
+
+    <!-- Lock Unlock -->
+    <section class="hxb-overview wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container">
+            <div class="hxb-overview-wrapper">
+                <div class="hxnet-table">
+                    <h4>HXB Overview</h4>
+                    <table class="table dt-responsive">
+                        <thead>
+                            <tr>
+                                <th>Indicator</th>
+                                <th>Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p>Total Supply</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="totalSupply">0</b> <span>hxb</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Max Supply</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="maxSupply">0</b> <span>hxb</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Circulating Supply</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="circulatingSupply">0</b> <span>hxb</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Total Locked Supply</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="lockedSupply">0</b> <span>hxb</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Founder Locked Supply</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="founderLockedSupply">0</b> <span>hxb</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Your Minted Interest</p></td>
+                                <td><p><img src="images/hexbet/icons/pairs-icon.png" alt="icon"> <b id="totalInterestEarned2">0</b> <span>hxb</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Lock Unlock -->
+
+    <!-- Footer -->
+    <footer class="ref-footer wow fadeIn" data-wow-duration="1s" data-wow-delay="0.20s">
+        <div class="container">
+            <div class="ref-ft-wrapper">
+                <p>Your Referral ID <span id="refAddress">0x</span></p>
+                <a href="#" class="ft-link">hex.business/?r=YOUR_REF_ID <div class="btn-main ft-link-img" ></div></a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+    <script type="text/javascript" src="js/hexbet/jquery.min.js"></script> 
+    <script type="text/javascript" src="js/hexbet/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hexbet/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/hexbet/wow.min.js"></script>
+    <script type="text/javascript" src="js/hexbet/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/hexbet/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="js/hexbet/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="js/hexbet/chart.js"></script>
+    <script type="text/javascript">
+        //wow animation js
+        new WOW().init();
+
+        //data table js
+        $('.table').DataTable();
+
+        
+        //our chart
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["June 16",   "June 16",   "June 16",  "June 16", "June 16"],
+                datasets: [{
+                    label: 'Series 1', // Name the series
+                    data: [1000, 35000, 23000, 140000,  200000], // Specify the data values array
+                    fill: true,
+                    borderColor: '#FFE787', // Add custom color border (Line)
+                    backgroundColor: 'rgba(255, 231, 135, 0.015)', // Add custom color background (Points and Fill)
+                    borderWidth: 1, // Specify bar border width
+                    pointRadius:0
+                }]},
+            options: {
+              responsive: true, // Instruct chart js to respond nicely.
+              maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+              scales: {
+                    xAxes: [{ 
+                        gridLines: {
+                            display: false,
+                        },
+                        ticks: {
+                          fontColor: "rgba(255, 231, 135, 0.7)", // this here
+                          fontStyle: "thiner",
+                          padding: 10,
+
+                        },
+                    }],
+                    yAxes: [{
+                        ticks: {
+                          fontColor: "rgba(187, 207, 236, 0.5)", // this here
+                          padding: 10,
+                          callback: function(value, index, values) {
+                                return '$' + value;
+                            }
+                        },
+                        gridLines: {
+                            display: false,
+                        },
+                    }],
+                },
+                legend: {
+                 display: false //This will do the task
+              }
+            }
+        });
+    </script>
+    <script>
+        $(".pairstatScroll").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".chart-container").offset().top
+            }, 1000);
+        });
+    </script>
+    <script>
+        var TxtRotate = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<strong class="wrap">' + this.txt + '</strong>';
+
+            var that = this;
+            var delta = 300 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-rotate');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.09em solid #fff }";
+            document.body.appendChild(css);
+        };
+    </script>
+    <script type="text/javascript" src="./js/web3.min.js"></script>
+    <script type="text/javascript" src="js/hexbet/web3_connect.js"></script>
+    <script type="text/javascript" src="js/hexbet/main.js"></script>
+</body>
+</html>

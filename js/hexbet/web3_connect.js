@@ -1780,9 +1780,7 @@ async function Setup() {
 			successMessage("Connecting...");
 			CheckAccount();
 			CheckNetwork();
-			ShowUserAddress();
-			transformRound = parseInt(await hxyContract.methods.getCurrentHxyRound().call());
-			transformRound += 2;
+      ShowUserAddress();
 			web3Found = true;
 			console.log("Web3 Found!");
 			console.log(web3.version);
@@ -1807,7 +1805,7 @@ async function CheckAccount() {
 			}, 5000);
 		} else {
 			activeAccount = accounts[0];
-			web3.eth.defaultAccount = accounts[0];
+      web3.eth.defaultAccount = accounts[0];
 			clearInterval(accountInterval);
 			//interval for account change
 			accountInterval = setInterval(function () {
@@ -1822,9 +1820,12 @@ async function CheckAccount() {
 					}
 				});
       }, 6000);
-      setTimeout(function(){
+      setTimeout(async function(){
+        var hxb = await hxbContract.methods.balanceOf(activeAccount).call();
+        hxb /= 10 ** 8;
+        document.getElementById("lockAmount").value = parseFloat(hxb);
         UpdateData();
-      }, 1000);
+      }, 1500);
 		}
 	}); 
 

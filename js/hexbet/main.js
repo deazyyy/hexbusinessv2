@@ -171,7 +171,6 @@ async function GetBalance() {
   currentInterest /= 10 ** 8;
     document.getElementById("hxyBalance").innerHTML = toFixedMax(hxy, 8);
     document.getElementById("hxbBalance").innerHTML = toFixedMax(hxb, 8);
-    document.getElementById("lockAmount").value = parseFloat(hxb);
     document.getElementById("lockedAmount").innerHTML = toFixedMax(lockedHxb, 8);
     document.getElementById("lockedInterest").innerHTML = toFixedMax(currentInterest, 8);
 	document.getElementById("hexBalance").innerHTML = toFixedMax(hex, 2);

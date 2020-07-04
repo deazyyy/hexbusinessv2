@@ -321,7 +321,8 @@ async function UnlockTokens() {
       errorMessage("Nothing to unlock");
       return;
     }
-  if(!isLockFinished()){
+    var fin = await isLockFinished();
+  if(!fin){
     errorMessage("Cannot unlock yet");
     return;
   }

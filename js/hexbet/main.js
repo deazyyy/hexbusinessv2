@@ -65,7 +65,7 @@ async function TimeTillUnlock() {
   var locked = await hxbContract.methods.locked(activeAccount).call({from:activeAccount});
   var lockTime = parseInt(locked.lockStartTimestamp);
   if(lockTime == 0){
-    return "No HXB locked";
+    return "&nbsp;&nbsp;Lock HXB for 14.6% interest per year<br/><img style='height:18px;' src='images/hexbet/icons/i-icon.png' alt='box'>7 day minimum lock period";
   }
   var minLockDays = 7
   var now = parseInt(Date.now() / 1000);
